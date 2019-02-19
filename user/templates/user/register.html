@@ -1,0 +1,22 @@
+{% extends "home/index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
+<div class="content-section col-md-8" style="color: black; border: 1px solid black;">
+  <center><h1><b><i>sign up to iert</i></b></h1></center>
+  <hr/>
+  <form method="POST" style="border: 0; margin: 4%;">
+    {% csrf_token %}
+    <fieldset class="form-group">
+         {{ form |crispy  }}
+    </fieldset>
+    {{form.errors}}
+   <center>
+    <button style="background: black; padding:2%; font-size: 2rem; color:white;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; sign up</button>
+  </center>
+  </form>
+  <sub><a href="{% url "login" %}" style="text-decoration: none; color: blue; padding:6%;">Already have an account ?</a></sub>
+  <br/>
+  <br/>
+</div>
+
+{% endblock start %}

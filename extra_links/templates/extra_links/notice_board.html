@@ -1,0 +1,16 @@
+{% extends "home/index.html" %}
+
+{% block start %}
+
+<div class="col-md-8" style="border: 1px solid black;">
+
+  {% for i in nb %}
+
+  <h2>{{i.topic}}</h2>
+  <hr/>
+  <p>{{i.info}}</p>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

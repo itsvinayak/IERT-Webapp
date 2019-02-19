@@ -1,0 +1,75 @@
+{% extends "home/index.html" %}
+{% block side %}
+{% endblock %}
+{% block start %}
+<style>
+
+.profile_img{
+
+  border:5px solid lightgrey ;
+  border-radius: 50%;
+  display: block;
+  margin: 50px;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 762px) {
+.profile_img{
+      height: 20rem;
+      width: 20rem;
+}
+
+
+}
+
+
+</style>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div  class="col-md-8" style=" background-color: #f2f2f2; border: 3px solid black; padding: 10px;">
+      <h4 style="float: left; padding-left: 1%; font-weight: bold; text-decoration: underline;">{{user.username}}'s profile &nbsp; &nbsp; &nbsp; &nbsp;</h4>
+      <center>
+     <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%"/>
+      <h4>{{user.username}}</h4>
+      </center>
+       <div style="color: black; font-size: 2rem; text-align: left;padding: 5%; padding-left: 4%; ">
+        <center><h1>info</h1></center>
+        <hr style="border: 1px solid black;"/>
+        <div>name : {{user.first_name}} {{user.last_name}}</div>
+        <div>email : {{user.email}}</div>
+        <div>aktu roll_no : {{user.user_details.roll_no}}</div>
+        <div>branch : {{user.user_details.branch}}</div>
+        <div>year : {{user.user_details.year}}</div>
+        <div>phone : {{user.user_details.phone_no}}</div>
+        <div>date of birth : {{user.user_details.date_of_birth}}</div>
+      </div>
+      <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary" ><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
+      <br/>
+      <br/>
+      <hr style="border:1px solid black;"/>
+      <br/>
+      <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>
+      {% for i in teacher %}
+
+      <div style="margin: 50px; border: 1px solid black" class="shade">
+        {% if i.image.url != '/media/def.png' %}
+        <a href="{{i.image.url}}" target="_blank">
+         <img src="{{ i.image.url }}" height="200px" width="100px" class="img-responsive img-thumbnail" style="float:left; margin: 50px;"/>
+       </a>
+        {% endif %}
+         <div style="text-align: left; margin:50px;">
+           <h3>{{i.name}}</h3>
+           <span>Designation : {{i.Designation}}</span>
+           <br/>
+           <span>Qualification :{{i.Qualification}}</span>
+           <br/>
+           <span>Phone No. : {{i.Phone}}</span>
+           <br/>
+           <span>Email : <a>{{i.email}}</a></span>
+         </div>
+       </div>
+      {% endfor %}
+     </div>
+  </div>
+
+{% endblock %}

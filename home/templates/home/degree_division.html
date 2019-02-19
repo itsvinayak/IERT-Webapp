@@ -1,0 +1,23 @@
+{% extends "home/index.html" %}
+
+
+{% block start %}
+
+
+  <div class="col-md-8" style="border: 1px solid black; padding: 3%;">
+    <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{branch}}</h1>
+    <hr/>
+    <br/>
+    <div style="font-size: 2rem ;">{{info}}</div>
+    <h2 style="font-size: 4rem ;">vision</h2>
+    <hr/>
+    <div style="font-size: 2rem ;">{{vision}}</div>
+    <h2 style="font-size: 4rem ;">mission</h2>
+    <hr/>
+    <pre>
+    <div style="font-size: 2rem ;">{{mission}}</div>
+  </pre>
+  </div>
+
+
+{% endblock %}

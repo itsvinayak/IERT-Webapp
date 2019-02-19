@@ -1,0 +1,36 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block start %}
+<div class="col-md-8" style="border: 1px solid black;">
+  <br />
+  <h1>Dr. Vimal Mishra</h1>
+  <hr />
+
+  <img src="{% static "home/img/director.jpg" %}" alt="pic not found" width="200px" height="200px" class="img-responsive " style=" border: 2px solid black; margin: 4%;   ">
+
+
+  <p style="margin: 2%; padding: 1%; font-size: 2rem;" ><b>Dr. Vimal Mishra </b> obtained his <b><i>Ph.D. degree in Computer Engineering </i></b> from Department of Computer Science & Engineering, Indian Institute of Technology- BHU (I.I.T.-BHU), Varanasi and M. Tech. in Electronics Engineering with specialization
+    in Digital Electronics & Systems and B. Tech. in Computer Science and Engineering from Kamla Nehru Institute of Technology, Sultanpur. His research interests are machine translation, natural language processing, artificial intelligence,
+    intelligent web, and cloud computing. He has published several books and research articles in national and international journals of repute. He has been working on leadership roles in various Govt. institutes since last 30 years in
+    technical education. He has been serving as a director in <b> IERT , Allahabad </b> since May, 2014.
+  </p>
+
+  <hr />
+  <blockquote>
+    <div style="border: 1px solid black ; background-color: lightblue; padding :2%; margin: 3%;">
+      <h3 style="text-align: center;">___contact info ___</h3>
+      <hr />
+      <ul>
+        <li> Name in Full :- Dr. Vimal Mishra</li>
+        <br />
+        <li> Address and Contact:- Institute of Engineering and Rural Technology 26, Chatham Line, Allahabad- 211002, U.P., India</li>
+        <br />
+        <li>Phone and Fax:- (+91)-0532-2544810</li>
+        <br />
+        <li> E-mail:- director@iert.ac.in</li>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}

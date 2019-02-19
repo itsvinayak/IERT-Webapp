@@ -1,0 +1,38 @@
+{% extends "home/index.html" %}
+{% block start %}
+
+<div class="col-md-8" style="border: 1px solid black">
+      <h1><center>Faculty Corner</center></h1>
+      <hr />
+       <h4>
+         <a href="#">-> Regarding submission of sessional marks of even semesters for the Session 2017-18</a>
+         <br/>
+         <br/>
+         <a href="#">-> Faculty leave form</a>
+       </h4>
+       <hr/>
+
+    <div style="text-align: center; font-family: Arial; font-size: 4rem;"> Faculty Here</div>
+
+    {% for i in fac %}
+
+    <div style="margin: 50px; border: 1px solid black" class="shade">
+      {% if i.image.url != '/media/def.png' %}
+      <a href="{{i.image.url}}" target="_blank">
+       <img src="{{ i.image.url }}" height="200px" width="100px" class="img-responsive img-thumbnail" style="float:left; margin: 50px;"/>
+     </a>
+      {% endif %}
+       <div style="text-align: left; margin:50px;">
+         <h3>{{i.name}}</h3>
+         <span>Designation : {{i.Designation}}</span>
+         <br/>
+         <span>Qualification :{{i.Qualification}}</span>
+         <br/>
+         <span>Phone No. : {{i.Phone}}</span>
+         <br/>
+         <span>Email : <a>{{i.email}}</a></span>
+       </div>
+     </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block side %}
+{% endblock %}
+
+{% block start %}
+
+  <!--style -->
+  <style>
+  article{
+    border: 1px solid black;
+    padding:2%;
+    margin: 2%;
+  }
+
+
+  </style>
+
+
+  <!-- news -->
+  <div class="row">
+    <div class="col-md-8">
+      {% for i in news %}
+      <article>
+        <div class="title">
+          <!-- title here -->
+          <h2>{{i.title}}</h2>
+          <br/>
+          <sub>
+            {{i.date}}
+            <br/>
+            {{i.author}}
+        </div>
+        <hr/>
+        {% if i.image.url != '/media/def.png' %}
+                 <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail" alt="image not here" height="40%" width="100%" />
+              <hr/>
+        {% endif %}
+
+        <div class="info">
+          <!--info -->
+          {{i.info}}
+        </div>
+
+      </article>
+      <br/>
+      <hr/>
+      {% endfor %}
+
+    </div>
+
+    <!--____________________________________________________-->
+   <br/>
+    <div class="col-md-4">
+          <!-- form -->
+
+          <form method="POST" style="border: 1px solid black; text-align: center; font-family: serif; color:black; padding: 3%; "  enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <h2><b><i>send us news</i></b></h2>
+            <hr style="background-color: black;  border: 1px solid black;"/>
+
+              {{form|crispy}}
+
+              <input type="submit" style="padding: 1rem; font-size: 2rem; border: 1px solid black; border-radius: 10%;" value="submit" />
+        </form>
+    </div>
+  </div>
+{% endblock %}

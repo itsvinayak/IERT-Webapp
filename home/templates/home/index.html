@@ -1,0 +1,419 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <link rel="stylesheet" type="text/css" href='{% static "home/index_style.css" %}' />
+
+  <!-- bootstrap file -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- bootstrap file-->
+
+
+
+  <!-- message here -->
+
+  {% if messages %}
+  {% for message in messages %}
+
+     <script>  alert("{{ message }}") ; </script>
+
+  {% endfor %}
+  {% endif %}
+
+<!--_______________________________________________-->
+
+
+
+</head>
+
+<body class="container-fluid">
+
+  <header class="row">
+
+    <!-- navbar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" class="styleheader" href="https://www.iert.ac.in/">IERT</a>
+        </div>
+        <div class="collapse navbar-collapse" id="mainNavBar">
+          <ul class="nav navbar-nav navbar-right">
+            <li ><a href="{% url "index" %}">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Institute<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url "about_us" %}"><span class="glyphicon glyphicon-fire"></span> &nbsp; About us</a></li>
+                <li><a href="{% url "about_city" %}"><span class="glyphicon glyphicon-map-marker"></span> &nbsp; About city</a></li>
+                <li><a href="{% url "vision_and_mission" %}"><span class="glyphicon glyphicon-flag"></span> &nbsp; Vision And Mission</a></li>
+                <li><a href="{% url "administration" %}"><span class="glyphicon glyphicon-list-alt"></span> &nbsp; Administration</a></li>
+                <li><a href="{% url "photo_gallery" %}"><span class="glyphicon glyphicon-picture"></span> &nbsp; Photo gallery</a></li>
+                <li><a href="{% url "video_gallery" %}"><span class="glyphicon glyphicon-facetime-video"></span> &nbsp; Video gallery</a></li>
+                <li><a href="{% url "institution_holiday" %}"><span class="glyphicon glyphicon-info-sign"></span> &nbsp; Institute Holiday</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Academics<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url "academic_cal" %}"><span class="glyphicon glyphicon-calendar"></span> &nbsp; Academics Calender</a></li>
+                <li><a href="{% url "u_g_program" %}"  ><span class="glyphicon glyphicon-info-sign"></span> &nbsp; U G Program</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Division<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1" href="#">Degree Division<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="{% url "Computer_science_and_engg" %}">Computer science and engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Electronics_engg" %}">Electronics engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Industrial_&_production_engg" %}">Industrial & production engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Instrumentation_&_Control_Engg" %}">Instrumentation & Control Engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Civil_Engg" %}">Civil Engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Electrical_Engg" %}">Electrical Engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Mechanical_engg" %}">Mechanical engg.</a></li>
+                    <li><a tabindex="-1" href="{% url "Applied_science_and_humanity" %}">Applied science and Humanity</a></li>
+                    <li><a tabindex="-1" href="{% url "Management" %}">Management</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Diploma Division</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Facility<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                  <a class="test" tabindex="-1" href="#">Library<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="{% url "Center_Library" %}"><span class="glyphicon glyphicon-education"></span> &nbsp; Center Library</a></li>
+                    <li><a tabindex="-1" href="{% url "Reference_Library" %}"><span class="glyphicon glyphicon-book"></span> &nbsp; Reference Library</a></li>
+                    <li><a tabindex="-1" target="_blank" href="https://ndl.iitkgp.ac.in/"><span class="glyphicon glyphicon-cd"></span> &nbsp; National Digital Library</a></li>
+                  </ul>
+                </li>
+            </li>
+            <li><a href="{% url "Health_Center" %}"><span class="glyphicon glyphicon-plus-sign"></span> &nbsp; Health Center</a></li>
+            <li><a href="{% url "Hostels" %}"><span class="glyphicon glyphicon-home"></span> &nbsp; Hostels</a></li>
+            <li><a href="{% url "Banking" %}"><span class="glyphicon glyphicon-usd"></span> &nbsp; Banking</a></li>
+          </ul>
+          </li>
+          <li class="{{news}}"><a href="{% url "news" %}">News</a></li>
+          <li class="{{news}}"><a href="{% url "books" %}">Books</a></li>
+          <li class="{{contact_us}}"><a href="{% url "contact_us" %}">Contact us</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href="{% url "profile" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Profile</a></li>
+            <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a></li>
+            {% else %}
+            <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Sign up</a></li>
+            <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> &nbsp; Log in</a></li>
+            {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </div>
+  </header>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+
+  {% block side %}
+  <div class="row">
+    <div class="col-md-4">
+      <br />
+
+      <!-- note by Director -->
+
+      <div class="dir">
+        <div style="background: black;font-size: 20px; text-align: center;color:white; ">Director's Desk</div>
+
+        <a target="_blank" href="https://www.iert.ac.in/img/director.jpg">
+          <img src="{% static "home/img/director.jpg" %}" alt="image not found" width="300" height="200" class="img-responsive">
+        </a>
+
+        <div class="desc">
+          <div style="text-align: justify; padding: 10px;">
+            Our objective is to prepare leaders, who go beyond conventional
+            technical skills. IERT is a developing high quality institute of
+            international standards in order to meet the needs of the fast changing
+            21<sup>st</sup> century world. <a href="{% url "desk" %}"> More...</a>
+            <br />
+            <br />
+
+            <div style="float: right;">
+
+              <a href="{% url "director" %}"><b>&nbsp;Dr.Vimal Mishra</b></a>
+              <br />
+              <br />
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sidebar" style="float:inherit; text-align: center; color:black; padding: 10px; margin: 10px">
+        <a class="list-group-item list-group-item-action" href="{% url 'recruitment' %}">Recruitment </a>
+        <a class="list-group-item list-group-item-action" href="{% url 'anti_ragging' %}">Anti Ragging</a>
+        <a class="list-group-item list-group-item-action" href="computer center.html">Computer Center</a>
+        <details>
+          <summary class="list-group-item list-group-item-action"><b>Student Corner</b></summary>
+          <a class="list-group-item list-group-item-action" href="Notice Board.html">Notice</a>
+          <a class="list-group-item list-group-item-action " href="Technovation.html">Technovation-2K18</a>
+          <a class="list-group-item list-group-item-action " href="Udbhav.html">Udbhav-2K17</a>
+          <a class="list-group-item list-group-item-action " href="Achievement.html">Achievement</a>
+          <a class="list-group-item list-group-item-action " href="Document Formats.html">Document Formats</a>
+        </details>
+        <a class="list-group-item list-group-item-action" href="Alumni.html">Alumni</a>
+        <a class="list-group-item list-group-item-action" href="Placements.html">Placements</a>
+        <a class="list-group-item list-group-item-action" href="rc.html">Research and Consultency</a>
+        <a class="list-group-item list-group-item-action" href="{% url "faculty" %}">Faculty Corner</a>
+        <details>
+          <summary class="list-group-item list-group-item-action"><b>Important Links</b></summary>
+          <a class="list-group-item list-group-item-action" href="https://www.aicte-india.org/" target="_blank" /> AICTE</a>
+          <a class="list-group-item list-group-item-action " href="http://csirhrdg.res.in/" target="_blank" /> CSIR</a>
+          <a class="list-group-item list-group-item-action" href="https://www.online-inspire.gov.in/" target="_blank" /> DST</a>
+          <a class="list-group-item list-group-item-action " href="http://mhrd.gov.in/" target="_blank" /> MHRD</a>
+          <a class="list-group-item list-group-item-action" href="https://ugc.ac.in/" target="_blank" /> UGC</a>
+        </details>
+        <a class="list-group-item list-group-item-action" href="Downloads.html">Downloads</a>
+        <a class="list-group-item list-group-item-action " href="Administration Notifications.html">Administration Notifications</a>
+        <a class="list-group-item list-group-item-action" href="Achievements Awards.html">Achievements/Awards</a>
+        <a class="list-group-item list-group-item-action" href="{% url "rti" %}">RTI Act</a>
+      </div>
+    </div>
+    <br/>
+    {% endblock %}
+    {% block start %}
+
+      <!-- gallery-->
+     <div class="col-md-4 testcase">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+
+        <div class="carousel-inner">
+            <div class="item active">
+              <img src="{% static "home/img/dip.jpeg" %}" alt="pic not found" style="width:100%;">
+            </div>
+
+            <div class="item">
+              <img src="{% static "home/img/dip.jpeg" %}" alt="pic not found" style="width:100%;">
+            </div>
+
+            <div class="item">
+              <img src="{% static "home/img/kk.JPG" %}" alt="pic not found" style="width:100%;">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+     </div>
+
+      <!-- Notice board -->
+
+      <div class="col-md-4 col-sm-4">
+        <h3 class="btn-basic btn-block" style="text-align: center"><b>ANNOUNCEMENTS</b></h3>
+        <hr>
+        <marquee direction="up" behavior="alternate" scrolldelay="400" width="300px" height="280px">
+
+          <a href="https://www.iert.ac.in/d%20(1).pdf" target="_blank">
+            <p>GENERAL INSTRUCTIONS TO DEGREE STUDENTS FOR SCHOLARSHIP &amp; FEE REIMBURSEMENT<img src="{% static "home/img/new.gif" %}"></p>
+          </a>
+
+          <a href="https://www.iert.ac.in/d%20(2).pdf" target="_blank">
+            <p>GENERAL INSTRUCTIONS TO DIPLOMA STUDENTS FOR SCHOLARSHIP &amp; FEE REIMBURSEMENT<img src="{% static "home/img/new.gif" %}" ></p>
+          </a>
+
+        </marquee>
+
+        <div style="text-align: right;"><a href="{% url "notice" %}"> More...</a></div>
+        <div style="padding-left: 12px; padding-right: 10px;">
+          <aside class="mt-1">
+            <div class="row">
+              <div class="btn btn-block" role="group">
+                <a class="btn btn-default mr-2" href="https://upsee.nic.in/" target="_blank">UPSEE</a>
+                <a class="btn btn-default mr-2" href="{% url "notice" %}" target="_blank">Notice Board</a>
+                <a class="btn btn-default mr-2" href="https://www.iert.ac.in/ad.html" target="_blank">ADMISSIONS</a>
+                <a class="btn btn-default mr-2" href="http://mail.google.com/a/iert.ac.in" target="_blank">WEBMAIL</a>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+    <hr />
+
+    <!--rest -->
+    <div class="col-md-8 rest">
+      <div style="border: 1px solid black;padding: 7px; background: white;">
+        <center>
+          <h2>CONFERENCE & SEMINARS</h2>
+        </center>
+        <hr />
+        <a href="#" target="_blank"><b>Faculty Development Program</b></a>
+        <br />
+        <br />
+        <a href="#" target="_blank"><b>Seminars On Teaching And Learning Methods</b></a>
+        <br />
+        <br />
+        <center>
+          <h2>E-Connect</h2>
+        </center>
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <figure class="col-md-4">
+              <a class="black-text" href="{% url "notice" %}">
+                <img alt="picture" src="{% static "home/img/no6.jpg" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Notice Board</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/n1.jpg" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>NPTEL</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/gr.png" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Women Grievance Portal</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/p.jpg" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Public Grievance Cell</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/swa.jpg" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Swayam</i></h3>
+              </a>
+            </figure>
+          </div>
+        </div>
+        <br />
+        <br />
+        <center>
+          <h2>AFFILIATION & APPROVAL</h2>
+        </center>
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/aktu.png" %}" class="img-fluid" height="100" width="150">
+                <h3 class="text-center my-3"><i>AKTU</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/aicte.jpg" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>AICTE</i></h3>
+              </a>
+            </figure>
+          </div>
+        </div>
+        <br />
+        <br />
+        <center>
+          <h2>RASHTRIYA ABHIYAAN</h2>
+        </center>
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/si.png" %}" class="img-fluid" height="100" width="150">
+                <h3 class="text-center my-3"><i>Skill INDIA</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/s.png" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Startup INDIA</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/download.png" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Rashtriya Avishkar Abhiyaan</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/v.jpg" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>Vidya Lalshm</i></h3>
+              </a>
+            </figure>
+            <figure class="col-md-4">
+              <a class="black-text" href="#">
+                <img alt="picture" src="{% static "home/img/dst-logo.png" %}" class="img-fluid" height="100" width="200">
+                <h3 class="text-center my-3"><i>DST-INSPIRE</i></h3>
+              </a>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}
+  </div>
+
+  <!-- footer here -->
+
+  <footer class="row footer_here">
+    <div class="row mt-4" style="color:white;background-color:black;text-align:center;padding:10px;margin-top:7px;font-size:12px;">
+      <p>&copy;<a href="http://www.iert.ac.in/"> Institute of Engineering and Rural Technology</a> 26, Chatham line, Allahabad - 211002 UP, INDIA &nbsp;&nbsp;&nbsp; <a href="contact us.html"> Contact</a> &nbsp;&nbsp;&nbsp; Telephone No.:
+        (+91)-0532-2544810</p>
+      <div align=center><a href='http://www.iert.ac.in/'>no. of visiter :&nbsp;&nbsp;<img src='https://www.counter12.com/img-y0ww8WAbZbzWbZCc-50.gif' border='0' alt='acesso gratis'></a>
+        <script type='text/javascript' src='https://www.counter12.com/ad.js?id=y0ww8WAbZbzWbZCc'></script>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    //for mulitilevel menu
+    $(document).ready(function() {
+      $('.dropdown-submenu a.test').on("click", function(e) {
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+
+</html>

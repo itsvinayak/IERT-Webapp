@@ -1,0 +1,48 @@
+{% extends "home/index.html" %}
+
+
+{% block start %}
+
+<style>
+
+.gal img {
+  border: solid 5px white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: filter 0.3s linear , transform 0.3s linear;
+}
+
+.gal:hover img{
+  filter: blur(4px);
+  transform: scale(0.9);
+}
+.gal img:hover{
+  filter: blur(0);
+  transform: scale(1.7);
+}
+
+
+
+</style>
+
+<div class="col-md-8">
+<!-- Gallery -->
+
+<div style="border: 1px solid black; background: lightgrey;" class="gal">
+
+  <h1 style="text-align:center; font-family: fantasy; text-decoration: unnderline;"> &nbsp; Gallery &nbsp; </h1>
+  {% for i in images %}
+
+  <div style=" margin: 2%;  padding: 2%; float: left; margin: 3%;">
+    <a href="{{i.image.url}}" target="_blank"><img src="{{i.image.url}}" style=" width: 15rem; height: 15rem;" /></a>
+    <br/>
+    <div style="text-align: center; font-family: cursive; margin: 3%;">{{i.title}}</div>
+  </div>
+  {% endfor %}
+</div>
+
+</div>
+
+
+
+{% endblock %}
