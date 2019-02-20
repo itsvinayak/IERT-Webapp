@@ -1,10 +1,13 @@
 {% extends "home/index.html" %}
 {% load crispy_forms_tags %}
+{% block side %}
+{% endblock %}
 {% block start %}
-<div class="content-section col-md-8" style="color: black; border: 1px solid black;">
+<div class="row">
+<div class="content-section col-md-8 col-md-offset-2" style="color: black; margin-bottom: 5rem; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),  0 6px 20px 0 rgba(0,0,0,0.39); border-radius: 20px; border: 1px solid black;">
   <center><h1><b><i>sign up to iert</i></b></h1></center>
   <hr/>
-  <form method="POST" style="border: 0; margin: 4%;">
+  <form method="POST" style="border: 0; margin: 4%; ">
     {% csrf_token %}
     <fieldset class="form-group">
          {{ form |crispy  }}
@@ -18,5 +21,5 @@
   <br/>
   <br/>
 </div>
-
+</div>
 {% endblock start %}

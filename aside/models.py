@@ -9,3 +9,14 @@ class facultys(models.Model):
     email = models.EmailField()
     def __str__(self):
         return self.name
+
+class recruitment_notice(models.Model):
+    notice=models.CharField(max_length=1000)
+    def __str__(self):
+        return self.notice
+
+class download_link(models.Model):
+    title=models.CharField(max_length=1000)
+    file=models.FileField(upload_to="pdf/")
+    def __str__(self):
+        return self.title

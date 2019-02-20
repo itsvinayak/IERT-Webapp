@@ -4,7 +4,7 @@ from .models import degree_detail,gallery_pic
 
 def index(request):
     page_details={
-                   "title":"iert"
+                   "title":"IERT, Prayagraj"
     }
     return render(request,"home/index.html",page_details)
 

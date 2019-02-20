@@ -17,8 +17,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
       path('faculty',views.faculty,name='faculty'),
       path('anti_ragging',views.anti_ragging,name='anti_ragging'),
+      path('computer_center',views.computer_center,name='computer_center'),
+      path('download',views.download,name='download'),
       path('recruitment',views.recruitment,name='recruitment'),
       path('rti',views.rti,name='rti'),
+
 ]

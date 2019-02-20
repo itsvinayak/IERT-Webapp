@@ -4,7 +4,7 @@ from .forms import user_news_story
 
 
 def index(request):
-    n=new.objects.order_by('-date')
+    n=new.objects.order_by('-date')[:6]
     if request.method=='POST':
             form=user_news_story(request.POST,request.FILES)
             if form.is_valid():

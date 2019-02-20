@@ -9,11 +9,25 @@
   <!--style -->
   <style>
   article{
-    border: 1px solid black;
-    padding:2%;
-    margin: 2%;
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+                   0 6px 20px 0 rgba(0,0,0,0.39);
+       margin-bottom : 6%;
+       border-radius: 25px;
+       padding : 5%;
+       overflow: auto;
+       text-overflow: ellipsis;
   }
-
+.form_article_sumit{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+              0 6px 20px 0 rgba(0,0,0,0.39);
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: center;
+  margin-top: -1%;
+  font-family: cursive;
+  color:black;
+  padding:4%;
+}
 
   </style>
 
@@ -25,10 +39,8 @@
       <article>
         <div class="title">
           <!-- title here -->
-          <h2>{{i.title}}</h2>
-          <br/>
-          <sub>
-            {{i.date}}
+          <h1>{{i.title}}</h1>
+           {{i.date}}
             <br/>
             {{i.author}}
         </div>
@@ -55,7 +67,7 @@
     <div class="col-md-4">
           <!-- form -->
 
-          <form method="POST" style="border: 1px solid black; text-align: center; font-family: serif; color:black; padding: 3%; "  enctype="multipart/form-data">
+          <form method="POST" class="form_article_sumit" enctype="multipart/form-data">
 
             {% csrf_token %}
             <h2><b><i>send us news</i></b></h2>

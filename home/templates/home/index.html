@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
   <link rel="stylesheet" type="text/css" href='{% static "home/index_style.css" %}' />
+  <link rel="shortcut icon" type="image/x-icon" href="{% static "home/img/iert_icon.png" %}">
+  <link rel="apple-touch-icon" href="{% static "home/img/iert_icon.png" %}"/>
+
 
   <!-- bootstrap file -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -167,7 +170,7 @@
       <div class="sidebar" style="float:inherit; text-align: center; color:black; padding: 10px; margin: 10px">
         <a class="list-group-item list-group-item-action" href="{% url 'recruitment' %}">Recruitment </a>
         <a class="list-group-item list-group-item-action" href="{% url 'anti_ragging' %}">Anti Ragging</a>
-        <a class="list-group-item list-group-item-action" href="computer center.html">Computer Center</a>
+        <a class="list-group-item list-group-item-action" href="{% url 'computer_center' %}">Computer Center</a>
         <details>
           <summary class="list-group-item list-group-item-action"><b>Student Corner</b></summary>
           <a class="list-group-item list-group-item-action" href="Notice Board.html">Notice</a>
@@ -188,7 +191,7 @@
           <a class="list-group-item list-group-item-action " href="http://mhrd.gov.in/" target="_blank" /> MHRD</a>
           <a class="list-group-item list-group-item-action" href="https://ugc.ac.in/" target="_blank" /> UGC</a>
         </details>
-        <a class="list-group-item list-group-item-action" href="Downloads.html">Downloads</a>
+        <a class="list-group-item list-group-item-action" href="{% url "download" %}">Downloads</a>
         <a class="list-group-item list-group-item-action " href="Administration Notifications.html">Administration Notifications</a>
         <a class="list-group-item list-group-item-action" href="Achievements Awards.html">Achievements/Awards</a>
         <a class="list-group-item list-group-item-action" href="{% url "rti" %}">RTI Act</a>

@@ -3,10 +3,31 @@
 {% endblock %}
 {% block start %}
 <style>
+.shade{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+              0 6px 20px 0 rgba(0,0,0,0.39);
 
+}
+.shade:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5),
+              0 12px 40px 0 rgba(0,0,0,0.39);
+  background: lightblue;
+}
+.shade img{
+  border-radius:10px;
+
+}
+
+.shade img:hover{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+              0 6px 20px 0 rgba(0,0,0,0.39);
+  border:1px solid black;
+}
 .profile_img{
 
   border:5px solid lightgrey ;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+              0 6px 20px 0 rgba(0,0,0,0.39);
   border-radius: 50%;
   display: block;
   margin: 50px;
