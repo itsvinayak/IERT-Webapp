@@ -108,9 +108,9 @@
             <li><a href="{% url "Banking" %}"><span class="glyphicon glyphicon-usd"></span> &nbsp; Banking</a></li>
           </ul>
           </li>
-          <li class="{{news}}"><a href="{% url "news" %}">News</a></li>
-          <li class="{{news}}"><a href="{% url "books" %}">Books</a></li>
-          <li class="{{contact_us}}"><a href="{% url "contact_us" %}">Contact us</a></li>
+          <li><a href="{% url "news" %}">News</a></li>
+
+          <li><a href="{% url "contact_us" %}">Contact us</a></li>
 
             {% if user.is_authenticated %}
             <li><a href="{% url "profile" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Profile</a></li>

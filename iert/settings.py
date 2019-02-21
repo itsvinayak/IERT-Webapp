@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #local apps
-    'books.apps.BooksConfig',
     'iert_news.apps.IertNewsConfig',
     'extra_links.apps.ExtraLinksConfig',
     'user.apps.UserConfig',

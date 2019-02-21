@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from user import views as user
 from django.contrib.auth import views as auth
-from books import views as books
+
 
 urlpatterns = [
 
@@ -31,7 +31,6 @@ urlpatterns = [
 
     #############################################
     path('news/',include('iert_news.urls')),
-    path('books/',books.index,name='books'),
     path('',include('home.urls')),
 
 
