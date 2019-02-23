@@ -33,8 +33,14 @@ urlpatterns = [
     path('news/',include('iert_news.urls')),
     path('',include('home.urls')),
 
+    ###################password reset###############
 
-    #user related path
+    path('password_reset/',auth.PasswordResetView.as_view(template_name='user/password_reset.html'),name="password_reset"),
+    path('password_reset/done',auth.PasswordResetDoneView.as_view(template_name='user/password_reset_done.html'),name="password_reset_done"),
+    path('password_reset_confirm/<uidb64>/<token>/',auth.PasswordResetConfirmView.as_view(template_name='user/password_reset_confirm.html'),name="password_reset_confirm"),
+    path('password_reset_complete/',auth.PasswordResetCompleteView.as_view(template_name='user/password_reset_complete.html'),name="password_reset_complete"),
+
+    #####user related path##########################
     path('user/',include('user.urls')),
     path('login/',user.Login,name='login'),
     path('logout/',auth.LogoutView.as_view(template_name='home/index.html'),name='logout'),

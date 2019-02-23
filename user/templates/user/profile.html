@@ -64,6 +64,9 @@
         <div>phone : {{user.user_details.phone_no}}</div>
         <div>date of birth : {{user.user_details.date_of_birth}}</div>
       </div>
+      <span style=" margin-left:3%;">
+       <sub style="text-align: left;" class="btn btn-default"><a href="{% url 'password_reset' %}" style="text-decoration: none; color: blue; padding: 4%;">change password</a></sub>
+      </span>
       <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary" ><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
       <br/>
       <br/>
