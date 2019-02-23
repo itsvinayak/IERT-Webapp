@@ -34,6 +34,13 @@ def computer_center(request):
     }
     return render(request,"aside/computer_center.html",page_details)
 
+def placement(request):
+    page_details={
+         "title":"placements",
+    }
+    return render(request,"aside/placement.html",page_details)
+
+
 def recruitment(request):
     l=recruitment_notice.objects.all()
     page_details={
@@ -41,6 +48,25 @@ def recruitment(request):
          "title":"recruitment"
     }
     return render(request,"aside/recruitment.html",page_details)
+
+def technovation(request):
+    page_details={
+         "title":"Technovation"
+    }
+    return render(request,"aside/technovation.html",page_details)
+
+def Udbhav(request):
+    page_details={
+         "title":"Udbhav"
+    }
+    return render(request,"aside/Udbhav.html",page_details)
+
+def Achievements(request):
+    page_details={
+         "title":"Achievements"
+    }
+    return render(request,"aside/Achievements.html",page_details)
+
 
 def rti(request):
     page_details={

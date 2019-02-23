@@ -19,7 +19,7 @@
   <!-- bootstrap file-->
 
    <!-- service worker -->
-   
+
    {% progressive_web_app_meta %}
 
    <!--_______________________-->
@@ -180,15 +180,12 @@
         <a class="list-group-item list-group-item-action" href="{% url 'computer_center' %}">Computer Center</a>
         <details>
           <summary class="list-group-item list-group-item-action"><b>Student Corner</b></summary>
-          <a class="list-group-item list-group-item-action" href="Notice Board.html">Notice</a>
-          <a class="list-group-item list-group-item-action " href="Technovation.html">Technovation-2K18</a>
-          <a class="list-group-item list-group-item-action " href="Udbhav.html">Udbhav-2K17</a>
-          <a class="list-group-item list-group-item-action " href="Achievement.html">Achievement</a>
+          <a class="list-group-item list-group-item-action" href="{% url "notice" %}">Notice</a>
+          <a class="list-group-item list-group-item-action " href="{% url "technovation" %}">Technovation</a>
+          <a class="list-group-item list-group-item-action " href="{% url "Udbhav" %}">Udbhav</a>
           <a class="list-group-item list-group-item-action " href="Document Formats.html">Document Formats</a>
         </details>
-        <a class="list-group-item list-group-item-action" href="Alumni.html">Alumni</a>
-        <a class="list-group-item list-group-item-action" href="Placements.html">Placements</a>
-        <a class="list-group-item list-group-item-action" href="rc.html">Research and Consultency</a>
+        <a class="list-group-item list-group-item-action" href="{% url "placement" %}">Placements</a>
         <a class="list-group-item list-group-item-action" href="{% url "faculty" %}">Faculty Corner</a>
         <details>
           <summary class="list-group-item list-group-item-action"><b>Important Links</b></summary>
@@ -199,8 +196,8 @@
           <a class="list-group-item list-group-item-action" href="https://ugc.ac.in/" target="_blank" /> UGC</a>
         </details>
         <a class="list-group-item list-group-item-action" href="{% url "download" %}">Downloads</a>
-        <a class="list-group-item list-group-item-action " href="Administration Notifications.html">Administration Notifications</a>
-        <a class="list-group-item list-group-item-action" href="Achievements Awards.html">Achievements/Awards</a>
+        <a class="list-group-item list-group-item-action " href="#">Administration Notifications</a>
+        <a class="list-group-item list-group-item-action" href="{% url "Achievements" %}">Achievements/Awards</a>
         <a class="list-group-item list-group-item-action" href="{% url "rti" %}">RTI Act</a>
       </div>
     </div>

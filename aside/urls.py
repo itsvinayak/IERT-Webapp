@@ -22,6 +22,10 @@ urlpatterns = [
       path('anti_ragging',views.anti_ragging,name='anti_ragging'),
       path('computer_center',views.computer_center,name='computer_center'),
       path('download',views.download,name='download'),
+      path('technovation',views.technovation,name='technovation'),
+      path('placements',views.placement,name='placement'),
+      path('Udbhav',views.Udbhav,name='Udbhav'),
+      path('Achievements',views.Achievements,name='Achievements'),
       path('recruitment',views.recruitment,name='recruitment'),
       path('rti',views.rti,name='rti'),
 
