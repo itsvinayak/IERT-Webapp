@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #################
     #third party app
     'crispy_forms',
+    'pwa',
 
     ################
     'django.contrib.admin',
@@ -148,3 +149,32 @@ EMAIL_USE_TLS=True
 ####################collage email id ##############
 EMAIL_HOST_USER="itssvinayak@gmail.com"
 EMAIL_HOST_PASSWORD="vqtofhhnakpaxrmo"
+
+
+
+#########################pwa settings###############
+
+
+PWA_APP_NAME = 'IERT'
+PWA_APP_DESCRIPTION = "Institute of Engineering & Technology"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+{
+'src': '/static/home/img/iert_icon.png',
+'sizes': '160x160'
+}
+]
+PWA_APP_SPLASH_SCREEN = [
+{
+'src': '/static/home/img/iert_icon.png',
+'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+}
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+###############################################################################################

@@ -33,6 +33,11 @@ urlpatterns = [
     path('news/',include('iert_news.urls')),
     path('',include('home.urls')),
 
+    #######################pwa app url#####################
+    ###leave it empty it always run#######################
+    
+    path('', include('pwa.urls')),
+
     ###################password reset###############
 
     path('password_reset/',auth.PasswordResetView.as_view(template_name='user/password_reset.html'),name="password_reset"),
