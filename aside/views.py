@@ -27,8 +27,10 @@ def anti_ragging(request):
     return render(request,"aside/anti_ragging.html",page_details)
 
 def computer_center(request):
+    teacher=facultys.objects.all().filter(Designation='Computer_science_and_engg')
     page_details={
-         "title":"computer_center"
+         "title":"computer_center",
+         "teachers":teacher,
     }
     return render(request,"aside/computer_center.html",page_details)
 
