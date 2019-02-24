@@ -35,7 +35,7 @@ urlpatterns = [
 
     #######################pwa app url#####################
     ###leave it empty it always run#######################
-    
+
     path('', include('pwa.urls')),
 
     ###################password reset###############
