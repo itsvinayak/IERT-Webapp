@@ -67,6 +67,12 @@ def Achievements(request):
     }
     return render(request,"aside/Achievements.html",page_details)
 
+def Women_Grievance_Cell(request):
+    page_details={
+             "title":"Women Grievance Cell"
+        }
+    return render(request,"aside/Women_Grievance_Cell.html",page_details)
+
 
 def rti(request):
     page_details={

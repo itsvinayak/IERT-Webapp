@@ -26,6 +26,7 @@ urlpatterns = [
       path('placements',views.placement,name='placement'),
       path('Udbhav',views.Udbhav,name='Udbhav'),
       path('Achievements',views.Achievements,name='Achievements'),
+      path('Women_Grievance_Cell',views.Women_Grievance_Cell,name='Women_Grievance_Cell'),
       path('recruitment',views.recruitment,name='recruitment'),
       path('rti',views.rti,name='rti'),
 

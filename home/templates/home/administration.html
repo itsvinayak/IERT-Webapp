@@ -1,7 +1,185 @@
 {% extends "home/index.html" %}
-
-
+{% load static %}
 {% block start %}
+
+<style>
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+</style>
+
+<div class="col-md-8" style="border: 1px solid black;">
+  <center><h1>Administration</h1></center>
+  <hr/>
+<center>
+
+  <div class="flip-card"   style="float: left; width:300px; height:300px;  margin: 2%;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+
+        <a href="{% static "home/img/Dr-Ashish-Kumar-Goel.jpg" %}" target="_blank">
+           <img src="{% static "home/img/Dr-Ashish-Kumar-Goel.jpg" %}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+        </a>
+
+      </div>
+      <div class="flip-card-back" style="width:300px; height:300px;" >
+
+        <h1>Dr. Ashish Kumar Goel (IAS) </h1>
+        <hr/>
+        <p>Divisional Commissioner,Allahabad</p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- card 2 -->
+
+<div class="flip-card"   style="float: left; width:300px; height:300px;  margin: 2%;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+
+      <a href="{% static "home/img/cheif_proctor.png" %}" target="_blank">
+         <img src="{% static "home/img/cheif_proctor.png" %}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+      </a>
+
+    </div>
+    <div class="flip-card-back" style="width:300px; height:300px;" >
+
+      <h1>Dr.  Sanjay Shukla</h1>
+      <hr/>
+      <p>Chief Proctor</p>
+      <p>(+91)-9919813706</p>
+      <p>proctor@iert.ac.in</p>
+
+    </div>
+  </div>
+</div>
+
+<!--card 3 -->
+
+
+<div class="flip-card"   style="float: left; width:300px; height:300px;  margin: 2%;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+
+      <a href="{% static "home/img/dean.png" %}" target="_blank">
+         <img src="{% static "home/img/dean.png" %}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+      </a>
+
+    </div>
+    <div class="flip-card-back" style="width:300px; height:300px;" >
+
+      <h1>Dr. Anil Kumar Bajpai  </h1>
+      <hr/>
+      <p>Dean</p>
+      <p>	Industrial and Production , Mechanical Engineering</p>
+      <p>	+91-9415500048</p>
+      <p>akbajpai@iert.ac.in</p>
+
+    </div>
+  </div>
+</div>
+
+<!--card 3 -->
+
+
+<div class="flip-card"   style="float: left; width:300px; height:300px;  margin: 2%;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+
+      <a href="{% static "home/img/bi.png" %}" target="_blank">
+         <img src="{% static "home/img/bi.png" %}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+      </a>
+
+    </div>
+    <div class="flip-card-back" style="width:300px; height:300px;" >
+
+      <h1>Dr. Bireshwar Dass Mazumdar </h1>
+      <hr/>
+      <p>Deputy Dean</p>
+      <p>Associate Professor & Head of Department</p>
+      <p>+91-9307977683</p>
+      <p>	bdmazumdar@iert.ac.in</p>
+
+    </div>
+  </div>
+</div>
+
+
+<!--card 4 -->
+
+
+<div class="flip-card"   style="float: left; width:300px; height:300px;  margin: 2%;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+
+      <a href="{% static "home/img/akt.png" %}" target="_blank">
+         <img src="{% static "home/img/akt.png" %}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+      </a>
+
+    </div>
+    <div class="flip-card-back" style="width:300px; height:300px;" >
+
+      <h1>Mr. Ashok Kumar Tripathi</h1>
+      <hr/>
+      <p>Head of Department</p>
+      <p>	+91-9415637760</p>
+      <p>	hodel@iert.ac.in</p>
+
+    </div>
+  </div>
+</div>
+
+</center>
+
+</div>
 
 
 

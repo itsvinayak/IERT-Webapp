@@ -211,11 +211,18 @@ def Management(request):
 
 ## Library
 
-def Center_Library(request):
-    pass
+def Central_Library(request):
+    page_details={
+        "title":"Central Library"
+    }
+    return render(request,"home/Central_Library.html",page_details)
+
 
 def Reference_Library(request):
-    pass
+    page_details={
+        "title":"Reference Library"
+    }
+    return render(request,"home/Reference_Library.html",page_details)
 
 
 ###########################################
