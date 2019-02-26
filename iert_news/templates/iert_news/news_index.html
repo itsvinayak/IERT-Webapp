@@ -8,6 +8,20 @@
 
   <!--style -->
   <style>
+  .like_button{
+    background: white;
+    color: red;
+    border: 0px;
+  }
+  .dislike_button{
+    background: white;
+    color: grey;
+    border: 0px;
+  }
+  button:hover{
+    color: lightblue;
+  }
+
   article{
        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
                    0 6px 20px 0 rgba(0,0,0,0.39);
@@ -54,7 +68,17 @@
           <!--info -->
           {{i.info|safe}}
         </div>
+        <hr/>
+        <b style="float: left; font-size: 2rem;"><i>{{ i.likes.count }} &nbsp;</i></b>
 
+        <form  action="{% url "like_news" %}" method="post" style="border: 0px;">
+          {% csrf_token %}
+        {% if i.id in if_dic %}
+          <button type="submit" name="news_id" value="{{ i.id }}" class="like_button"><i class="fa fa-heart" style="font-size:24px"></i></button>
+        {% else %}
+          <button type="submit" name="news_id" value="{{ i.id }}" class="dislike_button"><i class="fa fa-heart-o" style="font-size:24px"></i></button>
+        {% endif %}
+        </form>
       </article>
       <br/>
       <hr/>

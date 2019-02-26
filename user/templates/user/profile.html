@@ -95,8 +95,7 @@
 </style>
 
 <div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8" style=" background-color: #f2f2f2; border: 3px solid black; padding: 10px;">
+  <div class="col-md-8 col-md-offset-2" style=" background-color: #f2f2f2; border: 3px solid black; padding: 10px;">
     <h4 style="float: left; padding-left: 1%; font-weight: bold; text-decoration: underline;">{{user.username}}'s profile &nbsp; &nbsp; &nbsp; &nbsp;</h4>
     <center>
       <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
@@ -115,7 +114,7 @@
       <div>phone : {{user.user_details.phone_no}}</div>
       <div>date of birth : {{user.user_details.date_of_birth}}</div>
     </div>
-  
+
     <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
     <br />
     <br />
@@ -123,16 +122,10 @@
     <br />
     <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>
     {% for i in teacher %}
-    <div class="flip-card"   style="float: left; width:300px; height:300px;  margin: 2%;">
+    <div class="flip-card" style="float: left; width:300px; height:300px;  margin: 2%;">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-
-          {% if i.image.url != '/media/def.png' %}
-          <a href="{{i.image.url}}" target="_blank">
             <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
-          </a>
-          {% endif %}
-
         </div>
         <div class="flip-card-back" style="width:300px; height:300px;" >
           <h1>{{i.name}}</h1>

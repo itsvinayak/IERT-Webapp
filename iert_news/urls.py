@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
     path('',views.index,name="news"),
+    path('like/',views.like_news,name="like_news"),
 
 ]
