@@ -82,14 +82,15 @@ def contact_us(request):
 def Computer_science_and_engg(request):
     cse=degree_detail.objects.all()
     for i in cse:
-        if i.branch == "Computer_science_and_engg":
+        if i.branch == "Computer science and engg":
             bd={
                  "title":i.branch,
                  "branch":i.branch,
                  "info":i.branch_imformation,
                  "vision":i.branch_vision,
                  "mission":i.branch_mission,
-            }
+                 "table":i.timetable,
+             }
     return render(request,"home/degree_division.html",bd)
 
 

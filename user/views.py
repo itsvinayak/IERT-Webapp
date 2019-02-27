@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm,User_detailsForm
 from aside.models import facultys
+from home.models import degree_detail
 
 
 ########################################################################
@@ -79,10 +80,14 @@ def Profile_update(request):
 @login_required
 def Profile(request):
     ###########################select perticular teacher #######################
-    teacher=facultys.objects.all().filter(Designation='student')
-
+    teacher=facultys.objects.all().filter(Designation='Computer science and engg')
+    branch=degree_detail.objects.all()
+    for i in branch:
+        if i.branch == "Computer science and engg":
+           table= i.timetable
     context = {
         'title':'profile',
         'teacher':teacher,
+        'timetable':table,
     }
     return render(request, 'user/profile.html', context)

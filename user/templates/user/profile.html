@@ -3,6 +3,12 @@
 {% endblock %}
 {% block start %}
 <style>
+td:hover{
+  background: lightblue;
+  height: 30%;
+  width: 30%;
+  font-size: 2rem;
+}
   .shade {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
       0 6px 20px 0 rgba(0, 0, 0, 0.39);
@@ -118,6 +124,12 @@
     <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
     <br />
     <br />
+    <h2 style="font-family: fantasy; text-align: center;">time table</h2>
+    <hr style="border: 1px solid black;"/>
+    <br/>
+    <div style="font-size: 1rem;">
+      {{timetable|safe}}
+    </div>
     <hr style="border:1px solid black;" />
     <br />
     <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>

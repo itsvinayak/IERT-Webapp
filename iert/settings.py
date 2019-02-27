@@ -156,7 +156,7 @@ EMAIL_HOST_PASSWORD="vqtofhhnakpaxrmo"
 
 
 PWA_APP_NAME = 'IERT'
-PWA_APP_DESCRIPTION = "Institute of Engineering & Technology"
+PWA_APP_DESCRIPTION = "Institute of Engineering & Technology website made by vinayak"
 PWA_APP_THEME_COLOR = '#0A0302'
 PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'

@@ -2,7 +2,14 @@
 
 
 {% block start %}
-
+<style>
+td:hover{
+  background: lightblue;
+  height: 30%;
+  width: 30%;
+  font-size: 2rem;
+}
+</style>
 
   <div class="col-md-8" style="border: 1px solid black; padding: 3%;">
     <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{branch}}</h1>
@@ -15,6 +22,10 @@
     <h2 style="font-size: 4rem ;">mission</h2>
     <hr/>
     <div style="font-size: 2rem ;">{{mission|safe}}</div>
+    <hr/>
+    <h2 style="font-size: 4rem ; text-align: center;">{{branch}} time-table</h2>
+    <br/>
+    <div style="font-size: 1rem ;">{{table|safe}}</div>
   </div>
 
 
