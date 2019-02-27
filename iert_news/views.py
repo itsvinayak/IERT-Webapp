@@ -19,17 +19,12 @@ def index(request):
             if_dic.append(i.id)
 ##############################################
 
-
     page_details={
                     "title":"news in iert",
                     "news":n,
                     "form":form,
                     "if_dic":if_dic
-
     }
-
-
-
     return render(request,"iert_news/news_index.html",page_details)
 
 def like_news(request):

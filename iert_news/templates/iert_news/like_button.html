@@ -1,0 +1,8 @@
+<form action="{% url "like_news" %}" method="post" style="border: 0px;">
+  {% csrf_token %}
+  {% if i.id in if_dic %}
+  <button type="submit" id="like_id" name="news_id" value="{{ i.id }}" class="like_button"><i class="fa fa-heart" style="font-size:24px"></i></button>
+  {% else %}
+  <button type="submit" id="like_id" name="news_id" value="{{ i.id }}" class="dislike_button"><i class="fa fa-heart-o" style="font-size:24px"></i></button>
+  {% endif %}
+</form>
