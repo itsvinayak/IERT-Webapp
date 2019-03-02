@@ -42,6 +42,9 @@
   color:black;
   padding:4%;
 }
+.comment:hover{
+  color: lightblue;
+}
 
   </style>
 
@@ -70,14 +73,15 @@
         </div>
         <hr/>
         <b style="float: left; font-size: 2rem;"><i>{{ i.likes.count }} &nbsp;</i></b>
-        <div id="like-section">
+        <div id="like-section" style="float: left;">
           {% include 'iert_news/like_button.html' %}
         </div>
+        <b style="float: left; font-size: 2rem; "><i> &nbsp;&nbsp;&nbsp;{{ i.no_of_comment }} &nbsp;</i></b>
+        <a href="{% url "new_comments" id=i.id %}" value="{{ i.id }}" style="text-decoration: none; color: black; background: white; border: 0px;" > &nbsp;&nbsp;<i class="fa fa-comment-o comment" style="font-size:24px"></i></a>
       </article>
       <br/>
       <hr/>
       {% endfor %}
-
     </div>
 
     <!--____________________________________________________-->

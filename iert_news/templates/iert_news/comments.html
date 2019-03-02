@@ -1,0 +1,79 @@
+{% extends "home/index.html" %}
+{% load crispy_forms_tags %}
+{% block side %}
+{% endblock %}
+{% block start %}
+<style>
+
+  article{
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+                 0 6px 20px 0 rgba(0,0,0,0.39);
+     margin-bottom : 6%;
+     border-radius: 25px;
+     padding : 5%;
+     overflow: auto;
+     text-overflow: ellipsis;
+}
+.form_article_sumit{
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+            0 6px 20px 0 rgba(0,0,0,0.39);
+border-radius: 10px;
+border: 1px solid black;
+text-align: center;
+margin-top: -1%;
+font-family: cursive;
+color:black;
+padding:4%;
+}
+.info{
+   overflow: auto;
+}
+
+</style>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <article>
+      <div class="title">
+        <!-- title here -->
+        <h1>{{news.title}}</h1>
+        {{news.date}}
+        <br />
+        {{news.author}}
+      </div>
+      <hr />
+      {% if news.image.url != '/media/def.png' %}
+      <img src="{{ news.image.url }}" class="img-responsive img-thumbnail" alt="image not here" height="40%" width="100%" />
+      <hr />
+      {% endif %}
+
+      <div class="info">
+        <!--info -->
+        {{news.info|safe}}
+      </div>
+      <br />
+      <h2>{{com.count}} comments</h2>
+     {% if user.is_authenticated %}
+      <form method="POST" style="border:0; margin: 4%; background: #f2f2f2; padding:3%;">
+        {% csrf_token %}
+
+          {{ form|crispy }}
+          {{form.errors}}
+
+        <br/>
+        <button style="background: black; font-size: 2rem; padding:1%; color: white;" class="btn btn-default" type="submit"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp; comment</button>
+      </form>
+      {% endif %}
+
+
+      {% for i in com %}
+      <sub>
+        <hr />
+        <a>{{i.user}}</a><br />
+        {{i.time}}<br />
+        {{i.content}}<br />
+      </sub>
+      {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

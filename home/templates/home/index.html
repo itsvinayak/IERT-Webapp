@@ -20,6 +20,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
    <!-- service worker -->
 
    {% progressive_web_app_meta %}
@@ -46,7 +47,7 @@
 </head>
 
 <body class="container-fluid">
-
+  
   <header class="row">
 
     <!-- navbar-->
@@ -122,7 +123,7 @@
           <li><a href="{% url "contact_us" %}">Contact us</a></li>
 
             {% if user.is_authenticated %}
-            <li><a href="{% url "profile" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Profile</a></li>
+            <li><a href="{% url "profile" %}"><img src="{{user.profile.image.url}}" style="height: 2rem; float: left;" class="img-responsive img-circle"/> &nbsp; Profile</a></li>
             <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a></li>
             {% else %}
             <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Sign up</a></li>
@@ -403,7 +404,7 @@
 
   <!-- footer here -->
 
-  <footer class="row" style="margin-top: 4%;">
+  <footer class="row" style="margin-top: 4%; margin-bottom: 0; position: relative; bottom: 0;">
     <div class="row mt-4" style="color:white;background-color:black;text-align:center;padding:10px;margin-top:7px;font-size:1.3rem;">
       <p>&copy;<a href="#"> Institute of Engineering and Rural Technology</a> 26, Chatham line, Allahabad - 211002 UP, INDIA &nbsp;&nbsp;&nbsp; <a href="{% url "contact_us" %}"><i class="fa fa-address-book" style="font-size:24px"></i>&nbsp;Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telephone No.:
         (+91)-0532-2544810</p>

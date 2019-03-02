@@ -5,6 +5,7 @@ class new(models.Model):
     title=models.CharField(max_length=300)
     author=models.CharField(max_length=300)
     date=models.DateField(null=True,blank=True)
+    no_of_comment=models.IntegerField(blank=True)
     likes=models.ManyToManyField(User,related_name="likes",blank=True)
     image=models.ImageField(null=True,blank=True,upload_to='media/')
     info=models.TextField()
@@ -20,3 +21,13 @@ class new_by_viewer(models.Model):
     info=models.TextField()
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    news=models.ForeignKey(new,on_delete=models.CASCADE)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    content=models.CharField(max_length=300)
+    time=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "{} --> {}".format(str(self.user.username),self.news.title)
