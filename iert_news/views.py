@@ -20,7 +20,7 @@ def index(request):
             if_dic.append(i.id)
         news = get_object_or_404(new,id=i.id)
         i.no_of_comment=Comment.objects.filter(news=news).count()
-        print(i.no_of_comment)
+        
 
 ##############################################
 
@@ -53,12 +53,17 @@ def like_news(request):
 
 def new_comments(request,id):
     news = get_object_or_404(new,id=id)
-    com=Comment.objects.filter(news=news).order_by('-id')
+    com=Comment.objects.filter(news=news,reply=None).order_by('-id')
     if request.method == 'POST':
         form = CommentForm(request.POST or None)
         if form.is_valid():
             content = request.POST.get('content')
-            comment = Comment.objects.create(news=news,user=request.user,content=content)
+            reply_id = request.POST.get('comment_id')
+            comment_qs=None
+            if reply_id:
+                comment_qs=Comment.objects.get(id=reply_id)
+            print(comment_qs)
+            comment = Comment.objects.create(news=news,user=request.user,content=content,reply=comment_qs)
             comment.save()
             return redirect("new_comments",id=id)
 

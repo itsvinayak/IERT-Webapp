@@ -26,6 +26,8 @@ class new_by_viewer(models.Model):
 class Comment(models.Model):
     news=models.ForeignKey(new,on_delete=models.CASCADE)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
+    ##in place of self we can also use Comment here
+    reply=models.ForeignKey('self',null=True,related_name='replies',on_delete=models.CASCADE)
     content=models.CharField(max_length=300)
     time=models.DateTimeField(auto_now_add=True)
 

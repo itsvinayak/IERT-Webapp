@@ -47,7 +47,14 @@
 </head>
 
 <body class="container-fluid">
-  
+  <script>
+  $(document).ready(function() {
+  $('.replybutton').click(function() {
+    $(this).next('.reply').toggle();
+  });
+});
+  </script>
+
   <header class="row">
 
     <!-- navbar-->
