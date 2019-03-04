@@ -55,6 +55,7 @@ div.desc {
 
 
 @media only screen and (max-width: 762px) {
+
   div.dir {
     display: none;
   }
@@ -64,6 +65,9 @@ div.desc {
 
 .sidebar{
     display: none;
+  }
+  .mobilecenter{
+    text-align: center;
   }
 
 }
