@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import message_from_about_us_form
-from .models import degree_detail,gallery_pic
+from .models import *
 
 def index(request):
     page_details={
@@ -59,10 +59,12 @@ def video_gallery(request):
     return render(request,"home/video_gallery.html",page_details)
 
 def institution_holiday(request):
+    holidays=holiday.objects.all()
     page_details={
-                  "title":"institution_holiday"
+                  "title":"institution_holiday",
+                  "holiday":holidays
     }
-    return render(request,"home/institution_holiday.html",page_details)
+    return render(request,"home/instiute_holiday.html",page_details)
 
 
 def contact_us(request):

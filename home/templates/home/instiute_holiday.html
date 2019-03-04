@@ -1,0 +1,29 @@
+{% extends "home/index.html" %}
+{% block start %}
+<div class="col-md-8">
+
+  <h1><center>Holidays</center></h1>
+  <hr />
+  <br/>
+  <br/>
+  <ul>
+    {% for i in holiday %}
+      {{i.holiday_html|safe}}
+    {% endfor %}
+  </ul>
+
+<!-- google Calendar here -->
+<center>
+<iframe src="https://calendar.google.com/calendar/embed?src=d0m32ro56q0oiaqhno2b5kfnns%40group.calendar.google.com&ctz=Asia%2FKolkata" style="border: 1px; position: relative; top:0; left: 0; width: 100%;" width="800" height="600"  frameborder="0" scrolling="no"></iframe>
+</center>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+</div>
+
+{% endblock %}

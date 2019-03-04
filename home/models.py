@@ -22,3 +22,9 @@ class gallery_pic(models.Model):
     image=models.ImageField(upload_to="gallery/")
     def __str__ (self):
         return self.title
+
+
+class holiday(models.Model):
+    holiday_html=models.TextField()
+    def __str__(self):
+        return self.holiday_html
