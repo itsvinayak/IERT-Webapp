@@ -10,7 +10,10 @@ class message_from_about_us(models.Model):
 class degree_detail(models.Model):
     branch=models.CharField(max_length=300)
     branch_imformation=models.TextField()
-    timetable=models.TextField()
+    timetable_1_year=models.TextField()
+    timetable_2_year=models.TextField()
+    timetable_3_year=models.TextField()
+    timetable_4_year=models.TextField()
     branch_vision=models.TextField()
     branch_mission=models.TextField()
     def __str__(self):

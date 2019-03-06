@@ -94,7 +94,6 @@ def Computer_science_and_engg(request):
                  "info":i.branch_imformation,
                  "vision":i.branch_vision,
                  "mission":i.branch_mission,
-                 "table":i.timetable,
              }
     return render(request,"home/degree_division.html",bd)
 

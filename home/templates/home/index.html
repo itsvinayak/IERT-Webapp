@@ -57,28 +57,33 @@
       color: red;
    }
 
+   marquee a:active{
+     color:green;
+   }
+
    /* director */
 
-   div.dir {
+   div .dir {
      margin: 4px;
      border: 1px solid black;
      float: left;
      background: #f2f2f2;
+     box-shadow: 0 0 5px rgba(0,0,0,0.3);
      width: 250px;
      background: white;
      display: block;
    }
 
-   div.dir img {
+   div .dir img {
      width: 100%;
      border: 1px solid black;
      height: auto;
    }
-   div.dir img:hover{
+   div .dir img:hover{
      border: 1px solid lightblue;
    }
 
-   div.desc {
+   div .desc {
      padding: 15px;
      text-align: center;
    }
@@ -141,6 +146,7 @@
 
    form{
      border: 1px solid black;
+     box-shadow: 0 0 5px rgba(0,0,0,0.3);
    }
 
    .topic{
@@ -198,7 +204,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" class="styleheader" href="https://www.iert.ac.in/">IERT</a>
+          <a class="navbar-brand" class="styleheader" href="{% url "index" %}">IERT</a>
         </div>
         <div class="collapse navbar-collapse" id="mainNavBar">
           <ul class="nav navbar-nav navbar-right">
@@ -315,7 +321,7 @@
       </div>
 
 
-      <div class="sidebar" style="float:inherit; text-align: center; color:black; padding: 10px; margin: 10px">
+      <div class="sidebar" style="float:inherit; box-shadow: 0 0 5px rgba(0,0,0,0.3); text-align: center; color:black; padding: 10px; margin: 10px">
         <a class="list-group-item list-group-item-action" href="{% url 'recruitment' %}">Recruitment </a>
         <a class="list-group-item list-group-item-action" href="{% url 'anti_ragging' %}">Anti Ragging</a>
         <a class="list-group-item list-group-item-action" href="{% url 'computer_center' %}">Computer Center</a>
