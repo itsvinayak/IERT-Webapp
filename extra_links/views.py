@@ -21,3 +21,11 @@ def director(request):
                    "title":"Director"
     }
     return render(request,"extra_links/director.html",page_details)
+
+def notice(request,id):
+    nb=notice_board.objects.get(id=id)
+    page_details={
+               "nb":nb,
+               "title":"Notice"
+    }
+    return render(request,"extra_links/notice_page.html",page_details)

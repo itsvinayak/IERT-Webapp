@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from .forms import message_from_about_us_form
 from .models import *
+from extra_links.models import *
 
 def index(request):
+    notices = notice_board.objects.order_by('-date')[:3]
     page_details={
-                   "title":"IERT, Prayagraj"
+                   "title":"IERT, Prayagraj",
+                   "notice":notices
     }
     return render(request,"home/index.html",page_details)
 

@@ -7,7 +7,6 @@ class message_from_about_us(models.Model):
     def __str__(self):
         return self.topic
 
-
 class degree_detail(models.Model):
     branch=models.CharField(max_length=300)
     branch_imformation=models.TextField()

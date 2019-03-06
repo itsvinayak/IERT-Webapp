@@ -19,4 +19,5 @@ urlpatterns = [
     path('notice_board',views.notice_board_view,name='notice'),
     path('desk',views.desk,name='desk'),
     path('director',views.director,name='director'),
+    path('notice/<int:id>',views.notice,name='notice_page')
 ]

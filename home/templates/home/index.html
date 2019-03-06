@@ -7,7 +7,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
-  <link rel="stylesheet" type="text/css" href='{% static "home/index_style.css" %}' />
   <link rel="shortcut icon" type="image/x-icon" href="{% static "home/img/iert_icon.png" %}">
   <link rel="apple-touch-icon" href="{% static "home/img/iert_icon.png" %}"/>
 
@@ -26,7 +25,140 @@
 
    <!--_______________________-->
 
+  <!-- main css -->
+   <style>
 
+   body{
+     background-color: #f2f2f2;
+   }
+
+   header .upper_title{
+     color: white;
+     background-color: black;
+     padding: 1%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     text-align: center;
+     font-size: 2rem;
+     font-style: italic;
+     z-index: 1;
+     font-family: serif;
+     font-weight: bold;
+   }
+
+   .sidebar a:hover{
+      text-align: left;
+      background-color: lightblue;
+   }
+   marquee a:hover{
+      text-decoration: none;
+      color: red;
+   }
+
+   /* director */
+
+   div.dir {
+     margin: 4px;
+     border: 1px solid black;
+     float: left;
+     background: #f2f2f2;
+     width: 250px;
+     background: white;
+     display: block;
+   }
+
+   div.dir img {
+     width: 100%;
+     border: 1px solid black;
+     height: auto;
+   }
+   div.dir img:hover{
+     border: 1px solid lightblue;
+   }
+
+   div.desc {
+     padding: 15px;
+     text-align: center;
+   }
+
+   .testcase{
+     margin-top:9rem;
+   }
+
+
+   @media only screen and (max-width: 762px) {
+
+     div.dir {
+       display: none;
+     }
+     .testcase{
+       margin-top: 0;
+     }
+
+   .sidebar{
+       display: none;
+     }
+     .mobilecenter{
+       text-align: center;
+       overflow:auto;
+     }
+     .rest{
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       min-width: 50%;
+       text-align: center;
+     }
+
+
+
+   }
+
+
+   .rest{
+     background: white;
+     border: solid 5px white;
+     box-shadow: 0 0 5px rgba(0,0,0,0.3);
+     cursor: pointer;
+     overflow: hidden;
+     margin-top: 3%;
+   }
+
+
+   .rest a{
+     color:black;
+     text-align: center;
+     text-decoration: none;
+   }
+   .rest a:hover{
+     color: red;
+     text-decoration: none;
+   }
+
+
+
+   form{
+     border: 1px solid black;
+   }
+
+   .topic{
+     margin: 1rem;
+   }
+
+   .text{
+     margin: 1rem;
+   }
+
+   form button{
+     text-align: center;
+     font-style: italic;
+
+   }
+
+   </style>
+ <!--_________________________-->
 
 
   <!-- message here -->
@@ -258,22 +390,18 @@
       <!-- Notice board -->
 
       <div class="col-md-4 col-sm-4">
-        <h3 class="btn-basic btn-block" style="text-align: center"><b>ANNOUNCEMENTS</b></h3>
-        <hr>
+        <h3 class="btn-basic btn-block" style="text-align: center; text-decoration:none;"><b>ANNOUNCEMENTS</b></h3>
+        <hr style="border: 1px solid black;">
         <marquee direction="up" behavior="alternate" scrolldelay="400" width="300px" height="280px">
-
-          <a href="https://www.iert.ac.in/d%20(1).pdf" target="_blank">
-            <p>GENERAL INSTRUCTIONS TO DEGREE STUDENTS FOR SCHOLARSHIP &amp; FEE REIMBURSEMENT<img src="{% static "home/img/new.gif" %}"></p>
-          </a>
-
-          <a href="https://www.iert.ac.in/d%20(2).pdf" target="_blank">
-            <p>GENERAL INSTRUCTIONS TO DIPLOMA STUDENTS FOR SCHOLARSHIP &amp; FEE REIMBURSEMENT<img src="{% static "home/img/new.gif" %}" ></p>
-          </a>
-
+          <ul>
+            {% for i in notice %}
+            <li style="margin: 6%;"><a href="{% url "notice_page" i.id %}" >{{i.topic}}</a></li>
+            {% endfor %}
+         </ul>
         </marquee>
 
         <div style="text-align: right;"><a href="{% url "notice" %}"> More...</a></div>
-        <div style="padding-left: 12px; padding-right: 10px;">
+
 
             <div class="row mobilecenter">
               <div class="btn btn-block" role="group">
@@ -283,7 +411,7 @@
                 <a class="btn btn-default mr-2" href="http://mail.google.com/a/iert.ac.in" target="_blank">WEBMAIL</a>
               </div>
             </div>
-        </div>
+
       </div>
 
 
@@ -291,7 +419,6 @@
 
     <!--rest -->
     <div class="col-md-8 rest">
-      <div style="border: 1px solid black;padding: 7px; background: white;">
         <center>
           <h2>CONFERENCE & SEMINARS</h2>
         </center>
@@ -403,7 +530,6 @@
           </div>
         </div>
       </div>
-    </div>
 
     {% endblock %}
   </div>

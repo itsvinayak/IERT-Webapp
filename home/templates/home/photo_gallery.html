@@ -5,10 +5,9 @@
 
 <style>
 
-.gal img {
-  border: solid 5px white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+.gal {
   cursor: pointer;
+  overflow: hidden;
   transition: filter 0.3s linear , transform 0.3s linear;
 }
 
@@ -25,19 +24,20 @@
 
 </style>
 
-<div class="col-md-8">
+<div class="col-md-8 rest">
 <!-- Gallery -->
 
-<div style="border: 1px solid black; background: lightgrey;" class="gal">
+<div class="gal">
 
   <h1 style="text-align:center; font-family: fantasy; text-decoration: unnderline;"> &nbsp; Gallery &nbsp; </h1>
-  {% for i in images %}
 
+  {% for i in images %}
   <div style=" margin: 2%;  padding: 2%; float: left; margin: 3%;">
     <a href="{{i.image.url}}" target="_blank"><img src="{{i.image.url}}" style=" width: 15rem; height: 15rem;" /></a>
     <br/>
     <div style="text-align: center; font-family: cursive; margin: 3%;">{{i.title}}</div>
   </div>
+
   {% endfor %}
 </div>
 

@@ -1,16 +1,25 @@
 {% extends "home/index.html" %}
 
 {% block start %}
+<style>
+.rest a{
+  color:blue;
 
-<div class="col-md-8" style="border: 1px solid black;">
+}
+</style>
+
+<div class="col-md-8">
 
   {% for i in nb %}
-
+<div class="rest" style="padding:3%;">
   <h2>{{i.topic}}</h2>
   <hr/>
-  <p>{{i.info}}</p>
-
-  {% endfor %}
+  <p>{{i.info|safe}}</p>
 </div>
+<br/>
+  {% endfor %}
+
+</div>
+
 
 {% endblock %}
