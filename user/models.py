@@ -21,7 +21,7 @@ class Profile(models.Model):
 class User_details(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)
     phone_no=models.CharField(default='', max_length=20)
-    branch=models.CharField(default='', max_length=20)
+    branch=models.CharField(default='', max_length=200)
     year = models.CharField(default='', max_length=20)
     roll_no=models.CharField(default='', max_length=30)
     date_of_birth=models.DateTimeField(default=timezone.now)

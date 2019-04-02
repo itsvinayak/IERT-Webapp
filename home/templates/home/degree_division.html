@@ -12,16 +12,21 @@ td:hover{
 </style>
 
   <div class="col-md-8 rest">
-    <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{branch}}</h1>
+    {% for i in bra %}
+    <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{i.branch}}</h1>
     <hr/>
     <br/>
-    <div style="font-size: 2rem ;">{{info|safe}}</div>
+    <div style="font-size: 2rem ;">{{i.branch_imformation|safe}}</div>
     <h2 style="font-size: 4rem ;">vision</h2>
     <hr/>
-    <div style="font-size: 2rem ;">{{vision|safe}}</div>
+    <div style="font-size: 2rem ;">{{i.branch_vision|safe}}</div>
     <h2 style="font-size: 4rem ;">mission</h2>
     <hr/>
-    <div style="font-size: 2rem ;">{{mission|safe}}</div>
+    <div style="font-size: 2rem ;">{{i.branch_mission|safe}}</div>
+    <h2 style="font-size: 4rem ;">announcement</h2>
+    <hr/>
+    <div style="font-size: 2rem ;">{{i.notice|safe}}</div>
+    {% endfor %}
     <hr/>
   </div>
 

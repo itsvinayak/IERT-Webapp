@@ -24,7 +24,7 @@ def administration(request):
 
 def vision_and_mission(request):
     page_details={
-                  "title":"Vision and Mission"
+                  "title":"Vision and Mission",
     }
     return render(request,"home/vision_and_mission.html",page_details)
 
@@ -85,16 +85,11 @@ def contact_us(request):
 ## Degree Division
 
 def Computer_science_and_engg(request):
-    cse=degree_detail.objects.all()
-    for i in cse:
-        if i.branch == "Computer science and engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-             }
+    bra = degree_detail.objects.filter(branch='Computer science and engg')
+    bd={
+         "title":"Computer science and engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 

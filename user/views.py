@@ -83,58 +83,10 @@ def Profile_update(request):
 def Profile(request):
     ###########################select perticular teacher #######################
     teacher = facultys.objects.all().filter(Designation='Computer science and engg')
-    branch = degree_detail.objects.all()
-    year = request.user.user_details.year
-    print(year)
-    for i in branch:
-        if i.branch == "Computer science and engg":
-            if year == '1st':
-                table=i.timetable_1_year
-            elif year == '2nd':
-                table=i.timetable_2_year
-            elif year == '3rd':
-                table=i.timetable_3_year
-            elif year == '4th':
-                table=i.timetable_4_year
-            else:
-                table=""
-        if i.branch == "Computer science and engg":
-            if year == '1st':
-                table=i.timetable_1_year
-            elif year == '2nd':
-                table=i.timetable_2_year
-            elif year == '3rd':
-                table=i.timetable_3_year
-            elif year == '4th':
-                table=i.timetable_4_year
-            else:
-                table=""
-        if i.branch == "Computer science and engg":
-            if year == '1st':
-                table=i.timetable_1_year
-            elif year == '2nd':
-                table=i.timetable_2_year
-            elif year == '3rd':
-                table=i.timetable_3_year
-            elif year == '4th':
-                table=i.timetable_4_year
-            else:
-                table=""
-        if i.branch == "Computer science and engg":
-            if year == '1st':
-                table=i.timetable_1_year
-            elif year == '2nd':
-                table=i.timetable_2_year
-            elif year == '3rd':
-                table=i.timetable_3_year
-            elif year == '4th':
-                table=i.timetable_4_year
-            else:
-                table=""
-
+    bra = degree_detail.objects.filter(branch=request.user.user_details.branch)
     context = {
         'title':'profile',
         'teacher':teacher,
-        'timetable':table,
+        'bra':bra,
     }
     return render(request, 'user/profile.html', context)

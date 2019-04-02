@@ -134,18 +134,22 @@ td:hover{
     <br />
     <br />
     <hr style="border: 1px solid black;"/>
-
-    <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 100%; color: white; padding:2%;">check you result</a>
+    <center>
+    <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
+    <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
+   </center>
     <br />
     <br />
     <hr style="border: 0.5px solid black;"/>
 
-    <h2 style="font-family: fantasy; text-align: center;">time table</h2>
+    <h2 style="font-family: fantasy; text-align: center;">announcement</h2>
     <hr style="border: 1px solid black;"/>
     <br/>
-    <div style="font-size: 1rem;">
-      {{timetable|safe}}
+    {% for i in bra %}
+    <div style="font-size: 2rem;">
+      {{i.notice|safe}}
     </div>
+    {% endfor %}
     <hr style="border:1px solid black;" />
     <br />
     <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;" > &nbsp; teacher you need &nbsp; </h2>
