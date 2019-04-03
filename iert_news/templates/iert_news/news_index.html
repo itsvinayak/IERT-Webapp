@@ -51,7 +51,8 @@
 
 
   <!-- news -->
-  <div class="row">
+
+  <div class="row" style="margin-top: 7rem">
     <div class="col-md-8">
       {% for i in news %}
       <article>
@@ -87,19 +88,42 @@
 
     <!--____________________________________________________-->
    <br/>
-    <div class="col-md-4">
-          <!-- form -->
 
-          <form method="POST" class="form_article_sumit" enctype="multipart/form-data" style="background: white;">
+    <div class="col-md-4" >
+      <center>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="width: 60%; ">send us news</button>
 
-            {% csrf_token %}
-            <h2><b><i>send us news</i></b></h2>
-            <hr style="background-color: black;  border: 1px solid black;"/>
+    <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+     <div class="modal-dialog modal-md">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><b><i>send us news</i></b></h4>
+         </div>
+         <div class="modal-body">
+           <!-- form -->
+           <form method="POST" class="form_article_sumit" enctype="multipart/form-data">
 
-              {{form|crispy}}
+             {% csrf_token %}
 
-              <input type="submit" style="padding: 1rem; font-size: 2rem; border: 1px solid black; border-radius: 10%;" value="submit" />
-        </form>
-    </div>
-  </div>
-{% endblock %}
+             <hr style="background-color: black;  border: 1px solid black;"/>
+
+               {{form|crispy}}
+
+               <input type="submit" style="padding: 1rem; font-size: 2rem; border: 1px solid black; border-radius: 10%;" value="submit" />
+         </form>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </center>
+ </div>
+</div>
+
+
+ {% endblock %}
