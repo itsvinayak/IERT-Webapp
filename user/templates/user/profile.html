@@ -140,15 +140,17 @@ td:hover{
    </center>
     <br />
     <br />
-    <hr style="border: 0.5px solid black;"/>
 
+    {% for i in bra %}
+    {% if i.notice %}
+    <hr style="border: 0.5px solid black;"/>
     <h2 style="font-family: fantasy; text-align: center;">announcement</h2>
     <hr style="border: 1px solid black;"/>
     <br/>
-    {% for i in bra %}
     <div style="font-size: 2rem;">
       {{i.notice|safe}}
     </div>
+    {% endif %}
     {% endfor %}
     <hr style="border:1px solid black;" />
     <br />

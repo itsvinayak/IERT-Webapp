@@ -85,7 +85,7 @@ def contact_us(request):
 ## Degree Division
 
 def Computer_science_and_engg(request):
-    bra = degree_detail.objects.filter(branch='Computer science and engg')
+    bra = degree_detail.objects.filter(branch='Computer Science & Engineering')
     bd={
          "title":"Computer science and engg",
          "bra":bra,
@@ -94,117 +94,77 @@ def Computer_science_and_engg(request):
 
 
 def Electronics_engg(request):
-    ee=degree_detail.objects.all()
-    for i in ee:
-        if i.branch == "Electronics_engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='Electronic Engineering')
+    bd={
+         "title":"Electronics_engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 def Industrial_and_production_engg(request):
-    ip=degree_detail.objects.all()
-    for i in ip:
-        if i.branch == "Industrial_and_production_engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='Industrial & Production Engineering')
+    bd={
+         "title":"Industrial_and_production_engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 def Instrumentation_and_Control_Engg(request):
-    ice=degree_detail.objects.all()
-    for i in ice:
-        if i.branch == "Instrumentation_and_Control_Engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-                 }
+    bra = degree_detail.objects.filter(branch='Instrumentation & Control Engineering')
+    bd={
+         "title":"Instrumentation_and_Control_Engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 
 def Civil_Engg(request):
-    ce=degree_detail.objects.all()
-    for i in ce:
-        if i.branch == "Civil_Engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='Civil Engineering')
+    bd={
+         "title":"Civil_Engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 
 def Electrical_Engg(request):
-    ene=degree_detail.objects.all()
-    for i in ene:
-        if i.branch == "Electrical_Engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='Electrical Engineering')
+    bd={
+         "title":"Electrical_Engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 
 def Mechanical_engg(request):
-    me=degree_detail.objects.all()
-    for i in me:
-        if i.branch == "Mechanical_engg":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='	Mechanical Engineering')
+    bd={
+         "title":"Mechanical_engg",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 def Applied_science_and_humanity(request):
-    ash=degree_detail.objects.all()
-    for i in ash:
-        if i.branch == "Applied_science_and_humanity":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='Applied Science and Humanity')
+    bd={
+         "title":"Applied_science_and_humanity",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 
 def Management(request):
-    m=degree_detail.objects.all()
-    for i in m:
-        if i.branch == "Management":
-            bd={
-                 "title":i.branch,
-                 "branch":i.branch,
-                 "info":i.branch_imformation,
-                 "vision":i.branch_vision,
-                 "mission":i.branch_mission,
-            }
+    bra = degree_detail.objects.filter(branch='	Management')
+    bd={
+         "title":"Management",
+         "bra":bra,
+    }
     return render(request,"home/degree_division.html",bd)
 
 

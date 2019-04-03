@@ -61,8 +61,7 @@ def Profile_update(request):
             u_form.save()
             messages.success(request, f'profile is updated')
             return redirect('profile')
-
-
+        
     pd_form = User_detailsForm(instance=request.user.user_details)
     p_form = ProfileUpdateForm(instance=request.user.profile)
     u_form = UserUpdateForm(instance=request.user)
@@ -71,7 +70,7 @@ def Profile_update(request):
         'pd_form':pd_form,
         'p_form':p_form,
         'u_form': u_form,
-        'title':'profile',
+        'title':'profile update for {}'.format(request.user),
     }
     return render(request, 'user/profile_update.html', context)
 
@@ -85,7 +84,7 @@ def Profile(request):
     teacher = facultys.objects.all().filter(Designation='Computer science and engg')
     bra = degree_detail.objects.filter(branch=request.user.user_details.branch)
     context = {
-        'title':'profile',
+        'title':request.user,
         'teacher':teacher,
         'bra':bra,
     }

@@ -16,16 +16,25 @@ td:hover{
     <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{i.branch}}</h1>
     <hr/>
     <br/>
+    {% if i.branch_imformation %}
     <div style="font-size: 2rem ;">{{i.branch_imformation|safe}}</div>
+    {% endif %}
+    {% if i.branch_vision %}
     <h2 style="font-size: 4rem ;">vision</h2>
     <hr/>
     <div style="font-size: 2rem ;">{{i.branch_vision|safe}}</div>
+    {% endif %}
+    {% if i.branch_mission %}
     <h2 style="font-size: 4rem ;">mission</h2>
     <hr/>
     <div style="font-size: 2rem ;">{{i.branch_mission|safe}}</div>
+    {% endif %}
+    {% if i.notice %}
     <h2 style="font-size: 4rem ;">announcement</h2>
     <hr/>
     <div style="font-size: 2rem ;">{{i.notice|safe}}</div>
+    {% endif %}
+
     {% endfor %}
     <hr/>
   </div>

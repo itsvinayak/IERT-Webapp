@@ -9,10 +9,10 @@ class message_from_about_us(models.Model):
 
 class degree_detail(models.Model):
     branch=models.CharField(max_length=300)
-    branch_imformation=models.TextField()
-    notice=models.TextField()
-    branch_vision=models.TextField()
-    branch_mission=models.TextField()
+    branch_imformation=models.TextField(null=True,blank=True)
+    notice=models.TextField(null=True,blank=True)
+    branch_vision=models.TextField(null=True,blank=True)
+    branch_mission=models.TextField(null=True,blank=True)
     def __str__(self):
         return self.branch
 

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, User_details
 
+
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     first_name = forms.CharField(max_length=100, required=False)
@@ -30,19 +31,26 @@ class User_detailsForm(forms.ModelForm):
                 ('4th', '4th'),
              ]
     branch_list=[
-                 ('CSE', 'CSE'),
-                 ('ELEX', 'ELEX'),
-                 ('IP', 'IP'),
+                 ('Computer Science & Engineering', 'Computer Science & Engineering'),
+                 ('Electronic Engineering', 'Electronic Engineering'),
+                 ('Industrial & Production Engineering', 'Industrial & Production Engineering'),
+                 ('Electrical Engineering', 'Electrical Engineering'),
+                 ('Civil Engineering','Civil Engineering'),
+                 ('Mechanical Engineering', 'Mechanical Engineering'),
+                 ('Instrumentation and Control Engineering', 'Instrumentation and Control Engineering'),
+                 ('Applied Science and Humanity', 'Applied Science and Humanity'),
+                 ('Management', 'Management'),
                 ]
     #####################################################################################3
     phone_no = forms.CharField(max_length=20, required=False)
-    branch=forms.CharField(max_length=20,label='select your branch', widget=forms.Select(choices=branch_list), required=False)
+    branch=forms.CharField(max_length=400,label='select your branch', widget=forms.Select(choices=branch_list), required=False)
     roll_no = forms.CharField(max_length=30, required=False)
-    year = forms.CharField(max_length=20, label='select your year', widget=forms.Select(choices=year_list), required=False)
+    year = forms.CharField(max_length=5, label='select your year', widget=forms.Select(choices=year_list), required=False)
     date_of_birth = forms.DateTimeField(required=False)
     class Meta:
         model = User_details
         fields = ['phone_no', 'roll_no', 'branch', 'year', 'date_of_birth']
+
 
 class ProfileUpdateForm(forms.ModelForm):
 

@@ -20,10 +20,10 @@ class Profile(models.Model):
 
 class User_details(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)
-    phone_no=models.CharField(default='', max_length=20)
-    branch=models.CharField(default='', max_length=200)
-    year = models.CharField(default='', max_length=20)
-    roll_no=models.CharField(default='', max_length=30)
+    phone_no=models.CharField( max_length=20, blank = True, null = True)
+    branch=models.CharField(default='', max_length=500, blank = True, null = True)
+    year = models.CharField(default='', max_length=20 ,blank = True, null = True)
+    roll_no=models.CharField(default='', max_length=20 ,blank = True, null = True)
     date_of_birth=models.DateTimeField(default=timezone.now)
 
     def __str__(self):
