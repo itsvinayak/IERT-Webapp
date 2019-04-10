@@ -1,182 +1,260 @@
 {% extends "home/index.html" %}
+{% load static %}
 {% block side %}
 {% endblock %}
 {% block start %}
+
+<!--style here-->
 <style>
-td:hover{
-  background: lightblue;
-  height: 30%;
-  width: 30%;
+body{
+  overflow-x: hidden;
+}
+video{
+  position: fixed;
+  background: black;
+  top:0;
+  left:0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+.card{
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    margin-top: 10%;
+    border: 3px solid lightgrey;
+}
+
+.profile_img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    border-radius: 50%;
+    border-top: 3px solid lightgrey;
+    transform: translate(150%,-50%);
+    margin-bottom: -15%;
+}
+.info{
+   margin-top: 5%;
+}
+.info h1{
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.info .item{
+font-size: 2rem;
+}
+
+.info .item-title{
+  font-size: 3rem;
+}
+
+.button_style{
   font-size: 2rem;
 }
-  .shade {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-      0 6px 20px 0 rgba(0, 0, 0, 0.39);
+
+.announcement h2{
+   font-size: 4rem;
+   text-decoration: underline;
+   font-style: italic;
+   font-weight: bold;
+}
+.ann_info{
+  font-size: 2rem;
+  margin: 3%;
+
+}
+.username{
+  text-align: center;
+  font-size: 4rem;
+}
+
+/* mobile ---------------------------------------------------> */
+
+@media only screen and (max-width: 762px) {
+.teacher{
+  display: none;
+  }
+  .card{
+    margin-top:38%;
+  }
+  .profile_img{
+      transform: translate(35%,-50%);
+      display: flex;
+      align-self: center;
+      height: 18rem;
+      width: 18rem;
+  }
+  .username{
+    margin-top: -20%;
+  }
+
+  .info{
+     margin-top: 5%;
+  }
+  .info h1{
+    font-style: italic;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .info .item{
+  font-size: 1.5rem;
+  }
+
+  .info .item-title{
+    font-size: 3rem;
+  }
+
+  .button_style{
+    margin: 4%;
+    font-size: 1rem;
+  }
+
+  .announcement h2{
+     font-size: 3rem;
+     text-decoration: underline;
+     font-style: italic;
+     font-weight: bold;
+  }
+  .ann_info{
+    font-size: 1.5rem;
+    margin: 3%;
+    margin-top: 4%;
 
   }
 
-  .shade:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5),
-      0 12px 40px 0 rgba(0, 0, 0, 0.39);
-    background: lightblue;
-  }
+}
 
-  .shade img {
-    border-radius: 10px;
+/* mobile --> */
 
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  float: left;
+  margin: 2%;
+  background-color: transparent;
+  width: 30rem;
+  height: 30rem;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
 
-  }
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
-  .shade img:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-      0 6px 20px 0 rgba(0, 0, 0, 0.39);
-    border: 1px solid black;
-  }
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
 
-  .profile_img {
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 
-    border: 5px solid lightgrey;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-      0 6px 20px 0 rgba(0, 0, 0, 0.39);
-    border-radius: 50%;
-    display: block;
-    transform: translate(-50% -50%);
-    margin: 50px;
-    margin-bottom: 10px;
-  }
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
 
-  @media only screen and (max-width: 762px) {
-    .profile_img {
-      height: 20rem;
-      width: 20rem;
-    }
-  .flip-card {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      min-width: 50%;
-      text-align: center;
-    }
+/* Style the back side */
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
 
-
-  }
-
-  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-  .flip-card {
-    float: left;
-    margin: 2%;
-    background-color: transparent;
-    width: 30rem;
-    height: 30rem;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-    /* Remove this if you don't want the 3D effect */
-  }
-
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  /* Position the front and back side */
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-
-  /* Style the back side */
-  .flip-card-back {
-    background-color: black;
-    color: white;
-    transform: rotateY(180deg);
-  }
 
 </style>
 
+
+
+
+    <video loop autoplay muted>
+      <source src="{% static "Video_1.mp4" %}" type="video/mp4" />
+    </video>
+    
 <div class="row">
-  <div class="col-md-8 col-md-offset-2 rest" style="padding:3%;">
-    <center>
-      <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
-      <h4 style="text-align: center;">{{user.username}}</h4>
-    </center>
-    <div style="color: black; font-size: 2rem; text-align: left;padding: 5%; padding-left: 4%; ">
-      <center>
-        <h1>info</h1>
-      </center>
-      <hr style="border: 1px solid black;" />
-      <div>name : {{user.first_name}} {{user.last_name}}</div>
-      <div>email : {{user.email}}</div>
-      <div>aktu roll_no : {{user.user_details.roll_no}}</div>
-      <div>branch : {{user.user_details.branch}}</div>
-      <div>year : {{user.user_details.year}}</div>
-      <div>phone : {{user.user_details.phone_no}}</div>
-      <div>date of birth : {{user.user_details.date_of_birth}}</div>
+  <div class="col-md-8 col-md-offset-2 card">
+    <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
+    <h2 class="username">{{user.username}}</h2>
+    <div class="info">
+        <h1 class="item-title">about</h1>
+      <hr style="border: 1px solid black;"  width="50%" align="left"/>
+      <div class="item"><b>name : </b>{{user.first_name}} {{user.last_name}}</div>
+      <div class="item"><b>email : </b>{{user.email}}</div>
+      <div class="item"><b>aktu roll_no : </b>{{user.user_details.roll_no}}</div>
+      <div class="item"><b>branch : </b>{{user.user_details.branch}}</div>
+      <div class="item"><b>year : </b>{{user.user_details.year}}</div>
+      <div class="item"><b>phone : </b>{{user.user_details.phone_no}}</div>
+      <div class="item"><b>date of birth : </b>{{user.user_details.date_of_birth}}</div>
     </div>
 
-    <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
-    <br />
-    <br />
-    <hr style="border: 1px solid black;"/>
-    <center>
+    <!--button for update profile-->
+    <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary button_style"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
+    <!--_______________________-->
+    <br/>
+    <br/>
+
+    <hr/>
+    <center class="buttons_aktu">
     <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
     <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
    </center>
-    <br />
-    <br />
 
-    {% for i in bra %}
-    {% if i.notice %}
-    <hr style="border: 0.5px solid black;"/>
-    <h2 style="font-family: fantasy; text-align: center;">announcement</h2>
-    <hr style="border: 1px solid black;"/>
-    <br/>
-    <div style="font-size: 2rem;">
-      {{i.notice|safe}}
-    </div>
-    {% endif %}
-    {% endfor %}
-    <hr style="border:1px solid black;" />
-    <br />
-    <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;" > &nbsp; teacher you need &nbsp; </h2>
-    {% for i in teacher %}
-    <div class="flip-card" >
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
-        </div>
-        <div class="flip-card-back" style="width:300px; height:300px;" >
-          <h1>{{i.name}}</h1>
-          <p>{{i.Designation}}</p>
-          <p>{{i.Qualification}}</p>
-          <p>{{i.Phone}}</p>
-          <p>{{i.email}}</p>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-    <br/>
-    <br/>
-    <br/>
-  </div>
+   <hr/>
+   <div class="announcement">
+     <center><h2>announcement</h2></center>
+     {% for i in bra %}
+     {% if i.notice %}
+     <div class="ann_info">
+       {{i.notice|safe}}
+     </div>
+     <hr/>
+     {% endif %}
+     {% endfor %}
+   </div>
+
+   <!-- teacher you need -->
+   <div class="teacher">
+   <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;" > &nbsp; teacher you need &nbsp; </h2>
+   {% for i in teacher %}
+   <div class="flip-card" >
+     <div class="flip-card-inner">
+       <div class="flip-card-front">
+           <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+       </div>
+       <div class="flip-card-back" style="width:300px; height:300px;" >
+         <h1>{{i.name}}</h1>
+         <p>{{i.Designation}}</p>
+         <p>{{i.Qualification}}</p>
+         <p>{{i.Phone}}</p>
+         <p>{{i.email}}</p>
+       </div>
+     </div>
+   </div>
+   {% endfor %}
+ </div>
+   <!--_________________________-->
+
+ </div>
 </div>
 
 
