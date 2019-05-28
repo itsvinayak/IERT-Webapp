@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm,User_detailsForm
 from aside.models import facultys
 from home.models import degree_detail
+from extra_links.models import notice_board
 from .models import User_details
 from django.contrib.auth.models import User
 
@@ -61,7 +62,7 @@ def Profile_update(request):
             u_form.save()
             messages.success(request, f'profile is updated')
             return redirect('profile')
-        
+
     pd_form = User_detailsForm(instance=request.user.user_details)
     p_form = ProfileUpdateForm(instance=request.user.profile)
     u_form = UserUpdateForm(instance=request.user)
@@ -80,12 +81,13 @@ def Profile_update(request):
 
 @login_required
 def Profile(request):
-    ###########################select perticular teacher #######################
-    teacher = facultys.objects.all().filter(Designation='Computer science and engg')
-    bra = degree_detail.objects.filter(branch=request.user.user_details.branch)
+    ###########################select particular teacher #######################
+    teacher = facultys.objects.all().filter(Designation=request.user.user_details.branch)
+    notices = notice_board.objects.filter(branch=request.user.user_details.branch)
+    print(notices,' ',teacher,' ',request.user.user_details.branch)
     context = {
         'title':request.user,
         'teacher':teacher,
-        'bra':bra,
+        'notices':notices,
     }
     return render(request, 'user/profile.html', context)

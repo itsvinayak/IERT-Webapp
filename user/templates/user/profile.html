@@ -190,7 +190,7 @@ font-size: 2rem;
     <video loop autoplay muted>
       <source src="{% static "Video_1.mp4" %}" type="video/mp4" />
     </video>
-    
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2 card">
     <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
@@ -220,19 +220,27 @@ font-size: 2rem;
    </center>
 
    <hr/>
+   {% if notices %}
    <div class="announcement">
      <center><h2>announcement</h2></center>
-     {% for i in bra %}
-     {% if i.notice %}
+     {% for i in notices %}
      <div class="ann_info">
-       {{i.notice|safe}}
+       <h2>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+       <sup>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.date|safe}}
+       </sup>
+       <h3>
+         {{i.topic|safe}}
+       </h3>
+     </hr/>
      </div>
      <hr/>
-     {% endif %}
      {% endfor %}
    </div>
+   {% endif %}
 
    <!-- teacher you need -->
+   {% if teacher %}
    <div class="teacher">
    <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;" > &nbsp; teacher you need &nbsp; </h2>
    {% for i in teacher %}
@@ -252,6 +260,7 @@ font-size: 2rem;
    </div>
    {% endfor %}
  </div>
+ {% endif %}
    <!--_________________________-->
 
  </div>
