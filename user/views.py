@@ -84,7 +84,6 @@ def Profile(request):
     ###########################select particular teacher #######################
     teacher = facultys.objects.all().filter(Designation=request.user.user_details.branch)
     notices = notice_board.objects.filter(branch=request.user.user_details.branch)
-    print(notices,' ',teacher,' ',request.user.user_details.branch)
     context = {
         'title':request.user,
         'teacher':teacher,

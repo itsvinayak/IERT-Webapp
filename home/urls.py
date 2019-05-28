@@ -28,7 +28,6 @@ urlpatterns = [
     path('u_g_program',views.u_g_program,name='u_g_program'),
     path('vision_and_mission',views.vision_and_mission,name='vision_and_mission'),
     path('administration',views.administration,name='administration'),
-    path('video_gallery',views.video_gallery,name='video_gallery'),
     path('institution_holiday',views.institution_holiday,name='institution_holiday'),
     path('Computer_science_and_engg',views.Computer_science_and_engg,name='Computer_science_and_engg'),
     path('Electronics_engg',views.Electronics_engg,name='Electronics_engg'),
