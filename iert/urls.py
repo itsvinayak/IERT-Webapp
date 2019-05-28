@@ -18,7 +18,12 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from user import views as user
+from home import views as myapp_views
 from django.contrib.auth import views as auth
+
+###for error 404 ##################
+from django.conf.urls import handler404, handler500
+###################################
 
 
 urlpatterns = [
@@ -57,3 +62,7 @@ urlpatterns = [
     path('admin/',admin.site.urls),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+##error 404 ####
+handler404 = myapp_views.error_404
+handler500 = myapp_views.error_500

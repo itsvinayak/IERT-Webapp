@@ -206,3 +206,17 @@ def Banking(request):
                     "title":"Banking"
     }
     return render(request,"home/banking.html",page_details)
+
+
+###########error 404 ################
+
+
+def error_404(request,*kwags):
+        data = {}
+        return render(request,'home/error_404.html', data)
+
+def error_500(request,*kwags):
+        data = {}
+        return render(request,'home/error_500.html', data)
+
+#################################################################
