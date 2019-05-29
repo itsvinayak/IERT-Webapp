@@ -6,6 +6,7 @@
 
 <!--style here-->
 <style>
+
 body{
   overflow-x: hidden;
 }
@@ -225,13 +226,14 @@ font-size: 2rem;
      <center><h2>announcement</h2></center>
      {% for i in notices %}
      <div class="ann_info">
-       <h2>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+       <h4>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
        <sup>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.date|safe}}
        </sup>
-       <h3>
+       <h5>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          {{i.topic|safe}}
-       </h3>
+       </h5>
      </hr/>
      </div>
      <hr/>
