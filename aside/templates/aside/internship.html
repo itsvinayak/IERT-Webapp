@@ -1,0 +1,95 @@
+
+{% extends "home/index.html" %}
+{% load static %}
+
+
+{% block side %}
+{% endblock %}
+
+{% block start %}
+<style>
+body{
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.student1 img,.student2 img,.student3 img,.teacher img {
+  margin-left: 25%;
+  border: 2px solid black;
+}
+
+
+.info1, .info2, .info3,.infot{
+  text-align: center;
+  margin: 1rem;
+  visibility: hidden;
+
+}
+.student1:hover .info1{
+  visibility: visible;
+}
+.student2:hover .info2{
+  visibility: visible;
+}
+.student3:hover .info3{
+  visibility: visible;
+}
+
+.teacher:hover .infot{
+  visibility: visible;
+}
+
+</style>
+
+
+<div class="row">
+    <h1 style="text-decoration: underline; margin: 2%;"> made by &nbsp; &nbsp; &nbsp; &nbsp;</h1>
+</div>
+<div class="row">
+
+    <div class="student1 col-md-4">
+      <img src="{% static "aside/internship/default.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
+      <br/>
+      <div class="info1">
+        <h4>somil singh</h4>
+        <h4>9259888898</h4>
+        <h4>itssvinayak@gmail.com</h4>
+      </div>
+    </div>
+
+    <div class="student2 col-md-4">
+      <img src="{% static "aside/internship/vinayak.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
+      <br/>
+      <div class="info2">
+        <h4>vinayak sharma</h4>
+        <h4>9259888898</h4>
+        <h4>itssvinayak@gmail.com</h4>
+      </div>
+    </div>
+
+    <div class="student3 col-md-4">
+      <img src="{% static "aside/internship/default.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
+      <br/>
+      <div class="info3">
+        <h4>devesh patel</h4>
+        <h4>9259888898</h4>
+        <h4>itssvinayak@gmail.com</h4>
+      </div>
+    </div>
+</div>
+<div class="row">
+  <h1  style="text-decoration: underline; margin: 2%;">under the guidance of &nbsp; &nbsp; &nbsp; &nbsp;</h1>
+  <div class="teacher col-md-4 col-md-offset-4">
+    <img src="{% static "aside/internship/default.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
+    <br/>
+    <div class="infot">
+      <h4>devesh patel</h4>
+      <h4>9259888898</h4>
+      <h4>itssvinayak@gmail.com</h4>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+{% endblock %}

@@ -20,6 +20,7 @@ urlpatterns = [
 
       path('faculty',views.faculty,name='faculty'),
       path('anti_ragging',views.anti_ragging,name='anti_ragging'),
+      path('internship',views.internship,name='internship'),
       path('computer_center',views.computer_center,name='computer_center'),
       path('download',views.download,name='download'),
       path('technovation',views.technovation,name='technovation'),

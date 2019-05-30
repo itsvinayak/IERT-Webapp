@@ -97,6 +97,7 @@ body{
                 <li><a href="{% url "about_city" %}"><span class="glyphicon glyphicon-map-marker"></span> &nbsp; About city</a></li>
                 <li><a href="{% url "vision_and_mission" %}"><span class="glyphicon glyphicon-flag"></span> &nbsp; Vision And Mission</a></li>
                 <li><a href="{% url "administration" %}"><span class="glyphicon glyphicon-list-alt"></span> &nbsp; Administration</a></li>
+                <li><a href="{% url "faculty" %}"><span class="glyphicon glyphicon-certificate"></span> &nbsp; Faculty Corner</a></li>
                 <li><a href="{% url "photo_gallery" %}"><span class="glyphicon glyphicon-picture"></span> &nbsp; Photo gallery</a></li>
                 <li><a href="{% url "institution_holiday" %}"><span class="glyphicon glyphicon-info-sign"></span> &nbsp; Institute Holiday</a></li>
               </ul>
@@ -104,6 +105,7 @@ body{
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Academics<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{% url "academic_cal" %}"><span class="glyphicon glyphicon-calendar"></span> &nbsp; Academics Calender</a></li>
+                <li><a href="{% url "download" %}"><span class="glyphicon glyphicon-download"></span> &nbsp; downloads</a></li>
                 <li><a href="{% url "u_g_program" %}"  ><span class="glyphicon glyphicon-info-sign"></span> &nbsp; U G Program</a></li>
               </ul>
             </li>
@@ -205,6 +207,7 @@ body{
       <div class="sidebar" style="float:inherit; box-shadow: 0 0 5px rgba(0,0,0,0.3); text-align: center; color:black; padding: 10px; margin: 10px">
         <a class="list-group-item list-group-item-action" href="{% url 'recruitment' %}">Recruitment </a>
         <a class="list-group-item list-group-item-action" href="{% url 'anti_ragging' %}">Anti Ragging</a>
+        <a class="list-group-item list-group-item-action" href="{% url 'internship' %}">internship</a>
         <a class="list-group-item list-group-item-action" href="{% url 'computer_center' %}">Computer Center</a>
         <details>
           <summary class="list-group-item list-group-item-action"><b>Student Corner</b></summary>
@@ -427,13 +430,15 @@ body{
 
   <!-- footer here -->
 
-  <footer class="row" style="margin-top: 4%; margin-bottom: 0; position: relative; bottom: 0;">
-    <div class="row mt-4" style="color:white;background-color:black;text-align:center;padding:10px;margin-top:7px;font-size:1.3rem;">
-      <p>&copy;<a href="#"> Institute of Engineering and Rural Technology</a> 26, Chatham line, Allahabad - 211002 UP, INDIA &nbsp;&nbsp;&nbsp; <a href="{% url "contact_us" %}"><i class="fa fa-address-book" style="font-size:24px"></i>&nbsp;Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telephone No.:
+  <footer class="row" style="margin-top: 5%; margin-bottom: 0; position: relative; bottom: 0;">
+    <div class="row mt-4" style="color:white;background-color:black;text-align:center;padding:10px;margin-top:7px;font-size:1.4rem;">
+      <p>&copy;<a href="#"> Institute of Engineering and Rural Technology</a> 26, Chatham line, Allahabad - 211002 UP, INDIA &nbsp;&nbsp;&nbsp; <a href="{% url "contact_us" %}"><i class="fa fa-address-book" style="font-size:24px"></i></a>&nbsp;&nbsp; Telephone No.:
         (+91)-0532-2544810</p>
       <div align=center><a href='#'>no. of visiter :&nbsp;&nbsp;<img src='https://www.counter12.com/img-y0ww8WAbZbzWbZCc-50.gif' border='0' alt='acesso gratis'></a>
         <script type='text/javascript' src='https://www.counter12.com/ad.js?id=y0ww8WAbZbzWbZCc'></script>
-        <a href="#" >&nbsp; &nbsp; &nbsp; made by : vinayak</a>
+        <br/>
+        <br/>
+        <a href="{% url "internship" %}" > made by : vinayak, somil and devesh</a>
       </div>
       <hr width="30%" align="center"/>
       <a href="#"><i class="fa fa-facebook-official" style="font-size:24px; margin: 2%;"></i></a>

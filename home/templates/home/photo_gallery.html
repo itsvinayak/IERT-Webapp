@@ -1,5 +1,6 @@
 {% extends "home/index.html" %}
-
+{% block side %}
+{% endblock %}
 
 {% block start %}
 
@@ -20,11 +21,18 @@
   transform: scale(1.7);
 }
 
-
+@media only screen and (max-width: 762px){
+  .gal:hover img{
+    filter: blur(0);
+  }
+  .gal img:hover{
+    filter: blur(0);
+  }
+}
 
 </style>
 
-<div class="col-md-8 rest">
+<div class="row">
 <!-- Gallery -->
 
 <div class="gal">

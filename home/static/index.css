@@ -93,6 +93,9 @@ div .desc {
     margin-left: auto;
     margin-right: auto;
     min-width: 50%;
+    position: relative;
+    left: 0;
+    right: 0;
     text-align: center;
   }
 }

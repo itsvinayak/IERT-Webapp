@@ -79,3 +79,9 @@ def rti(request):
         "title":"rti"
     }
     return render(request,"aside/rti.html")
+
+def internship(request):
+    page_details={
+        "title":"internship ,made by with love"
+    }
+    return render(request,"aside/internship.html")
