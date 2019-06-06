@@ -6,18 +6,18 @@ from .models import Profile, User_details
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    first_name = forms.CharField(max_length=100, required=False)
-    last_name = forms.CharField(max_length=100, required=False)
-
+    phone_no = forms.CharField(max_length=20)
+    first_name = forms.CharField(max_length=20)
+    last_name = forms.CharField(max_length=20)
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email','phone_no','password1', 'password2']
 
 class UserUpdateForm(forms.ModelForm):
     username=forms.CharField(required=False)
     email = forms.EmailField(required=False)
-    first_name = forms.CharField(max_length=100, required=False)
-    last_name = forms.CharField(max_length=100, required=False)
+    first_name = forms.CharField(max_length=20, required=False)
+    last_name = forms.CharField(max_length=20, required=False)
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email']
@@ -41,7 +41,7 @@ class User_detailsForm(forms.ModelForm):
                  ('Applied Science and Humanity', 'Applied Science and Humanity'),
                  ('Management', 'Management'),
                 ]
-    #####################################################################################3
+    #####################################################################################
     phone_no = forms.CharField(max_length=20, required=False)
     branch=forms.CharField(max_length=400,label='select your branch', widget=forms.Select(choices=branch_list), required=False)
     roll_no = forms.CharField(max_length=30, required=False)

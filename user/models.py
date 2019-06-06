@@ -26,7 +26,7 @@ class User_details(models.Model):
     branch=models.CharField(default='', max_length=500, blank = True, null = True)
     year = models.CharField(default='', max_length=20 ,blank = True, null = True)
     roll_no=models.CharField(default='', max_length=20 ,blank = True, null = True)
-    date_of_birth=models.DateTimeField(default=timezone.now)
+    date_of_birth=models.DateField(blank = True, null = True)
 
     def __str__(self):
         return f'{self.user.username} profile details'

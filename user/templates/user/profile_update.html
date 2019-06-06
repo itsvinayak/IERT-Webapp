@@ -19,8 +19,9 @@
   {% csrf_token %}
 
        {{p_form|crispy}}
-       {{pd_form|crispy}}
        {{u_form|crispy}}
+       {{pd_form|crispy}}
+
 
   <center>
     <button style="display: inline; margin: 2%;" class="btn btn-default"><a href="{% url 'password_reset' %}" style="text-decoration: none; color: blue; padding: 4%;">change password</a></sub>
