@@ -11,6 +11,8 @@ class degree_detail(models.Model):
     branch=models.CharField(max_length=300)
     branch_imformation=models.TextField(null=True,blank=True)
     branch_vision=models.TextField(null=True,blank=True)
+    branch_lab=models.TextField(null=True,blank=True)
+    branch_syllabus=models.TextField(null=True,blank=True)
     branch_mission=models.TextField(null=True,blank=True)
     def __str__(self):
         return self.branch

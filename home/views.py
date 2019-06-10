@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import message_from_about_us_form
 from .models import *
 from extra_links.models import *
+from aside.models import *
 
 def index(request):
     notices = notice_board.objects.order_by('-date')[:3]
@@ -85,36 +86,56 @@ def contact_us(request):
 ## Degree Division
 
 def Computer_science_and_engg(request):
+    a='Computer Science & Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Computer Science & Engineering')
     bd={
          "title":"Computer science and engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
 
 
 def Electronics_engg(request):
+    a='Electronic Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Electronic Engineering')
     bd={
          "title":"Electronics_engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
 
 
 def Industrial_and_production_engg(request):
+    a='Industrial & Production Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Industrial & Production Engineering')
     bd={
-         "title":"Industrial_and_production_engg",
+         "title":"Industrial and production engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
 
 
 def Instrumentation_and_Control_Engg(request):
+    a='Instrumentation and Control Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Instrumentation & Control Engineering')
     bd={
-         "title":"Instrumentation_and_Control_Engg",
+         "title":"Instrumentation and Control Engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
@@ -122,9 +143,14 @@ def Instrumentation_and_Control_Engg(request):
 
 
 def Civil_Engg(request):
+    a='Civil Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Civil Engineering')
     bd={
-         "title":"Civil_Engg",
+         "title":"Civil Engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
@@ -132,9 +158,14 @@ def Civil_Engg(request):
 
 
 def Electrical_Engg(request):
+    a='Electrical Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Electrical Engineering')
     bd={
-         "title":"Electrical_Engg",
+         "title":"Electrical Engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
@@ -142,27 +173,42 @@ def Electrical_Engg(request):
 
 
 def Mechanical_engg(request):
+    a='Mechanical Engineering'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='	Mechanical Engineering')
     bd={
-         "title":"Mechanical_engg",
+         "title":"Mechanical engg",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
 
 
 def Applied_science_and_humanity(request):
+    a='Applied Science and Humanity'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='Applied Science and Humanity')
     bd={
-         "title":"Applied_science_and_humanity",
+         "title":"Applied science and humanity",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)
 
 
 def Management(request):
+    a='Management'
+    teacher = facultys.objects.all().filter(branch=a)
+    notices = notice_board.objects.filter(branch=a)
     bra = degree_detail.objects.filter(branch='	Management')
     bd={
          "title":"Management",
+         "notice":notices,
+         "teacher":teacher,
          "bra":bra,
     }
     return render(request,"home/degree_division.html",bd)

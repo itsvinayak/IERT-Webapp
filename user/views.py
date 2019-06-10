@@ -82,7 +82,7 @@ def Profile_update(request):
 @login_required
 def Profile(request):
     ###########################select particular teacher #######################
-    teacher = facultys.objects.all().filter(Designation=request.user.user_details.branch)
+    teacher = facultys.objects.all().filter(branch=request.user.user_details.branch)
     notices = notice_board.objects.filter(branch=request.user.user_details.branch)
     context = {
         'title':request.user,

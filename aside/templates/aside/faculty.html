@@ -63,7 +63,7 @@
   </h4>
   <hr />
 
-  <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>
+  <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; Faculty here &nbsp; </h2>
   {% for i in fac %}
   <div class="flip-card" style="float: left; width:300px; height:300px;  margin: 2%;">
     <div class="flip-card-inner">
@@ -79,6 +79,7 @@
       <div class="flip-card-back" style="width:300px; height:300px;">
         <h1>{{i.name}}</h1>
         <p>{{i.Designation}}</p>
+        <p>{{i.branch}}</p>
         <p>{{i.Qualification}}</p>
         <p>{{i.Phone}}</p>
         <p>{{i.email}}</p>
