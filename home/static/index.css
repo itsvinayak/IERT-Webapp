@@ -99,6 +99,7 @@ div .desc {
     margin-right: auto;
     min-width: 50%;
     position: relative;
+    height: 100%;
     left: 0;
     right: 0;
     text-align: center;
@@ -111,6 +112,7 @@ div .desc {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   overflow: hidden;
+  height: 100%;
   margin-top: 3%;
 }
 
@@ -143,16 +145,6 @@ form button {
   font-style: italic;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-/* Fixed navbar styles */
-body > .container {
-  padding-top: 60px;
+footer{
+  margin-top: 10%;
 }
