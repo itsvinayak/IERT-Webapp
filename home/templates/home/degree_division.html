@@ -134,7 +134,11 @@ td:hover{
   <div id="about" class="tabcontent">
 
     {% for i in bra %}
+    {% if i.branch %}
     <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{i.branch}}</h1>
+    {% else %}
+    <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">not available</h1>
+    {% endif %}
     <hr/>
     <br/>
     {% if i.branch_imformation %}
@@ -204,7 +208,7 @@ td:hover{
            <b>  notices here </b>
       </summary>
          {% for i in notice %}
-       <p>
+       <p style="background-color: #f2f2f2; color:black; padding:4%; margin:2%;">
          <b>{{i.topic}}</b><br/>
          <sup>{{i.date}}</sup><br/>
          {{i.info}}
