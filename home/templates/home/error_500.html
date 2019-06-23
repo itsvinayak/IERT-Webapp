@@ -1,8 +1,17 @@
 {% extends "home/index.html" %}
 {% load static %}
+{% block side %}
+{% endblock %}
 {% block start %}
+<style>
+  body{
+    background-image:url("{% static 'home/img/error.png' %}");
+    background-color:black;
+    color:white;
 
-<div class="col-md-8 rest">
+  }
+</style>
+<div class="row error">
 <center>
   <b>
     <h1>error 500</h1>
