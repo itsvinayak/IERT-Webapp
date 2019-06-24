@@ -5,9 +5,11 @@ from extra_links.models import *
 from aside.models import *
 
 def index(request):
-    notices = notice_board.objects.order_by('-date')[:3]
+    notices = notice_board.objects.order_by('-date')[:]
+    popup_notice=popup.objects.all()
     page_details={
                    "title":"IERT, Prayagraj",
+                   "popup_notice":popup_notice,
                    "notice":notices
     }
     return render(request,"home/index.html",page_details)

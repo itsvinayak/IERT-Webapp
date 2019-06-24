@@ -1,3 +1,4 @@
+
 {% load static %}
 {% load pwa %}
 <!DOCTYPE html>
@@ -71,17 +72,13 @@ body{
 
 <body class="container-fluid">
 
-
-
-
-  <script>
-  $(document).ready(function() {
-  $('.replybutton').click(function() {
-    $(this).next('.reply').toggle();
+<script>
+   $(document).ready(function() {
+   $('.replybutton').click(function() {
+     $(this).next('.reply').toggle();
+   });
   });
-});
-
-  </script>
+</script>
 
   <header class="row">
 
@@ -247,6 +244,10 @@ body{
     {% endblock %}
     <div class="mobile_margin" style="margin-top: -4rem;">
     {% block start %}
+
+    <!--popup-->
+
+    {% include 'home/popup.html' %}
 
       <!-- gallery-->
      <div class="col-md-4 testcase">
