@@ -6,10 +6,10 @@
 
 <div class="row">
   <center>
-<div class="content-section col-md-8 col-md-offset-2" style=" padding:3%; margin-top:6rem; margin-bottom: 10rem ;border: 1px solid black; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),  0 6px 20px 0 rgba(0,0,0,0.39); border-radius: 20px; background: white;">
+<div class="content-section col-md-8 col-md-offset-2">
   <center><h1><b><i>login to your iert account</i></b></h1></center>
   <hr/>
-  <form method="POST" style="border:0; margin: 4%;">
+  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
     {% csrf_token %}
     <fieldset class="form-group">
       {{ form|crispy }}
@@ -18,9 +18,11 @@
    <center>
     <button style="background: black; font-size: 2rem; padding:1%;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-log-in"></span> &nbsp; login</button>
   </center>
+  <br/>
+  <sub style="text-align: left;"><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">don't have account,sign up</a></sub>
+  <sub style="text-align: right;"><a href="{% url 'password_reset' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer;">forgot password</a></sub>
+
   </form>
-  <sub style="text-align: left;"><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding: 4%;">don't have account , sign up</a></sub>
-  <sub style="text-align: right;"><a href="{% url 'password_reset' %}" style="text-decoration: none; color: blue; padding: 4%;">forgot password</a></sub>
 
 </div>
 </center>

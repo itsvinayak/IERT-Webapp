@@ -20,6 +20,7 @@ video{
   min-height: 100%;
   z-index: -1;
 }
+
 .card{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
@@ -76,11 +77,22 @@ font-size: 2rem;
 /* mobile ---------------------------------------------------> */
 
 @media only screen and (max-width: 762px) {
-.teacher{
-  display: none;
+.teacher_box img{
+   margin-bottom:10%;
+
   }
-  .card{
-    margin-top:38%;
+.teacher_box{
+  text-align:center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
+.error_handle{
+  margin-top:38%;
+}
+.card{
+    margin-left:3%;
+    margin-right:3%;
+    margin-bottom:4%;
   }
   .profile_img{
       transform: translate(35%,-50%);
@@ -133,55 +145,25 @@ font-size: 2rem;
 
 /* mobile --> */
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  float: left;
-  margin: 2%;
-  background-color: transparent;
-  width: 30rem;
-  height: 30rem;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-  /* Remove this if you don't want the 3D effect */
+.teacher_box{
+  display:block;
+  width:80%;
+  padding:5%;
+  margin:10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  background:lightblue;
+  border:1px solid black;
 }
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.teacher_box img{
+  width:200px;
+  margin-right:20%;
+  height:200px;
+  float:left;
 }
+.teacher_info{
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
 }
-
-/* Position the front and back side */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  background-color: black;
-  color: white;
-  transform: rotateY(180deg);
-}
-
 
 </style>
 
@@ -193,7 +175,8 @@ font-size: 2rem;
     </video>
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2 card">
+  <div class="col-md-8 col-md-offset-2 card error_handle">
+    <div >
     <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
     <h2 class="username">{{user.username}}</h2>
     <div class="info">
@@ -207,6 +190,7 @@ font-size: 2rem;
       <div class="item"><b>phone : </b>{{user.user_details.phone_no}}</div>
       <div class="item"><b>date of birth : </b>{{user.user_details.date_of_birth}}</div>
     </div>
+    </div>
 
     <!--button for update profile-->
     <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary button_style"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
@@ -219,8 +203,13 @@ font-size: 2rem;
     <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
     <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
    </center>
+   </div>
+   </div>
 
-   <hr/>
+ <!-- notices -->
+
+   <div class="row">
+     <div class="col-md-8 col-md-offset-2 card">
    {% if notices %}
    <div class="announcement">
      <center><h2>announcement</h2></center>
@@ -234,32 +223,34 @@ font-size: 2rem;
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          {{i.topic|safe}}
        </h5>
-     </hr/>
+     <hr/>
      </div>
      <hr/>
      {% endfor %}
    </div>
    {% endif %}
+  </div>
+ </div>
 
-   <!-- teacher you need -->
+ <!-- teacher you need -->
+
+ <div class="row">
+   <div class="col-md-8 col-md-offset-2 card">
+
    {% if teacher %}
    <div class="teacher">
    <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;" > &nbsp; teacher you need &nbsp; </h2>
    {% for i in teacher %}
-   <div class="flip-card" >
-     <div class="flip-card-inner">
-       <div class="flip-card-front">
-           <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
-       </div>
-       <div class="flip-card-back" style="width:300px; height:300px;" >
-         <h1>{{i.name}}</h1>
-         <p>{{i.Designation}}</p>
-         <p>{{i.Qualification}}</p>
-         <p>{{i.Phone}}</p>
-         <p>{{i.email}}</p>
-       </div>
-     </div>
-   </div>
+   <div class="teacher_box">
+         <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail"  />
+         <div class="teacher_info">
+          <h1>{{i.name}}</h1>
+          <p>{{i.Designation}}</p>
+          <p>{{i.Qualification}}</p>
+          <p>{{i.Phone}}</p>
+          <p>{{i.email}}</p>
+         </div>
+    </div>
    {% endfor %}
  </div>
  {% endif %}
