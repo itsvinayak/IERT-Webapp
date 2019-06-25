@@ -260,11 +260,15 @@ def Banking(request):
 
 
 def error_404(request,*kwags):
-        data = {}
+        data = {
+               "title":"error 404 !!"
+        }
         return render(request,'home/error_404.html', data)
 
 def error_500(request,*kwags):
-        data = {}
+        data = {
+             "title":"error 500 !!"
+        }
         return render(request,'home/error_500.html', data)
 
 #################################################################
