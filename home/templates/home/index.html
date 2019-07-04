@@ -268,14 +268,21 @@ body{
               <img src="{% static "home/img/dip.jpeg" %}" alt="pic not found" style="width:100%;">
             </div>
 
-            <div class="item">
-              <img src="{% static "home/img/dip.jpeg" %}" alt="pic not found" style="width:100%;">
-            </div>
 
             <div class="item">
               <img src="{% static "home/img/kk.JPG" %}" alt="pic not found" style="width:100%;">
             </div>
+
+
+          <div class="item">
+            <img src="{% static "home/img/slide1.jpeg" %}" alt="pic not found" style="width:100%;">
           </div>
+
+
+        <div class="item">
+          <img src="{% static "home/img/slide2.jpeg" %}" alt="pic not found" style="width:100%;">
+        </div>
+      </div>
 
           <!-- Left and right controls -->
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -441,6 +448,7 @@ body{
 
   <!-- footer here -->
 
+{% block footer %}
   <!-- Footer -->
 <footer class="page-footer  special-color-dark  footer row" style="background-color:#2E2E2E; text-align: center; color: white;">
 
@@ -488,8 +496,7 @@ body{
 </div>
  </footer>
  <!-- Footer -->
-
-
+{% endblock %}
 
   <script>
     //for mulitilevel menu

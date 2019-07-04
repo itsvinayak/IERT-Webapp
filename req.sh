@@ -18,3 +18,5 @@ pip3 install social-auth-app-django==3.1.0
 pip3 install social-auth-core==3.1.0
 pip3 install sqlparse==0.3.0
 pip3 install urllib3==1.24.1
+pip3 install google-api-python-client==1.4.1
+pip3 install django-jet==1.0.8

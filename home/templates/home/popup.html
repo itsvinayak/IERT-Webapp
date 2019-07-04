@@ -13,7 +13,7 @@
             <h4 class="modal-title">ANNOUNCEMENTS</h4>
           </div>
           <div class="modal-body">
-            <ul>
+            <ul style="overflow-x:scroll;">
               {% for i in popup_notice %}
               <li style="margin: 6%;"><a href="{% url "notice_page" i.id %}" >{{i.text|safe}}</a></li>
               {% endfor %}

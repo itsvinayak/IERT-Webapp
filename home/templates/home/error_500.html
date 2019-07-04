@@ -9,9 +9,22 @@
     background-image:url("{% static 'home/img/error.png' %}");
     background-color:black;
     color:white;
-
+    cursor: crosshair;
+    min-height:100%;
+    min-width:100%;
+  }
+  center{
+    color:red;
+    text-align:center;
+    font-weight:bolder;
   }
 </style>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <div class="row error">
 <center>
   <b>
@@ -27,4 +40,7 @@
 
 </div>
 
+
+{% endblock %}
+{% block footer %}
 {% endblock %}

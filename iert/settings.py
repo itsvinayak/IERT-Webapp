@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     #################
     #third party app
+    'jet.dashboard',
+    'jet',
     'crispy_forms',
     'social_django',
     'pwa',
