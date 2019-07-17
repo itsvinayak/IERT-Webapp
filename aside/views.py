@@ -3,9 +3,11 @@ from .models import facultys,recruitment_notice,download_link
 
 def faculty(request):
     fac=facultys.objects.all()
+    l=recruitment_notice.objects.all()
 
     page_details={
         "title" : "faculty",
+        "notice": l,
         "fac" : fac
     }
     return render(request,"aside/faculty.html",page_details)

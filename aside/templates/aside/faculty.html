@@ -6,8 +6,8 @@
   /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
   .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     border: 1px solid #f1f1f1;
     perspective: 1000px;
     /* Remove this if you don't want the 3D effect */
@@ -19,7 +19,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 1s;
     transform-style: preserve-3d;
   }
 
@@ -56,28 +56,18 @@
     <center>Faculty Corner</center>
   </h1>
   <hr />
-  <h4>
-    <a href="#">-> Regarding submission of sessional marks of even semesters for the Session 2017-18</a>
-    <br />
-    <br />
-    <a href="#">-> Faculty leave form</a>
-  </h4>
-  <hr />
-
-  <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; Faculty here &nbsp; </h2>
   {% for i in fac %}
-  <div class="flip-card" style="float: left; width:300px; height:300px;  margin: 2%;">
+  <div class="flip-card" style="float: left; width:200px; height:250px;  margin: 2%;">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-
         {% if i.image.url != '/media/def.png' %}
         <a href="{{i.image.url}}" target="_blank">
-          <img src="{{ i.image.url }}" class="img-responsive img-thumbnail" style="width:300px; height:300px; " alt="can't find image"/>
+          <img src="{{ i.image.url }}" class="img-responsive img-thumbnail" style="width:200px; height:250px; " alt="can't find image" />
         </a>
         {% endif %}
 
       </div>
-      <div class="flip-card-back" style="width:300px; height:300px;">
+      <div class="flip-card-back" style="width:200px; height:250px;">
         <h1>{{i.name}}</h1>
         <p>{{i.Designation}}</p>
         <p>{{i.branch}}</p>

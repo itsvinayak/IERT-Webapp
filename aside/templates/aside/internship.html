@@ -7,107 +7,80 @@
 
 {% block start %}
 <style>
-body{
-  background-color: #f2f2f2;
-  color: black;
+.in{
+  padding:1%;
+  margin:2%;
 }
-
-.student1 img,.student2 img,.student3 img,.teacher img {
-  margin-left: 25%;
-  border: 2px solid black;
+.rest ul{
+  list-style:none;
 }
-
-
-.info1, .info2, .info3,.infot{
-  text-align: center;
-  margin: 1rem;
-  visibility: hidden;
-
+.rest li{
+  background:lightgrey;
+  padding:2%;
+  width:40%;
+  height:auto;
+  float:left;
+  margin:2%;
 }
-.student1:hover .info1{
-  visibility: visible;
+.rest li img {
+  float:left;
+  margin-right:3%;
 }
-.student2:hover .info2{
-  visibility: visible;
-}
-.student3:hover .info3{
-  visibility: visible;
-}
-
-.teacher:hover .infot{
-  visibility: visible;
-}
-.rest h1{
-  text-decoration:underline;
-  margin-left:3%;
+.rest li h3{
+  font-size:1.8rem;
 }
 @media only screen and (max-width: 762px){
-  .rest h1{
-    text-align:center;
-    margin:10%;
-    font-size:3rem;
-    text-decoration:none;
+  .rest li{
+    width:auto;
+    float:none;
+    display:block;
+    margin:5% auto 0;
+    height:auto;
   }
-  .rest img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+  .rest li img {
+    display:block;
+    float:none;
+    margin-right:0;
+    margin:auto;
 
   }
+
+}
+
+.rest{
+  margin-top:10%;
 }
 
 </style>
 
 <div class="rest">
-<div class="row">
-    <h1> made by</h1>
-</div>
-<div class="row">
+  <div class="row in">
+    <h1> Internship </h1>
+   <br/>
+   <br/>
+    <ul>
+      <li>
+        <h2>vinayak</h2>
+        <img src="{% static 'aside/internship/vinayak.jpg' %}" alt="not found" height="120px" width="120px" />
+        <h3> Mr. vinayak is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+      </li>
 
-    <div class="student1 col-md-4">
-      <img src="{% static "aside/internship/default.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
-      <br/>
-      <div class="info1">
-        <h4>somil singh</h4>
-        <h4>9259888898</h4>
-        <h4>itssvinayak@gmail.com</h4>
-      </div>
-    </div>
+      <li>
+      <h2>somil</h2>
+        <img src="{% static 'aside/internship/default.jpg' %}" alt="not found" height="120px" width="120px" />
+        <h3> Mr. somil singh is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+      </li>
 
-    <div class="student2 col-md-4">
-      <img src="{% static "aside/internship/vinayak.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
-      <br/>
-      <div class="info2">
-        <h4>vinayak sharma</h4>
-        <h4>9259888898</h4>
-        <h4>itssvinayak@gmail.com</h4>
-      </div>
-    </div>
+      <li>
+      <h2>devesh</h2>
+        <img src="{% static 'aside/internship/default.jpg' %}" alt="not found" height="120px" width="120px" />
+        <h3> Mr. devesh patel is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+      </li>
 
-    <div class="student3 col-md-4">
-      <img src="{% static "aside/internship/default.jpg" %}" style="height: 20rem;" class="img-responsive img-circle"/>
-      <br/>
-      <div class="info3">
-        <h4>devesh patel</h4>
-        <h4>9259888898</h4>
-        <h4>itssvinayak@gmail.com</h4>
-      </div>
-    </div>
-</div>
-<div class="row">
-  <h1>under the guidance of</h1>
-  <div class="teacher col-md-4 col-md-offset-4">
-    <img src="{% static "aside/internship/bi .jpg" %}" style="height: 20rem; width:20rem;" class="img-responsive img-circle"/>
-    <br/>
-    <div class="infot">
-      <h4>Dr.Bireshwar Dass Mazumdar</h4>
-      <h4>Associate Professor</h4>
-      <h4> Ph.D (IIT BHU) </h4>
-      <h4>+91-9307977683</h4>
-      <h4>bdmazumdar@iert.ac.in</h4>
-    </div>
+    </ul>
+
+
+
   </div>
-</div>
 </div>
 {% endblock %}
