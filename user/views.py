@@ -10,6 +10,14 @@ from extra_links.models import notice_board
 from .models import User_details
 from django.contrib.auth.models import User
 
+#################for email send when register############################\
+
+from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.template import Context
+
+
 
 ########################################################################
 ########### register here #####################################
@@ -20,6 +28,16 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            ######################### mail system ####################################
+            htmly = get_template('user/Email.html')
+            d = { 'username': username }
+            subject, from_email, to = 'welcome to iert', 'itssvinayak@gmail.com', email
+            html_content = htmly.render(d)
+            msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+            ##################################################################
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
     else:

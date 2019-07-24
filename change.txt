@@ -1,0 +1,15 @@
+______________________change email______________________
+settings.py
+home/views.py
+home/templates/home/Academic_calender.html
+________________________________________________________
+
+_________________mysql-backends ettings_________________________
+
+'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'posts',
+    'HOST':'127.0.0.1',
+    'PORT': 3306,
+    'USER':'root',
+    'PASSWORD':'root',
+________________________________________________________

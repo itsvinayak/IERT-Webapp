@@ -164,17 +164,19 @@ EMAIL_PORT=587
 EMAIL_USE_TLS=True
 ####################collage email id ##############
 EMAIL_HOST_USER="itssvinayak@gmail.com"
-EMAIL_HOST_PASSWORD="*****************"
+EMAIL_HOST_PASSWORD="vqtofhhnakpaxrmo"
 ##################################################
 
 
 #########################pwa settings###############
+#PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'home/static/', 'serviceworker.js')
+#own serviceworker
 
 
 PWA_APP_NAME = 'IERT'
 PWA_APP_DESCRIPTION = "Institute of Engineering & Technology website made by vinayak"
 PWA_APP_THEME_COLOR = 'black'
-PWA_APP_BACKGROUND_COLOR = 'black'
+PWA_APP_BACKGROUND_COLOR = 'white'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
