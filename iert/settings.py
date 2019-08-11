@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     #################
     #third party app
-    'jet.dashboard',
-    'jet',
+    # 'jet.dashboard',
+    # 'jet',
     'crispy_forms',
     'social_django',
     'pwa',
@@ -99,14 +99,28 @@ WSGI_APPLICATION = 'iert.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'iert',
+         'USER': 'root',
+         'HOST':'localhost',
+         'PASSWORD': 'vinayak',
+         'PORT': '3306',
+          'OPTIONS': {
+              'autocommit': True,
+              "init_command": "SET default_storage_engine=MyISAM",
+         },
+     }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -192,6 +206,8 @@ PWA_APP_SPLASH_SCREEN = [
 'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
 }
 ]
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'home/static/', 'serviceworker.js')
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
