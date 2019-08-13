@@ -1,0 +1,46 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block side %}
+{% endblock %}
+{% block start %}
+<style>
+  body{
+    background-image:url("{% static 'home/img/error.png' %}");
+    background-color:black;
+    color:white;
+    cursor: crosshair;
+    min-height:100%;
+    min-width:100%;
+  }
+  center{
+    color:red;
+    text-align:center;
+    font-weight:bolder;
+  }
+
+</style>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="row error">
+<center>
+  <b>
+    <h1>error 404</h1>
+  </b>
+  <i>
+    <h3>
+      page not found
+    </h3>
+  </i>
+</center>
+
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

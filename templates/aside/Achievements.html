@@ -1,0 +1,27 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+
+{% block start %}
+<div class="col-md-8 rest">
+  <center>
+    <h1>Achievements</h1>
+  </center>
+  <hr/>
+  <div style="font-size: 2rem;">
+    <ul>
+
+      <h3>Some of the major achievements are:</h3>
+      <li><a href="{% static "aside/pdf/Smart India Hackathon_2.pdf" %}">Smart India Hackathon_2</a></li>
+      <li><a href="#">AKTU Zonal Fest Winners</a></li>
+
+      <img src="{% static "aside/Achievements/IMG-20180411-WA0009.jpg" %}" height="30%" width="30%" style="float: left; margin: 2%;" class="img-responsive"/>
+      <img src="{% static "aside/Achievements/IMG-20180411-WA0000.jpg" %}" height="30%" width="30%" style="float: left; margin: 2%;" class="img-responsive"/>
+      <img src="{% static "aside/Achievements/IMG-20180413-WA0007.jpg" %}" height="30%" width="30%" style="float: left; margin: 2%;" class="img-responsive"/>
+
+    </ul>
+  </div>
+  <br/>
+
+</div>
+{% endblock %}

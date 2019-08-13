@@ -1,0 +1,287 @@
+{% extends "home/index.html" %}
+
+{% block start %}
+<style>
+td:hover{
+  background: lightblue;
+  height: 30%;
+  width: 30%;
+  font-size: 2rem;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border-bottom: 1px solid black;
+
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+
+.tabcontent {
+  animation: fadeEffect 2s; /* Fading effect takes 2 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+/* style for teacher */
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 762px){
+
+  .tab{
+    text-align: center;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:1.3rem;
+  }
+}
+
+
+</style>
+
+
+  <div class="col-md-8 rest">
+
+    <!-- Tab links -->
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, 'about')"  id="defaultOpen" >about</button>
+     <button class="tablinks" onclick="openTab(event, 'syllabus')">syllabus</button>
+     <button class="tablinks" onclick="openTab(event, 'labs')">labs</button>
+     <button class="tablinks" onclick="openTab(event, 'more')">more</button>
+    </div>
+
+
+  <!-- content page about -->
+
+  <div id="about" class="tabcontent">
+
+    {% for i in bra %}
+    {% if i.branch %}
+    <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">{{i.branch}}</h1>
+    {% else %}
+    <h1 class="dtitle" style="font-size: 4rem ; font-family: serif; font-weight: bold; text-align: center;">not available</h1>
+    {% endif %}
+    <hr/>
+    <br/>
+    {% if i.branch_imformation %}
+    <div style="font-size: 2rem ;">{{i.branch_imformation|safe}}</div>
+    {% endif %}
+    {% if i.branch_vision %}
+    <h2 style="font-size: 4rem ;">vision</h2>
+    <hr/>
+    <div style="font-size: 2rem ;">{{i.branch_vision|safe}}</div>
+    {% endif %}
+    {% if i.branch_mission %}
+    <h2 style="font-size: 4rem ;">mission</h2>
+    <hr/>
+    <div style="font-size: 2rem ;">{{i.branch_mission|safe}}</div>
+    {% endif %}
+    {% if i.notice %}
+    <h2 style="font-size: 4rem ;">announcement</h2>
+    <hr/>
+    {% endif %}
+
+    {% endfor %}
+    <hr/>
+  </div>
+
+  <!-- _______________________________________-->
+
+  <!-- content page syllabus -->
+
+  <div id="syllabus" class="tabcontent">
+    {% for i in bra %}
+    {% if i.branch_syllabus %}
+    {{i.branch_syllabus|safe}}
+    {% else %}
+    <h2>
+      syllabus not uploaded
+    </h2>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+  <!-- ________________________-->
+
+
+  <!-- content page labs -->
+
+  <div id="labs" class="tabcontent">
+
+    {% for i in bra %}
+    {% if i.branch_lab %}
+    {{i.branch_lab|safe}}
+    {% else %}
+    <h2>
+      lab info not available
+    </h2>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+  <!-- ________________________-->
+
+
+  <!-- content page more -->
+
+  <div id="more" class="tabcontent">
+    <details style="text-align: left">
+      <summary>
+           <b>  notices here </b>
+      </summary>
+         {% for i in notice %}
+       <p style="background-color: #f2f2f2; color:black; padding:4%; margin:2%;">
+         <b>{{i.topic}}</b><br/>
+         <sup>{{i.date}}</sup><br/>
+         {{i.info}}
+       </p>
+       <hr/>
+       {% endfor %}
+    </details>
+
+
+ <!-- teacher -->
+
+ <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; Faculty here &nbsp; </h2>
+ {% for i in teacher%}
+ <div class="flip-card" style="float: left; width:300px; height:300px;  margin: 2%;">
+   <div class="flip-card-inner">
+     <div class="flip-card-front">
+
+       {% if i.image.url != '/media/def.png' %}
+       <a href="{{i.image.url}}" target="_blank">
+         <img src="{{ i.image.url }}" class="img-responsive img-thumbnail" style="width:300px; height:300px; " alt="can't find image"/>
+       </a>
+       {% endif %}
+
+     </div>
+     <div class="flip-card-back" style="width:300px; height:300px;">
+       <h1>{{i.name}}</h1>
+       <p>{{i.Designation}}</p>
+       <p>{{i.branch}}</p>
+       <p>{{i.Qualification}}</p>
+       <p>{{i.Phone}}</p>
+       <p>{{i.email}}</p>
+     </div>
+   </div>
+ </div>
+ {% endfor %}
+
+
+
+
+
+
+
+
+
+<!-- _____________________________________-->
+
+  </div>
+  <!-- ________________________-->
+
+
+<script>
+
+  document.getElementById("defaultOpen").click();
+
+  function openTab(evt, op) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(op).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+{% endblock %}

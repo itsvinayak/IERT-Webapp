@@ -1,0 +1,19 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block start %}
+
+<div class="col-md-8 rest">
+  <center><h1>Important Download</h1></center>
+  <hr/>
+  <ul>
+    {% for i in links %}
+    <li><a href="{{i.file.url}}" target="_blank">{{i.title}}</a></li>
+    {% endfor %}
+  </ul>
+  <br/>
+  <br/>
+  <br/>
+</div>
+
+{% endblock %}

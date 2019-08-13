@@ -79,7 +79,8 @@ ROOT_URLCONF = 'iert.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,6 +94,8 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 WSGI_APPLICATION = 'iert.wsgi.application'
 
@@ -161,8 +164,12 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 CRISPY_TEMPLATE_PACK='bootstrap3'
 

@@ -1,0 +1,86 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+
+{% block side %}
+{% endblock %}
+
+{% block start %}
+<style>
+.in{
+  padding:1%;
+  margin:2%;
+}
+.rest ul{
+  list-style:none;
+}
+.rest li{
+  background:lightgrey;
+  padding:2%;
+  width:40%;
+  height:auto;
+  float:left;
+  margin:2%;
+}
+.rest li img {
+  float:left;
+  margin-right:3%;
+}
+.rest li h3{
+  font-size:1.8rem;
+}
+@media only screen and (max-width: 762px){
+  .rest li{
+    width:auto;
+    float:none;
+    display:block;
+    margin:5% auto 0;
+    height:auto;
+  }
+  .rest li img {
+    display:block;
+    float:none;
+    margin-right:0;
+    margin:auto;
+
+  }
+
+}
+
+.rest{
+  margin-top:10%;
+}
+
+</style>
+
+<div class="rest">
+  <div class="row in">
+    <h1> Internship </h1>
+   <br/>
+   <br/>
+    <ul>
+      <li>
+        <h2>vinayak</h2>
+        <img src="{% static 'aside/internship/vinayak.jpg' %}" alt="not found" height="120px" width="120px" />
+        <h3> Mr. vinayak is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+      </li>
+
+      <li>
+      <h2>somil</h2>
+        <img src="{% static 'aside/internship/default.jpg' %}" alt="not found" height="120px" width="120px" />
+        <h3> Mr. somil singh is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+      </li>
+
+      <li>
+      <h2>devesh</h2>
+        <img src="{% static 'aside/internship/default.jpg' %}" alt="not found" height="120px" width="120px" />
+        <h3> Mr. devesh patel is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+      </li>
+
+    </ul>
+
+
+
+  </div>
+</div>
+{% endblock %}

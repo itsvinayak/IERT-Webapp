@@ -1,0 +1,32 @@
+{% extends "home/index.html" %}
+{% load crispy_forms_tags %}
+{% block side %}
+{% endblock %}
+{% block start %}
+<style>
+ .update_form{
+  padding:3%;
+  margin: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
+              0 6px 20px 0 rgba(0,0,0,0.39);
+  border-radius: 20px;
+}
+
+</style>
+
+<center><h1><ins> &nbsp; &nbsp; &nbsp; update your profile &nbsp; &nbsp; &nbsp;</ins></h1></center>
+<form method="POST" enctype="multipart/form-data" class="update_form" style="background: white;">
+  {% csrf_token %}
+
+       {{p_form|crispy}}
+       {{u_form|crispy}}
+       {{pd_form|crispy}}
+
+
+  <center>
+    <button style="display: inline; margin: 2%;" class="btn btn-default"><a href="{% url 'password_reset' %}" style="text-decoration: none; color: blue; padding: 4%;">change password</a></sub>
+
+    <button style="background: black; color:white; font-size: 1.5rem;" class="btn btn-outline-info" type="sumbit"><span class="glyphicon glyphicon-saved"></span> &nbsp; update</button>
+  </center>
+</form>
+{% endblock %}

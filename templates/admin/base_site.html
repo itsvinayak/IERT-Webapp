@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+<!-- Latest compiled and minified CSS -->
+<link rel="shortcut icon" type="image/x-icon" href="{% static "home/img/iert_icon.png" %}">
+<link rel="apple-touch-icon" href="{% static "home/img/iert_icon.png" %}" />
+{% endblock %}
+{% block branding %}
+     <img  src="{% static "home/img/iert_icon.png" %}" height='40' width='40' style="border-radius:50%; " alt="img not found" />
+     <!--h2 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h2-->
+{% endblock %}

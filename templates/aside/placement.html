@@ -1,0 +1,50 @@
+{% extends "home/index.html" %}
+
+{% load static %}
+{% block start %}
+<style>
+marquee img{
+  margin: 2%;
+  padding: 2%;
+}
+</style>
+<div class="col-md-8 col-lg-8 rest">
+  <center>
+    <h1>Placements</h1>
+  </center>
+  <hr />
+  <mark>The main objective of training and placement cell is to provide world class training as well as best job opportunities to the students of institution .</mark>
+  <br/>
+  <marquee style="margin:2%;">
+    <a href="{% static 'aside/com_img/012.jpg' %}" target="_blank">
+      <img src="{% static 'aside/com_img/012.jpg' %}" height="110rem" width="110rem" class="img-responsive img-thumbnail"/>
+    </a>
+    <a href="{% static 'aside/com_img/avi.png' %}" target="_blank">
+      <img src="{% static 'aside/com_img/avi.png' %}" height="110rem" width="110rem" class="img-responsive img-thumbnail"/>
+    </a>
+    <a href="{% static 'aside/com_img/hcl.png' %}" target="_blank">
+      <img src="{% static 'aside/com_img/hcl.png' %}" height="110rem" width="110rem" class="img-responsive img-thumbnail"/>
+    </a>
+    <a href="{% static 'aside/com_img/sim.jpg' %}" target="_blank">
+      <img src="{% static 'aside/com_img/sim.jpg' %}" height="110rem" width="110rem" class="img-responsive img-thumbnail"/>
+    </a>
+    <a href="{% static 'aside/com_img/tcs.jpg' %}" target="_blank">
+      <img src="{% static 'aside/com_img/tcs.jpg' %}" height="110rem" width="110rem" class="img-responsive img-thumbnail"/>
+    </a>
+    <a href="{% static 'aside/com_img/wip.png' %}" target="_blank">
+      <img src="{% static 'aside/com_img/wip.png' %}" height="110rem" width="110rem" class="img-responsive img-thumbnail"/>
+    </a>
+  </marquee>
+
+  <p>
+    TCS, WIPRO, ACCENTURE, INFOSYS, SATYAM, HCL, BIRLA SOFT, ZUARI CEMENT, INDORAMA, SYNTEL, MAHINDRA & MAHINDRA, ESCORTS, L&T INFOTECH, L&T BANGALORE, PRISM CEMENT LTD. SATANA, ADITYA BIRLA GROUP (HINDALCO) RENUKOOT, LOHIO STARNGAR LTD. KANPUR,
+    PRISM CEMENT LTD MUMBAI, CAPUITAL TRUST LTD, MARUTI SUZUKI GURGAON, L&T ECC DIV. NEW DELHI, METSO INDIA LTD. GURGAON, MITSUBA LTD. GURGAON, GE TRANSPORTATION N.D., VIKAS GROUP ALWAR, BIRLA CARBON LTD MUMBAI, U-FLEX P LTD NOIDA, SWATANTRA
+    MICROFIN MUMBAI, KALPATRU TRANSMISSION HYDERABAD, TATA MOTORS LTD LUCKNOW
+  </p>
+
+
+
+
+</div>
+
+{% endblock %}

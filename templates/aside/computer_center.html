@@ -1,0 +1,33 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+
+{% block start %}
+
+<div class="col-md-8 rest">
+
+  <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teachers in computer center &nbsp; </h2>
+
+  {% for i in teachers %}
+
+  <div style="margin: 50px; border: 1px solid black;">
+    {% if i.image.url != '/media/def.png' %}
+    <a href="{{i.image.url}}" target="_blank">
+     <img src="{{ i.image.url }}" height="200px" width="100px" class="img-responsive img-thumbnail" style="float:left; margin: 50px;"/>
+    </a>
+    {% endif %}
+     <div style="text-align: left; margin:50px;">
+       <h3>{{i.name}}</h3>
+       <span>Designation : {{i.Designation}}</span>
+       <br/>
+       <span>Qualification :{{i.Qualification}}</span>
+       <br/>
+       <span>Phone No. : {{i.Phone}}</span>
+       <br/>
+       <span>Email : <a>{{i.email}}</a></span>
+     </div>
+   </div>
+  {% endfor %}
+ </div>
+
+{% endblock %}

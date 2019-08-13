@@ -1,0 +1,177 @@
+{% extends "home/index.html" %}
+{% block side %}
+{% endblock %}
+
+
+{% block start %}
+
+<style>
+  /* Gallery */
+  @import url(http://fonts.googleapis.com/css?family=Anaheim);
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    background-image: radial-gradient(mintcream 0%, lightgray 100%);
+  }
+
+  h1 {
+    display: table;
+    margin: 5% auto 0;
+    text-transform: uppercase;
+    font-family: 'Anaheim', sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+    text-shadow: 0 1px white, 0 2px black;
+  }
+
+  @media only screen and (max-width: 762px) {
+    h1 {
+      display: table;
+      margin: 10% auto 0;
+      padding: 10%;
+      text-transform: uppercase;
+      font-family: 'Anaheim', sans-serif;
+      font-size: 4em;
+      font-weight: 400;
+      text-shadow: 0 1px white, 0 2px black;
+    }
+
+  }
+
+  .videos {
+    margin: 4%;
+    height:300px;
+
+  }
+  .videos iframe{
+    height:100%;
+    margin: auto 4%;
+    width:40%;
+  }
+
+  .container {
+    margin: 4% auto;
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
+  }
+
+  #carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotation 20s infinite linear;
+  }
+
+  #carousel:hover {
+    animation-play-state: paused;
+  }
+
+  #carousel figure {
+    display: block;
+    position: absolute;
+    width: 98%;
+    height: 150px;
+    left: 10px;
+    top: 10px;
+    background: black;
+    overflow: hidden;
+    border: solid 5px black;
+  }
+
+  #carousel figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(288px);
+  }
+
+  #carousel figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(288px);
+  }
+
+  img {
+    -webkit-filter: grayscale(1);
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+
+  img:hover {
+    -webkit-filter: grayscale(0);
+    transform: scale(1.2, 1.2);
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotateY(0deg);
+    }
+
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+</style>
+
+<div class="row">
+  <!-- Gallery -->
+
+  <h1> &nbsp; Gallery &nbsp; </h1>
+  <div class="container">
+    <div id="carousel">
+      {% for i in images %}
+      <figure><img src="{{i.image.url}}" alt="" height="100%" width="100%"></figure>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+
+</div>
+<div class="row ">
+  <hr />
+  <h1> &nbsp; Videos &nbsp; </h1>
+  <div class="videos">
+
+
+    <br />
+    <iframe src="https://www.youtube.com/embed/Hx27Egg29_M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe  src="https://www.youtube.com/embed/Vw7WrohdXuI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

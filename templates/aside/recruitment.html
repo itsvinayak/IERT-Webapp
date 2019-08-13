@@ -1,0 +1,61 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block start %}
+
+<div class="col-md-8 rest">
+<h1 style="text-align: center; font-size: 4rem;"> Recruitment </h1>
+
+<ul>
+  <li>
+     <h1>Important Dates</h1>
+    <ul>
+      {% for i in li %}
+      <li>{{i.notice}}</li>
+      {% endfor %}
+    </ul>
+  </li>
+  <br/>
+  <br/>
+  <li>
+     <h1>Important Downloads </h1>
+    <ul>
+      <li><a href="{% static "aside/pdf/Guidelines.pdf" %}" target="_blank"> How to Apply Manual </a></li>
+      <li><a href="{% static "aside/pdf/Advertisementfinal.pdf" %}" target="_blank"> Advertisement for Teaching post </a></li>
+      <li><a href="{% static "aside/pdf/Instructional_Manual.pdf" %}" target="_blank"> Guidelines to Fill Performance Based Appraisal System (PBAS) Form </a></li>
+      <li><a href="{% static "aside/pdf/PBAS_CALCULATION_SHEET.docx" %}" target="_blank"> PBAS Calculation Sheet </a></li>
+      <li><a href="{% static "aside/pdf/PBASDetailSheet.docx" %}" target="_blank"> PBAS Detailed Sheet </a></li>
+    </ul>
+  </li>
+</ul>
+<br/>
+<br/>
+<center>
+<a class="btn btn-primary" href="#" target="_blank" style="padding: 2%; margin: 10%;"> Apply now </a>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

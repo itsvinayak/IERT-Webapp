@@ -1,0 +1,43 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+
+{% block start %}
+
+<div class="col-md-8 rest" >
+  <div style="font-family: sans-serif">
+    <h2>Director's Desk</h2>
+    <hr />
+    <img src="{% static "home/img/director.jpg" %}" class="img-circle img-responsive" alt="img not found" height="200" width="200" />
+    <br />
+    <p style="text-align: justify">
+      Welcome to the <b><i>Institute of Engineering and Rural Technology (IERT), Allahabad.</i></b>
+      Since its formation, IERT has been serving as our nation’s flagship as comprehensive institution of technical education.
+      We are advancing institute’s tradition of excellence in Engineering and Technology through high-quality programs in teaching, research, executive training, and service.
+      We continue to rank among the nation’s best Engineering Colleges.
+      <br />
+      Our goal is to prepare experts, who go beyond conventional technical skills. In order to meet the needs of the fast changing 21st century world, IERT is producing high-quality engineers of international standard. The institute not only
+      provides high technology-based education to students but also lays emphasis on the cultivation of modern outlook. The institute also provides a congenial atmosphere for students to facilitate their development as a balanced and mature human
+      being as they grow in life.
+      <br />
+      We are fortunate to have a talented, highly committed teaching and support staff here to ensure the learning environment of our students. Our faculties are renowned scholars and accomplished practitioners who are actively engaged in the
+      academic excellence and innovative research ideas of the modern world.
+      <br />
+      We seek to prepare our young students with the very best preparation for life at IERT. We also seek to impart in our students a passion for learning that will bring the knowledge and understanding required for a positive contribution to the
+      community.
+      <br />
+      <br />
+      <i><b>
+          <a href="{% url "director" %}"> Dr. Vimal Mishra</a>
+          <br />&nbsp;&nbsp;&nbsp;(Director I.E.R.T.)
+      </i></b>
+    </p>
+    <br />
+  </div>
+
+
+</div>
+
+
+
+{% endblock%}

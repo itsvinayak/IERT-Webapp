@@ -1,0 +1,25 @@
+{% extends "home/index.html" %}
+
+
+{% block start %}
+
+<style>
+.rest a{
+  color:blue;
+
+}
+</style>
+
+<div class="col-md-8  rest">
+
+  <h2>{{nb.topic}}</h2>
+  <sud>
+    <b>{{nb.date}}</b>
+  </sud>
+  <hr />
+  <p>{{nb.info|safe}}</p>
+
+</div>
+
+
+{% endblock %}

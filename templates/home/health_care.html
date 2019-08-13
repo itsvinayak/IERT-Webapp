@@ -1,0 +1,42 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block start %}
+
+<div class="col-md-8 rest">
+  <h1 style="text-align: center; font-family: cursive; font-style: italic;">Health Center</h1>
+  <hr />
+  <p style="font-size: 2rem;">A college is a place of academic, professional, and personal growth. This can be difficult if you are also struggling with health concerns. We know how hard it is to keep up on homework and exams when all your body wants to do is rest and
+    recuperate. That is why we are here to walk with you through these rough patches.<br/>
+
+    College provides comprehensive medical services and public health leadership to enhance the personal success. Whether you need assistance with allergies, colds, physical injuries, immunizations, nutrition, dental care, etc., the health center is
+    here to resolve your health concerns and helps you to make the most of your college experience.
+        <br/>
+    The health center of the institute is a 24x7 functional body that provides OPD care and first aid facilities for the residents where prompt treatment for ailments and small wounds can be availed.
+
+  </p>
+
+  <br/><br/><br/>
+  <style>
+
+  .sss img{
+    margin: 1%;
+    border: solid 5px white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  </style>
+<div style="float:left;" class="sss">
+<center>
+ <img src="{% static "home/img/h1.png" %}" alt="pic not found" height="30%" width="30%"/>
+ <img src="{% static "home/img/h2.jpg" %}" alt="pic not found" height="30%" width="30%"/>
+ <img src="{% static "home/img/h3.jpg" %}" alt="pic not found" height="30%" width="30%"/>
+</center>
+</div>
+
+<br/><br/><br/>
+
+</div>
+
+
+
+{% endblock %}
