@@ -72,6 +72,7 @@ body{
 
 <body class="container-fluid">
 
+<!-- script for comment box -->
 <script>
    $(document).ready(function() {
    $('.replybutton').click(function() {
@@ -103,7 +104,7 @@ body{
                 <li><a href="{% url "about_city" %}"><span class="glyphicon glyphicon-map-marker"></span> &nbsp; About city</a></li>
                 <li><a href="{% url "vision_and_mission" %}"><span class="glyphicon glyphicon-flag"></span> &nbsp; Vision And Mission</a></li>
                 <li><a href="{% url "administration" %}"><span class="glyphicon glyphicon-list-alt"></span> &nbsp; Administration</a></li>
-                <li><a href="{% url "faculty" %}"><span class="glyphicon glyphicon-certificate"></span> &nbsp; Faculty Corner</a></li>
+                <li><a href="{% url "recruitment" %}"><span class="glyphicon glyphicon-certificate"></span> &nbsp; Faculty Corner</a></li>
                 <li><a href="{% url "photo_gallery" %}"><span class="glyphicon glyphicon-picture"></span> &nbsp; Photo gallery</a></li>
                 <li><a href="{% url "institution_holiday" %}"><span class="glyphicon glyphicon-info-sign"></span> &nbsp; Institute Holiday</a></li>
               </ul>
@@ -156,7 +157,7 @@ body{
           <li><a href="{% url "contact_us" %}">Contact us</a></li>
 
             {% if user.is_authenticated %}
-            <li><a href="{% url "profile" %}"><img src="{{user.profile.image.url}}" style="height: 2rem; float: left;" class="img-responsive img-circle"/> &nbsp; Profile</a></li>
+            <li><a href="{% url "profile" %}"><img src="{{user.profile.image.url}}" style="height:2.2rem; width:2.2rem; float: left; border:1px solid #f2f2f2;" class="img-responsive img-circle"/> &nbsp; Profile</a></li>
             <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a></li>
             {% else %}
             <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> &nbsp; Sign up</a></li>
@@ -219,12 +220,12 @@ body{
           <summary class="list-group-item list-group-item-action"><b>Student Corner</b></summary>
           <a class="list-group-item list-group-item-action" href="{% url "notice" %}">Notice</a>
           <a class="list-group-item list-group-item-action " href="{% url "technovation" %}">Technovation</a>
+            <a class="list-group-item list-group-item-action" href="{% url "faculty" %}">Facultys</a>
           <a class="list-group-item list-group-item-action " href="{% url "Udbhav" %}">Udbhav</a>
           <a class="list-group-item list-group-item-action " href="Document Formats.html">Document Formats</a>
           <a class="list-group-item list-group-item-action " href="https://itsvinayak.github.io/resume-generator/">resume generator</a>
         </details>
         <a class="list-group-item list-group-item-action" href="{% url "placement" %}">Placements</a>
-        <a class="list-group-item list-group-item-action" href="{% url "faculty" %}">Faculty Corner</a>
         <details>
           <summary class="list-group-item list-group-item-action"><b>Important Links</b></summary>
           <a class="list-group-item list-group-item-action" href="https://www.aicte-india.org/" target="_blank" /> AICTE</a>

@@ -78,12 +78,12 @@ def Women_Grievance_Cell(request):
 
 def rti(request):
     page_details={
-        "title":"rti"
+        "title":"RTI"
     }
-    return render(request,"aside/rti.html")
+    return render(request,"aside/rti.html",page_details)
 
 def internship(request):
     page_details={
         "title":"internship ,made by with love"
     }
-    return render(request,"aside/internship.html")
+    return render(request,"aside/internship.html",page_details)

@@ -13,9 +13,9 @@
           <h4 class="modal-title">ANNOUNCEMENTS</h4>
         </div>
         <div class="modal-body">
-          <ul>
+          <ul style="list-style:none; text-align:center;">
             {% for i in popup_notice %}
-            <li style="margin: 6%; text-align:justify;">{{i.text|safe}}</li>
+            <li style="margin: 6%; text-align:center; word-wrap: break-word;">{{i.text | safe}}</li>
             {% endfor %}
           </ul>
         </div>

@@ -6,258 +6,269 @@
 
 <!--style here-->
 <style>
+  body {
+    overflow-x: hidden;
+  }
 
-body{
-  overflow-x: hidden;
-}
-video{
-  position: fixed;
-  background: black;
-  top:0;
-  left:0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
+  video {
+    position: fixed;
+    background: black;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
 
-.card{
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  .card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+      0 6px 20px 0 rgba(0, 0, 0, 0.39);
     margin-top: 10%;
     border: 3px solid lightgrey;
-}
+  }
 
-.profile_img{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  .profile_img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+      0 6px 20px 0 rgba(0, 0, 0, 0.39);
     border-radius: 50%;
-    border-top: 3px solid lightgrey;
-    transform: translate(150%,-50%);
-    margin-bottom: -15%;
-}
-.info{
-   margin-top: 5%;
-}
-.info h1{
-  font-style: italic;
-  font-family: cursive;
-  font-weight: bold;
-}
+    height: 220px;
+    width: 220px;
+    border: 3px solid lightgrey;
+    transform: translate(150%, -50%);
+    margin-bottom: -10%;
+  }
 
-.info .item{
-font-size: 2rem;
-}
+  .info {
+    margin-top: 5%;
+  }
 
-.info .item-title{
-  font-size: 3rem;
-}
+  .info h1 {
+    font-style: italic;
+    font-family: cursive;
+    font-weight: bold;
+  }
 
-.button_style{
-  font-size: 2rem;
-}
+  .info .item {
+    font-size: 2rem;
+  }
 
-.announcement h2{
-   font-size: 4rem;
-   text-decoration: underline;
-   font-style: italic;
-   font-weight: bold;
-}
-.ann_info{
-  font-size: 2rem;
-  margin: 3%;
+  .info .item-title {
+    font-size: 3rem;
+  }
 
-}
-.username{
-  text-align: center;
-  font-size: 4rem;
-}
+  .button_style {
+    font-size: 2rem;
+  }
 
-/* mobile ---------------------------------------------------> */
+  .announcement h2 {
+    font-size: 4rem;
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bold;
+  }
 
-@media only screen and (max-width: 762px) {
-.teacher_box img{
-   margin-bottom:10%;
+  .ann_info {
+    font-size: 2rem;
+    margin: 3%;
 
   }
-.teacher_box{
-  text-align:center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.39);
-}
-.error_handle{
-  margin-top:38%;
-}
-.card{
-    margin-left:3%;
-    margin-right:3%;
-    margin-bottom:4%;
+
+  .username {
+    text-align: center;
+    font-size: 4rem;
   }
-  .profile_img{
-      transform: translate(35%,-50%);
+
+  /* mobile ---------------------------------------------------> */
+
+  @media only screen and (max-width: 762px) {
+    .teacher_box img {
+      margin-bottom: 10%;
+
+    }
+
+    .teacher_box {
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+        0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    }
+
+    .error_handle {
+      margin-top: 38%;
+    }
+
+    .card {
+      margin-left: 3%;
+      margin-right: 3%;
+      margin-bottom: 4%;
+    }
+
+    .profile_img {
+      transform: translate(35%, -50%);
       display: flex;
       align-self: center;
       height: 18rem;
       width: 18rem;
+    }
+
+    .username {
+      margin-top: -20%;
+    }
+
+    .info {
+      margin-top: 5%;
+    }
+
+    .info h1 {
+      font-style: italic;
+      font-family: cursive;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .info .item {
+      font-size: 1.5rem;
+    }
+
+    .info .item-title {
+      font-size: 3rem;
+    }
+
+    .button_style {
+      margin: 4%;
+      font-size: 1rem;
+    }
+
+    .announcement h2 {
+      font-size: 3rem;
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .ann_info {
+      font-size: 1.5rem;
+      margin: 3%;
+      margin-top: 4%;
+
+    }
+
   }
-  .username{
-    margin-top: -20%;
+
+  /* mobile --> */
+
+  .teacher_box {
+    display: block;
+    width: 80%;
+    padding: 5%;
+    margin: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+      0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    background: lightblue;
+    border: 1px solid black;
   }
 
-  .info{
-     margin-top: 5%;
+  .teacher_box img {
+    width: 200px;
+    margin-right: 20%;
+    height: 200px;
+    float: left;
   }
-  .info h1{
-    font-style: italic;
-    font-family: cursive;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  .info .item{
-  font-size: 1.5rem;
-  }
-
-  .info .item-title{
-    font-size: 3rem;
-  }
-
-  .button_style{
-    margin: 4%;
-    font-size: 1rem;
-  }
-
-  .announcement h2{
-     font-size: 3rem;
-     text-decoration: underline;
-     font-style: italic;
-     font-weight: bold;
-  }
-  .ann_info{
-    font-size: 1.5rem;
-    margin: 3%;
-    margin-top: 4%;
-
-  }
-
-}
-
-/* mobile --> */
-
-.teacher_box{
-  display:block;
-  width:80%;
-  padding:5%;
-  margin:10%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.39);
-  background:lightblue;
-  border:1px solid black;
-}
-.teacher_box img{
-  width:200px;
-  margin-right:20%;
-  height:200px;
-  float:left;
-}
-.teacher_info{
-
-}
 
 </style>
 
 
 
 
-    <video loop autoplay muted>
-      <source src="{% static 'video/Video_1.mp4' %}" type="video/mp4" >
-    </video>
+<video loop autoplay muted>
+  <source src="{% static 'video/Video_1.mp4' %}" type="video/mp4">
+</video>
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2 card error_handle">
-    <div >
-    <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
-    <h2 class="username">{{user.username}}</h2>
-    <div class="info">
+    <div>
+      <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" />
+      <h2 class="username">{{user.username}}</h2>
+      <div class="info">
         <h1 class="item-title">about</h1>
-      <hr style="border: 1px solid black;"  width="50%" align="left"/>
-      <div class="item"><b>name : </b>{{user.first_name}} {{user.last_name}}</div>
-      <div class="item"><b>email : </b>{{user.email}}</div>
-      <div class="item"><b>aktu roll_no : </b>{{user.user_details.roll_no}}</div>
-      <div class="item"><b>branch : </b>{{user.user_details.branch}}</div>
-      <div class="item"><b>year : </b>{{user.user_details.year}}</div>
-      <div class="item"><b>phone : </b>{{user.user_details.phone_no}}</div>
-      <div class="item"><b>date of birth : </b>{{user.user_details.date_of_birth}}</div>
-    </div>
+        <hr style="border: 1px solid black;" width="50%" align="left" />
+        <div class="item"><b>name : </b>{{user.first_name}} {{user.last_name}}</div>
+        <div class="item"><b>email : </b>{{user.email}}</div>
+        <div class="item"><b>aktu roll_no : </b>{{user.user_details.roll_no}}</div>
+        <div class="item"><b>branch : </b>{{user.user_details.branch}}</div>
+        <div class="item"><b>year : </b>{{user.user_details.year}}</div>
+        <div class="item"><b>phone : </b>{{user.user_details.phone_no}}</div>
+        <div class="item"><b>date of birth : </b>{{user.user_details.date_of_birth}}</div>
+      </div>
     </div>
 
     <!--button for update profile-->
     <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary button_style"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
     <!--_______________________-->
-    <br/>
-    <br/>
+    <br />
+    <br />
 
-    <hr/>
+    <hr />
     <center class="buttons_aktu">
-    <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
-    <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
-   </center>
-   </div>
-   </div>
-
- <!-- notices -->
-
-   <div class="row">
-     <div class="col-md-8 col-md-offset-2 card">
-   {% if notices %}
-   <div class="announcement">
-     <center><h2>announcement</h2></center>
-     {% for i in notices %}
-     <div class="ann_info">
-       <h4>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-       <sup>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.date|safe}}
-       </sup>
-       <h5>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         {{i.topic|safe}}
-       </h5>
-     <hr/>
-     </div>
-     <hr/>
-     {% endfor %}
-   </div>
-   {% endif %}
+      <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
+      <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
+    </center>
   </div>
- </div>
+</div>
 
- <!-- teacher you need -->
+<!-- notices -->
+{% if notices %}
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 card">
 
- <div class="row">
-   <div class="col-md-8 col-md-offset-2 card">
+    <div class="announcement">
+      <center>
+        <h2>announcement</h2>
+      </center>
+      {% for i in notices %}
+      <div class="ann_info">
+        <h4>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+        <sup>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.date|safe}}
+        </sup>
+        <h5>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {{i.topic|safe}}
+        </h5>
+        <hr />
+      </div>
+      <hr />
+      {% endfor %}
+    </div>
 
-   {% if teacher %}
-   <div class="teacher">
-   <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;" > &nbsp; teacher you need &nbsp; </h2>
-   {% for i in teacher %}
-   <div class="teacher_box">
-         <img src="{{ i.image.url }}"  class="img-responsive img-thumbnail"  />
-         <div class="teacher_info">
+  </div>
+</div>
+{% endif %}
+
+<!-- teacher you need -->
+{% if teacher %}
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 card">
+    <div class="teacher">
+      <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>
+      {% for i in teacher %}
+      <div class="teacher_box">
+        <img src="{{ i.image.url }}" class="img-responsive img-thumbnail" />
+        <div class="teacher_info">
           <h1>{{i.name}}</h1>
           <p>{{i.Designation}}</p>
           <p>{{i.Qualification}}</p>
           <p>{{i.Phone}}</p>
           <p>{{i.email}}</p>
-         </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-   {% endfor %}
- </div>
- {% endif %}
-   <!--_________________________-->
-
- </div>
+  </div>
 </div>
+{% endif %}
+
 
 
 {% endblock %}

@@ -31,19 +31,22 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    #local apps
+    # local apps
     'iert_news.apps.IertNewsConfig',
     'extra_links.apps.ExtraLinksConfig',
     'user.apps.UserConfig',
     'aside.apps.AsideConfig',
     'home.apps.HomeConfig',
     #################
-    #third party app
+    # third party app
     # 'jet.dashboard',
     # 'jet',
     'crispy_forms',
     'social_django',
     'pwa',
+    ###to be add####
+    #'pagedown', not Build yet
+    #'markdown_extras',
 
     ################
     'django.contrib.admin',
@@ -55,12 +58,10 @@ INSTALLED_APPS = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-           'social_core.backends.github.GithubOAuth2',
-           'social_core.backends.google.GoogleOAuth2',
-           'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
 ]
-
-
 
 
 MIDDLEWARE = [
@@ -79,8 +80,8 @@ ROOT_URLCONF = 'iert.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [],
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        # 'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,21 +110,21 @@ WSGI_APPLICATION = 'iert.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
+################set database to sql######################
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'iert',
-         'USER': 'root',
-         'HOST':'localhost',
-         'PASSWORD': 'vinayak',
-         'PORT': '3306',
-          'OPTIONS': {
-              'autocommit': True,
-              "init_command": "SET default_storage_engine=MyISAM",
-         },
-     }
- }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'iert',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PASSWORD': 'vinayak',
+        'PORT': '3306',
+        'OPTIONS': {
+            'autocommit': True,
+            "init_command": "SET default_storage_engine=MyISAM",
+        },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -165,33 +166,31 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-CRISPY_TEMPLATE_PACK='bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
-LOGIN_REDIRECT_URL ="index"
+LOGIN_REDIRECT_URL = "index"
 
 
-
-
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 ####################collage email id ##############
-EMAIL_HOST_USER="itssvinayak@gmail.com"
-EMAIL_HOST_PASSWORD="vqtofhhnakpaxrmo"
+EMAIL_HOST_USER = "itssvinayak@gmail.com"
+EMAIL_HOST_PASSWORD = "vqtofhhnakpaxrmo"
 ##################################################
 
 
 #########################pwa settings###############
 #PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'home/static/', 'serviceworker.js')
-#own serviceworker
+# own serviceworker
 
 
 PWA_APP_NAME = 'IERT'
@@ -202,19 +201,20 @@ PWA_APP_DISPLAY = 'standalone'
 PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
-{
-'src': '/static/home/img/iert_icon.png',
-'sizes': '160x160'
-}
+    {
+        'src': '/static/home/img/iert_icon.png',
+        'sizes': '160x160'
+    }
 ]
 PWA_APP_SPLASH_SCREEN = [
-{
-'src': '/static/home/img/iert_icon.png',
-'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
-}
+    {
+        'src': '/static/home/img/iert_icon.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
 ]
 
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'home/static/', 'serviceworker.js')
+PWA_SERVICE_WORKER_PATH = os.path.join(
+    BASE_DIR, 'home/static/', 'serviceworker.js')
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
