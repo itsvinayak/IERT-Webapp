@@ -213,8 +213,7 @@ PWA_APP_SPLASH_SCREEN = [
     }
 ]
 
-PWA_SERVICE_WORKER_PATH = os.path.join(
-    BASE_DIR, 'home/static/', 'serviceworker.js')
+
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
