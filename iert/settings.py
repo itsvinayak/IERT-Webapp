@@ -184,7 +184,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ####################collage email id ##############
 EMAIL_HOST_USER = "itssvinayak@gmail.com"
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_PASSWORD = "vqtofhhnakpaxrmo"
 ##################################################
 
 
@@ -213,6 +213,7 @@ PWA_APP_SPLASH_SCREEN = [
     }
 ]
 
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'home/static/', 'serviceworker.js')
 
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
