@@ -21,4 +21,4 @@ pip3 install urllib3==1.24.1
 pip3 install google-api-python-client==1.4.1
 pip3 install django-jet==1.0.8
 pip3 install Markdown
-
+pip3 install django-debug-toolbar

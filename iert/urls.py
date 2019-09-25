@@ -79,6 +79,13 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-##error 404 ####
+############################ DEBUG TOOLBAR URL##############################
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [ path('__debug__/', include(debug_toolbar.urls))]
+########################################################################
+
+
+############### error 404(file not found) and 500 #################################
 handler404 = myapp_views.error_404
 handler500 = myapp_views.error_500

@@ -25,7 +25,7 @@ SECRET_KEY = '775_^4c@7hj=4l!ru(g$j1!u9n^!3evi=_n0-&s9(pibcdg@f='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,9 +44,14 @@ INSTALLED_APPS = [
     'crispy_forms',
     'social_django',
     'pwa',
+
     ###to be add####
     #'pagedown', not Build yet
     #'markdown_extras',
+
+    ######tool bar####
+
+    'debug_toolbar',
 
     ################
     'django.contrib.admin',
@@ -58,13 +63,18 @@ INSTALLED_APPS = [
 ]
 
 AUTHENTICATION_BACKENDS = [
+
+    ##############google and github##########
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.google.GoogleOAuth2',
+    #########################################
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 
 MIDDLEWARE = [
+    ###first one is for  "DEBUGGER TOOLBAR" #####
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -219,3 +229,42 @@ PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
 ###############################################################################################
+
+
+############################# DEBUGGER TOOLBAR (only for testbranch)###################################
+
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.versions.VersionsPanel',
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.settings.SettingsPanel',
+    'debug_toolbar.panels.headers.HeadersPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'debug_toolbar.panels.cache.CachePanel',
+    'debug_toolbar.panels.signals.SignalsPanel',
+    'debug_toolbar.panels.logging.LoggingPanel',
+    'debug_toolbar.panels.redirects.RedirectsPanel',
+    'debug_toolbar.panels.profiling.ProfilingPanel',
+]
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
+
+def show_toolbar(request):
+    return True
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS':False,
+    "SHOW_TOOLBAR_CALLBACK" : show_toolbar,
+     # Toolbar options
+    'RESULTS_CACHE_SIZE': 3,
+    'SHOW_COLLAPSED': True,
+    # Panel options
+    'SQL_WARNING_THRESHOLD': 100,   # milliseconds
+
+}
