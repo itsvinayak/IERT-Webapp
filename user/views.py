@@ -36,7 +36,11 @@ def register(request):
             msg = EmailMultiAlternatives(
                 subject, html_content, from_email, [to])
             msg.attach_alternative(html_content, "text/html")
-            msg.send()
+            try:
+                msg.send()
+            except:
+                print("email not working")
+                pass
             ##################################################################
             messages.success(
                 request, f'Your account has been created! You are now able to log in')
