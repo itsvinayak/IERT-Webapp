@@ -120,8 +120,7 @@ DATABASES = {
         'PASSWORD': 'vinayak',
         'PORT': '3306',
         'OPTIONS': {
-            'autocommit': True,
-            "init_command": "SET default_storage_engine=MyISAM",
+            'sql_mode':'traditional',
         },
     }
 }
