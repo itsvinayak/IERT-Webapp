@@ -3,13 +3,7 @@
 {% block side %}
 {% endblock %}
 {% block start %}
-
-<!--style here-->
-<style>
-  body {
-    overflow-x: hidden;
-  }
-
+<style media="screen">
   video {
     position: fixed;
     background: black;
@@ -25,16 +19,28 @@
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
       0 6px 20px 0 rgba(0, 0, 0, 0.39);
-    margin-top: 10%;
     border: 3px solid lightgrey;
+    margin: 0 auto;
+    margin-bottom: 3%;
+    float: none;
+    /* on mobile 20% margin need*/
+  }
+
+  .first {
+    margin-top: 15%;
   }
 
   .profile_img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
       0 6px 20px 0 rgba(0, 0, 0, 0.39);
     border-radius: 50%;
-    border-top: 3px solid lightgrey;
-    transform: translate(150%, -50%);
+    border: 5px solid lightgrey;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    display: block;
+    height: 25rem;
+    width: 25rem;
+    float: none;
     margin-bottom: -15%;
   }
 
@@ -67,94 +73,35 @@
     font-weight: bold;
   }
 
-  .ann_info {
-    font-size: 2rem;
-    margin: 3%;
-
-  }
-
-  .username {
-    text-align: center;
-    font-size: 4rem;
-  }
-
-  /* mobile ---------------------------------------------------> */
-
   @media only screen and (max-width: 762px) {
     .teacher_box img {
-      margin-bottom: 10%;
-
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      min-width: 50%;
+      margin: 5%;
+      position: relative;
+      height: 100%;
+      left: 0;
+      right: 0;
     }
 
     .teacher_box {
       text-align: center;
+
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
         0 6px 20px 0 rgba(0, 0, 0, 0.39);
     }
 
-    .error_handle {
-      margin-top: 38%;
+    .first {
+      margin-top: 45%;
     }
 
-    .card {
-      margin-left: 3%;
-      margin-right: 3%;
-      margin-bottom: 4%;
-    }
-
-    .profile_img {
-      transform: translate(35%, -50%);
-      display: flex;
-      align-self: center;
-      height: 18rem;
-      width: 18rem;
-    }
-
-    .username {
-      margin-top: -20%;
-    }
-
-    .info {
-      margin-top: 5%;
-    }
-
-    .info h1 {
-      font-style: italic;
-      font-family: cursive;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .info .item {
-      font-size: 1.5rem;
-    }
-
-    .info .item-title {
-      font-size: 3rem;
-    }
-
-    .button_style {
-      margin: 4%;
-      font-size: 1rem;
-    }
-
-    .announcement h2 {
-      font-size: 3rem;
-      text-decoration: underline;
-      font-style: italic;
-      font-weight: bold;
-    }
-
-    .ann_info {
-      font-size: 1.5rem;
-      margin: 3%;
-      margin-top: 4%;
+    .buttons_aktu{
+      margin-top:10%;
 
     }
-
   }
-
-  /* mobile --> */
 
   .teacher_box {
     display: block;
@@ -173,22 +120,16 @@
     height: 200px;
     float: left;
   }
-
-  .teacher_info {}
 </style>
-
-
-
 
 <video loop autoplay muted>
   <source src="{% static 'video/Video_1.mp4' %}" type="video/mp4">
 </video>
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2 card error_handle">
-    <div>
-      <img class="rounded-circle profile_img" src="{{user.profile.image.url}}" height="25%" width="25%" />
-      <h2 class="username">{{user.username}}</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 card first">
+      <img class="rounded-circle profile_img img-fluid" src="{{user.profile.image.url}}" />
+      <h2 style="text-align:center;font-size: 4rem;">{{user.username}}</h2>
       <div class="info">
         <h1 class="item-title">about</h1>
         <hr style="border: 1px solid black;" width="50%" align="left" />
@@ -199,78 +140,71 @@
         <div class="item"><b>year : </b>{{user.user_details.year}}</div>
         <div class="item"><b>phone : </b>{{user.user_details.phone_no}}</div>
         <div class="item"><b>date of birth : </b>{{user.user_details.date_of_birth}}</div>
-      </div>
-    </div>
-
-    <!--button for update profile-->
-    <a href="{% url 'Profile_update' %}" style="font-family:  monospace;  float: right;" class="btn btn-primary button_style"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
-    <!--_______________________-->
-    <br />
-    <br />
-
-    <hr />
-    <center class="buttons_aktu">
-      <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
-      <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
-    </center>
-  </div>
-</div>
-
-<!-- notices -->
-{% if notices %}
-<div class="row">
-  <div class="col-md-8 col-md-offset-2 card">
-    <div class="announcement">
-      <center>
-        <h2>announcement</h2>
-      </center>
-      {% for i in notices %}
-      <div class="ann_info">
-        <h4>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-        <sup>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.date|safe}}
-        </sup>
-        <h5>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          {{i.topic|safe}}
-        </h5>
         <hr />
+        <!--button for update profile-->
+        <a href="{% url 'Profile_update' %}" style="font-family: cursive; float: right;" class="btn btn-primary button_style"><i><span class="glyphicon glyphicon-pencil"></span> &nbsp; update profile</i></a>
+        <!--_______________________-->
+        <br />
+        <br />
       </div>
-      <hr />
-      {% endfor %}
+      <center class="buttons_aktu">
+        <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-danger" style="width: 40%; color: white; padding:2%; float: left; margin:3%; overflow: hidden;">check you result</a>
+        <a href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx" class="btn btn-info" style="width: 40%; color: white; padding:2%; margin:3%; overflow: hidden;">UPTU syllabus</a>
+      </center>
     </div>
   </div>
-</div>
-{% endif %}
 
-
-<!-- teacher you need -->
-{% if teacher %}
-<div class="row">
-  <div class="col-md-8 col-md-offset-2 card">
-
-
-    <div class="teacher">
-      <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>
-      {% for i in teacher %}
-      <div class="teacher_box">
-        <img src="{{ i.image.url }}" class="img-responsive img-thumbnail" />
-        <div class="teacher_info">
-          <h1>{{i.name}}</h1>
-          <p>{{i.Designation}}</p>
-          <p>{{i.Qualification}}</p>
-          <p>{{i.Phone}}</p>
-          <p>{{i.email}}</p>
+  <!-- notices -->
+  {% if notices %}
+  <div class="row">
+    <div class="col-md-8 card">
+      <div class="announcement">
+        <center>
+          <h2>announcement</h2>
+        </center>
+        {% for i in notices %}
+        <div class="info">
+          <h3>{{i.topic|safe}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+          <sup class="text-muted">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.date|safe}}
+          </sup>
+          <h4>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {{i.topic|safe}}
+          </h4>
         </div>
+        <hr />
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
-
   </div>
-</div>
+  {% endif %}
 
-{% endif %}
-<!--_________________________-->
+  <!-- teacher you need -->
+  {% if teacher %}
+  <div class="row">
+    <div class="col-md-8 card">
+      <div class="teacher">
+        <h2 style="text-align: center; font-family: cursive; font-weight: bold; text-decoration: underline;"> &nbsp; teacher you need &nbsp; </h2>
+        {% for i in teacher %}
+        <div class="teacher_box">
+          <img src="{{ i.image.url }}" class="img-responsive img-thumbnail" />
+          <div class="teacher_info">
+            <h1>{{i.name}}</h1>
+            <p>{{i.Designation}}</p>
+            <p>{{i.Qualification}}</p>
+            <p>{{i.Phone}}</p>
+            <p>{{i.email}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+  {% endif %}
+</div>
 
 
 {% endblock %}
