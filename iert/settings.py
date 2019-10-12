@@ -25,7 +25,7 @@ SECRET_KEY = '775_^4c@7hj=4l!ru(g$j1!u9n^!3evi=_n0-&s9(pibcdg@f='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'aside.apps.AsideConfig',
     'home.apps.HomeConfig',
+
     #################
     # third party app
     # 'jet.dashboard',
@@ -46,8 +47,8 @@ INSTALLED_APPS = [
     'pwa',
 
     ###to be add####
-    #'pagedown', not Build yet
-    #'markdown_extras',
+    # 'pagedown', not Build yet
+    # 'markdown_extras',
 
     ######tool bar####
 
@@ -130,7 +131,7 @@ DATABASES = {
         'PASSWORD': 'vinayak',
         'PORT': '3306',
         'OPTIONS': {
-            'sql_mode':'traditional',
+            'sql_mode': 'traditional',
         },
     }
 }
@@ -222,7 +223,8 @@ PWA_APP_SPLASH_SCREEN = [
     }
 ]
 
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'home/static/', 'serviceworker.js')
+PWA_SERVICE_WORKER_PATH = os.path.join(
+    BASE_DIR, 'home/static/', 'serviceworker.js')
 
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
@@ -254,13 +256,15 @@ INTERNAL_IPS = [
     # ...
 ]
 
+
 def show_toolbar(request):
     return True
 
+
 DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS':False,
-    "SHOW_TOOLBAR_CALLBACK" : show_toolbar,
-     # Toolbar options
+    'INTERCEPT_REDIRECTS': False,
+    "SHOW_TOOLBAR_CALLBACK": show_toolbar,
+    # Toolbar options
     'RESULTS_CACHE_SIZE': 3,
     'SHOW_COLLAPSED': True,
     # Panel options
