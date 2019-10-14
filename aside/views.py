@@ -84,6 +84,6 @@ def rti(request):
 
 def internship(request):
     page_details={
-        "title":"internship ,made by with love"
+        "title":"internship"
     }
     return render(request,"aside/internship.html",page_details)
