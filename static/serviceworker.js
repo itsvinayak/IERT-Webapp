@@ -8,25 +8,6 @@ var filesToCache = [
   '/static/css/django-pwa-app.css',
   '/static/index.css',
   '/static/home/img/iert_icon.png',
-  //images
-  "home/img/director.jpg",
-  "home/img/dip.jpeg",
-  "home/img/kk.jpg",
-  "home/img/slide1.jpeg",
-  "home/img/slide2.jpeg",
-  "home/img/no6.jpg",
-  "home/img/n1.jpg",
-  "home/img/gr.png",
-  "home/img/p.jpg",
-  "home/img/swa.jpg",
-  "home/img/aktu.png",
-  "home/img/aicte.jpg",
-  "home/img/si.png",
-  "home/img/s.png",
-  "home/img/download.png",
-  "home/img/v.jpg",
-  "home/img/dst-logo.png",
-
 ];
 
 // Cache on install

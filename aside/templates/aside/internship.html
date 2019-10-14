@@ -6,81 +6,120 @@
 {% endblock %}
 
 {% block start %}
-<style>
-.in{
-  padding:1%;
-  margin:2%;
-}
-.rest ul{
-  list-style:none;
-}
-.rest li{
-  background:lightgrey;
-  padding:2%;
-  width:40%;
-  height:auto;
-  float:left;
-  margin:2%;
-}
-.rest li img {
-  float:left;
-  margin-right:3%;
-}
-.rest li h3{
-  font-size:1.8rem;
-}
-@media only screen and (max-width: 762px){
-  .rest li{
-    width:auto;
-    float:none;
-    display:block;
-    margin:5% auto 0;
-    height:auto;
-  }
-  .rest li img {
-    display:block;
-    float:none;
-    margin-right:0;
-    margin:auto;
 
+
+<style media="screen">
+  body{
+    background:#1f292d;
+  }
+  .card img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+      0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    border: 1px solid black;
+    margin: 0 auto;
+    display: block;
+    float: none;
+    padding: 0;
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    margin-bottom: -20%;
+    transform: translateY(-50%);
   }
 
-}
+  .card h2{
+    margin-top:-5%;
+    font-size:4rem;
+    font-family:cursive;
+  }
 
-.rest{
-  margin-top:10%;
-}
+  .card h3{
+    font-size:2rem;
+  }
+  .card {
+    background: #f2f2f2f2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 40%;
+    margin: 2%;
+    padding: 0;
+    text-align: center;
+  }
 
+  .rest .row {
+    display: flex;
+    top: 0;
+    left: 0;
+    margin: 10%;
+  }
+
+  .rest .row .card {
+    margin: 0 auto;
+
+  }
+
+  @media only screen and (max-width: 762px) {
+    .rest .row {
+      display: block !important;
+    }
+
+    .card {
+      width: 100%;
+      display: block !important;
+      margin: 0 auto;
+      font-size: 2rem;
+    }
+
+    .card img {
+      height: 70%;
+      width: 70%;
+      margin-top: 50%;
+    }
+
+    .rest{
+      margin-top:20%;
+    }
+  }
+
+
+  .rest h1{
+    text-align:center;
+    font-weight:bolder;
+    display:block;
+    margin-bottom:20%;
+  }
 </style>
 
-<div class="rest">
-  <div class="row in">
-    <h1> Internship </h1>
-   <br/>
-   <br/>
-    <ul>
-      <li>
-        <h2>vinayak</h2>
-        <img src="{% static 'aside/internship/vinayak.jpg' %}" alt="not found" height="120px" width="120px" />
-        <h3> Mr. vinayak is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
-      </li>
 
-      <li>
-      <h2>somil</h2>
-        <img src="{% static 'aside/internship/default.jpg' %}" alt="not found" height="120px" width="120px" />
-        <h3> Mr. somil singh is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
-      </li>
+<div class="rest container">
 
-      <li>
-      <h2>devesh</h2>
-        <img src="{% static 'aside/internship/default.jpg' %}" alt="not found" height="120px" width="120px" />
-        <h3> Mr. devesh patel is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
-      </li>
-
-    </ul>
+  <h1>Internship </h1>
 
 
 
+  <div class="row"">
+        <div class=" card">
+    <img src="{% static 'aside/internship/vinayak.jpg' %}" alt="vinayak" />
+    <h2>vinayak</h2>
+    <h3> Mr. vinayak is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 card">
+    <img src="{% static 'aside/internship/default.jpg' %}" alt="somil" />
+    <h2>somil</h2>
+    <h3> Mr. somil singh is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+  </div>
+
+  <div class="col-md-6 card">
+    <img src="{% static 'aside/internship/default.jpg' %}" alt="devesh" />
+    <h2>devesh</h2>
+    <h3> Mr. devesh patel is B.Tech third year student of CSE in IERT. He currently involve in institute web development project and server maintenance as an intern under the supervision of Dr. B.D. Mazumdar.</h3>
+  </div>
+
+
+
+
+</div>
 </div>
 {% endblock %}
