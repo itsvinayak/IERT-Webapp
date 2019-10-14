@@ -3,7 +3,7 @@
 
 This is my college website created using python (django framework) at backend . Some of the features of website include implementation of login/logout system for students , it's a responsive website which is also a standalone progressive web app and provide dynamic notification and content from backend.
 
-<center><img src="iert.png" width="100%"/></center>
+<center><img src="iert.png" width="100%" height="60%"/></center>
 
 # Django
 
