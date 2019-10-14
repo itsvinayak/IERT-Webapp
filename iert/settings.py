@@ -25,7 +25,7 @@ SECRET_KEY = '775_^4c@7hj=4l!ru(g$j1!u9n^!3evi=_n0-&s9(pibcdg@f='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -120,8 +120,7 @@ DATABASES = {
         'PASSWORD': 'vinayak',
         'PORT': '3306',
         'OPTIONS': {
-            'autocommit': True,
-            "init_command": "SET default_storage_engine=MyISAM",
+            'sql_mode':'traditional',
         },
     }
 }

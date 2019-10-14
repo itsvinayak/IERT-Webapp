@@ -6,7 +6,7 @@ class new(models.Model):
     title = models.CharField(max_length=300)
     author = models.CharField(max_length=300)
     date = models.DateField(null=True, blank=True)
-    no_of_comment = models.IntegerField(blank=True)
+    no_of_comment = models.IntegerField(blank=True,default=0)
     likes = models.ManyToManyField(User, related_name="likes", blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='media/')
     info = models.TextField()
