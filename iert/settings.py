@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'aside.apps.AsideConfig',
     'home.apps.HomeConfig',
+    'diploma.apps.DiplomaConfig',
     #################
     # third party app
     # 'jet.dashboard',
