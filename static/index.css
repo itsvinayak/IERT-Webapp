@@ -4,7 +4,7 @@
 html,
 body {
   overflow-x: hidden;
-  min-width: 100%;
+  background: black;
   min-height: 100%;
 }
 
@@ -115,7 +115,6 @@ div .desc {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   overflow: hidden;
-  min-width: 100%;
   min-height: 100vh;
   margin-top: 3%;
 }
