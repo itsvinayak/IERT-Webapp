@@ -216,7 +216,7 @@ def Management(request):
     a = 'Management'
     teacher = facultys.objects.all().filter(branch=a)
     notices = notice_board.objects.filter(branch=a)
-    bra = degree_detail.objects.filter(branch='	Management')
+    bra = degree_detail.objects.filter(branch='Management')
     bd = {
         "title": "Management",
         "notice": notices,
