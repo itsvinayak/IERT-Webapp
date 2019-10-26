@@ -86,7 +86,7 @@
           {% if data.img %}
            <img src="../media/profile_pics/default.jpg"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
            {% else %}
-           <img src="{% static "home/img/Dr-Ashish-Kumar-Goel.jpg" %}"  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
+           <img src="{{ data.image.url }}""  class="img-responsive img-thumbnail" style="width:300px; height:300px; " />
            {% endif %}
 
 
@@ -105,12 +105,13 @@
     </div>
   </div>
 {% endfor %}
+{% else %}
+<h1> no content available </h1>
 {% endif %}
 
+
 </center>
-
 </div>
-
 </div>
 
 
