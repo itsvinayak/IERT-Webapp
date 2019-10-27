@@ -1,10 +1,18 @@
-from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from user import views as user
 from home import views as myapp_views
 from django.contrib.auth import views as auth
+
+
+
+############# admin #########################
+from django.contrib import admin
+
+## in case you need a different diploma panel
+#from diploma.admin import diploma_admin_site
+#############################################
 
 
 ###for error 404 ##################
@@ -15,8 +23,9 @@ from django.conf.urls import handler404, handler500
 admin.site.site_header = 'iert admin'
 admin.site.site_title = 'iert admin'
 #admin.site.site_url = 'http://coffeehouse.com/'
-admin.site.index_title = 'IERT Administration'
+admin.site.index_title = 'Welcome IERT Administration'
 admin.empty_value_display = '**Empty**'
+
 ################################################
 
 
@@ -61,6 +70,11 @@ urlpatterns = [
 
     # admin path
     path('admin/', admin.site.urls),
+
+    #in case you need different admin panel for diploma
+    #path('diploma-admin/',diploma_admin_site.urls),
+
+    # add style to admin by uncomment
     # path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     # path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
 
