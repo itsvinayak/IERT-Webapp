@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.urls import path, include
 from . import views
+
 urlpatterns = [
-    path('notice_board', views.notice_board_view, name='notice'),
-    path('desk', views.desk, name='desk'),
-    path('director', views.director, name='director'),
-    path('notice/<int:id>', views.notice, name='notice_page')
+    path("notice_board", views.notice_board_view, name="notice"),
+    path("desk", views.desk, name="desk"),
+    path("director", views.director, name="director"),
+    path("notice/<int:id>", views.notice, name="notice_page")
     # taking int value
 ]
