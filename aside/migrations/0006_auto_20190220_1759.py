@@ -6,19 +6,14 @@ import django.utils.timezone
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('aside', '0005_download_link'),
-    ]
+    dependencies = [("aside", "0005_download_link")]
 
     operations = [
-        migrations.RemoveField(
-            model_name='download_link',
-            name='link',
-        ),
+        migrations.RemoveField(model_name="download_link", name="link"),
         migrations.AddField(
-            model_name='download_link',
-            name='file',
-            field=models.FileField(default=django.utils.timezone.now, upload_to='pdf/'),
+            model_name="download_link",
+            name="file",
+            field=models.FileField(default=django.utils.timezone.now, upload_to="pdf/"),
             preserve_default=False,
         ),
     ]

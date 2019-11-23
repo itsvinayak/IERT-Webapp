@@ -5,14 +5,35 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('extra_links', '0005_auto_20190810_2021'),
-    ]
+    dependencies = [("extra_links", "0005_auto_20190810_2021")]
 
     operations = [
         migrations.AlterField(
-            model_name='notice_board',
-            name='branch',
-            field=models.CharField(choices=[('all', 'all'), ('Computer Science & Engineering', 'Computer Science & Engineering'), ('Electronic Engineering', 'Electronic Engineering'), ('Industrial & Production Engineering', 'Industrial & Production Engineering'), ('Electrical Engineering', 'Electrical Engineering'), ('Civil Engineering', 'Civil Engineering'), ('Mechanical Engineering', 'Mechanical Engineering'), ('Instrumentation and Control Engineering', 'Instrumentation and Control Engineering'), ('Applied Science and Humanity', 'Applied Science and Humanity'), ('Management', 'Management')], max_length=100),
-        ),
+            model_name="notice_board",
+            name="branch",
+            field=models.CharField(
+                choices=[
+                    ("all", "all"),
+                    (
+                        "Computer Science & Engineering",
+                        "Computer Science & Engineering",
+                    ),
+                    ("Electronic Engineering", "Electronic Engineering"),
+                    (
+                        "Industrial & Production Engineering",
+                        "Industrial & Production Engineering",
+                    ),
+                    ("Electrical Engineering", "Electrical Engineering"),
+                    ("Civil Engineering", "Civil Engineering"),
+                    ("Mechanical Engineering", "Mechanical Engineering"),
+                    (
+                        "Instrumentation and Control Engineering",
+                        "Instrumentation and Control Engineering",
+                    ),
+                    ("Applied Science and Humanity", "Applied Science and Humanity"),
+                    ("Management", "Management"),
+                ],
+                max_length=100,
+            ),
+        )
     ]

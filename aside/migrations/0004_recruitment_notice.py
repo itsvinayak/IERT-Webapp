@@ -5,16 +5,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('aside', '0003_facultys_image'),
-    ]
+    dependencies = [("aside", "0003_facultys_image")]
 
     operations = [
         migrations.CreateModel(
-            name='recruitment_notice',
+            name="recruitment_notice",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('notice', models.CharField(max_length=1000)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("notice", models.CharField(max_length=1000)),
             ],
-        ),
+        )
     ]

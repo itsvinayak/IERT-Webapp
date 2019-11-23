@@ -5,19 +5,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('home', '0013_remove_degree_detail_notice'),
-    ]
+    dependencies = [("home", "0013_remove_degree_detail_notice")]
 
     operations = [
         migrations.AddField(
-            model_name='degree_detail',
-            name='branch_lab',
+            model_name="degree_detail",
+            name="branch_lab",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='degree_detail',
-            name='branch_syllabus',
+            model_name="degree_detail",
+            name="branch_syllabus",
             field=models.TextField(blank=True, null=True),
         ),
     ]

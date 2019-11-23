@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0011_auto_20190225_1730'),
-    ]
+    dependencies = [("iert_news", "0011_auto_20190225_1730")]
 
     operations = [
         migrations.AlterField(
-            model_name='new',
-            name='image',
-            field=models.ImageField(blank=True, null=True, upload_to='media/'),
-        ),
+            model_name="new",
+            name="image",
+            field=models.ImageField(blank=True, null=True, upload_to="media/"),
+        )
     ]

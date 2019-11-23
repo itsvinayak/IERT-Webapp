@@ -5,14 +5,35 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('extra_links', '0004_auto_20190810_2020'),
-    ]
+    dependencies = [("extra_links", "0004_auto_20190810_2020")]
 
     operations = [
         migrations.AlterField(
-            model_name='notice_board',
-            name='branch',
-            field=models.CharField(choices=[('Computer Science & Engineering', 'Computer Science & Engineering'), ('Electronic Engineering', 'Electronic Engineering'), ('Industrial & Production Engineering', 'Industrial & Production Engineering'), ('Electrical Engineering', 'Electrical Engineering'), ('Civil Engineering', 'Civil Engineering'), ('Mechanical Engineering', 'Mechanical Engineering'), ('Instrumentation and Control Engineering', 'Instrumentation and Control Engineering'), ('Applied Science and Humanity', 'Applied Science and Humanity'), ('Management', 'Management')], default='all', max_length=100),
-        ),
+            model_name="notice_board",
+            name="branch",
+            field=models.CharField(
+                choices=[
+                    (
+                        "Computer Science & Engineering",
+                        "Computer Science & Engineering",
+                    ),
+                    ("Electronic Engineering", "Electronic Engineering"),
+                    (
+                        "Industrial & Production Engineering",
+                        "Industrial & Production Engineering",
+                    ),
+                    ("Electrical Engineering", "Electrical Engineering"),
+                    ("Civil Engineering", "Civil Engineering"),
+                    ("Mechanical Engineering", "Mechanical Engineering"),
+                    (
+                        "Instrumentation and Control Engineering",
+                        "Instrumentation and Control Engineering",
+                    ),
+                    ("Applied Science and Humanity", "Applied Science and Humanity"),
+                    ("Management", "Management"),
+                ],
+                default="all",
+                max_length=100,
+            ),
+        )
     ]

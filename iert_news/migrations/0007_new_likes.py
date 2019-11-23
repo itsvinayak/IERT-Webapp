@@ -8,13 +8,15 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('iert_news', '0006_auto_20190211_2245'),
+        ("iert_news", "0006_auto_20190211_2245"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='new',
-            name='likes',
-            field=models.ManyToManyField(blank=True, related_name='new_likes', to=settings.AUTH_USER_MODEL),
-        ),
+            model_name="new",
+            name="likes",
+            field=models.ManyToManyField(
+                blank=True, related_name="new_likes", to=settings.AUTH_USER_MODEL
+            ),
+        )
     ]

@@ -5,15 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0018_new_no_of_comment'),
-    ]
+    dependencies = [("iert_news", "0018_new_no_of_comment")]
 
     operations = [
         migrations.AlterField(
-            model_name='new',
-            name='no_of_comment',
+            model_name="new",
+            name="no_of_comment",
             field=models.IntegerField(blank=True, default=0),
             preserve_default=False,
-        ),
+        )
     ]

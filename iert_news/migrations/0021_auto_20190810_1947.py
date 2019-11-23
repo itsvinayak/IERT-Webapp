@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0020_comment_reply'),
-    ]
+    dependencies = [("iert_news", "0020_comment_reply")]
 
     operations = [
         migrations.AlterField(
-            model_name='comment',
-            name='time',
+            model_name="comment",
+            name="time",
             field=models.DateTimeField(auto_now_add=True, null=True),
-        ),
+        )
     ]

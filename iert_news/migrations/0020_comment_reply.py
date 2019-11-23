@@ -6,14 +6,17 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0019_auto_20190302_2134'),
-    ]
+    dependencies = [("iert_news", "0019_auto_20190302_2134")]
 
     operations = [
         migrations.AddField(
-            model_name='comment',
-            name='reply',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='replies', to='iert_news.Comment'),
-        ),
+            model_name="comment",
+            name="reply",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="replies",
+                to="iert_news.Comment",
+            ),
+        )
     ]

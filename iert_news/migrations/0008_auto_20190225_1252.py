@@ -6,14 +6,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0007_new_likes'),
-    ]
+    dependencies = [("iert_news", "0007_new_likes")]
 
     operations = [
         migrations.AlterField(
-            model_name='new',
-            name='likes',
-            field=models.ManyToManyField(blank=True, default=None, related_name='user_likes', to=settings.AUTH_USER_MODEL),
-        ),
+            model_name="new",
+            name="likes",
+            field=models.ManyToManyField(
+                blank=True,
+                default=None,
+                related_name="user_likes",
+                to=settings.AUTH_USER_MODEL,
+            ),
+        )
     ]

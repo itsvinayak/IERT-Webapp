@@ -7,19 +7,17 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0016_auto_20190302_1807'),
-    ]
+    dependencies = [("iert_news", "0016_auto_20190302_1807")]
 
     operations = [
         migrations.AlterField(
-            model_name='comment',
-            name='content',
-            field=models.CharField(max_length=300),
+            model_name="comment", name="content", field=models.CharField(max_length=300)
         ),
         migrations.AlterField(
-            model_name='comment',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="comment",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

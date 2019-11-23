@@ -5,19 +5,25 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('home', '0001_initial'),
-    ]
+    dependencies = [("home", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='degree_detail',
+            name="degree_detail",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('branch', models.CharField(max_length=300)),
-                ('branch_imformation', models.TextField()),
-                ('branch_vision', models.TextField()),
-                ('branch_mission', models.TextField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("branch", models.CharField(max_length=300)),
+                ("branch_imformation", models.TextField()),
+                ("branch_vision", models.TextField()),
+                ("branch_mission", models.TextField()),
             ],
-        ),
+        )
     ]

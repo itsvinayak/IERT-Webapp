@@ -5,24 +5,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('home', '0011_auto_20190403_0452'),
-    ]
+    dependencies = [("home", "0011_auto_20190403_0452")]
 
     operations = [
         migrations.AlterField(
-            model_name='degree_detail',
-            name='branch_imformation',
+            model_name="degree_detail",
+            name="branch_imformation",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='degree_detail',
-            name='branch_mission',
+            model_name="degree_detail",
+            name="branch_mission",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='degree_detail',
-            name='branch_vision',
+            model_name="degree_detail",
+            name="branch_vision",
             field=models.TextField(blank=True, null=True),
         ),
     ]

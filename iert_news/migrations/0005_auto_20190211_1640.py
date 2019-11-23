@@ -5,13 +5,6 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0004_auto_20190211_1631'),
-    ]
+    dependencies = [("iert_news", "0004_auto_20190211_1631")]
 
-    operations = [
-        migrations.RenameModel(
-            old_name='news',
-            new_name='new',
-        ),
-    ]
+    operations = [migrations.RenameModel(old_name="news", new_name="new")]

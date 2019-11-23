@@ -5,14 +5,8 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('home', '0015_popup'),
-    ]
+    dependencies = [("home", "0015_popup")]
 
     operations = [
-        migrations.AlterField(
-            model_name='popup',
-            name='text',
-            field=models.TextField(),
-        ),
+        migrations.AlterField(model_name="popup", name="text", field=models.TextField())
     ]

@@ -5,25 +5,31 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('iert_news', '0003_auto_20190211_1554'),
-    ]
+    dependencies = [("iert_news", "0003_auto_20190211_1554")]
 
     operations = [
         migrations.CreateModel(
-            name='new_by_viewer',
+            name="new_by_viewer",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=300)),
-                ('author', models.CharField(max_length=300)),
-                ('date', models.DateField()),
-                ('image', models.ImageField(default='', upload_to='media/')),
-                ('info', models.TextField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=300)),
+                ("author", models.CharField(max_length=300)),
+                ("date", models.DateField()),
+                ("image", models.ImageField(default="", upload_to="media/")),
+                ("info", models.TextField()),
             ],
         ),
         migrations.AlterField(
-            model_name='news',
-            name='image',
-            field=models.ImageField(default='', upload_to='media/'),
+            model_name="news",
+            name="image",
+            field=models.ImageField(default="", upload_to="media/"),
         ),
     ]

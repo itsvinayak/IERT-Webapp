@@ -17,18 +17,18 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-
-      path('faculty',views.faculty,name='faculty'),
-      path('anti_ragging',views.anti_ragging,name='anti_ragging'),
-      path('internship',views.internship,name='internship'),
-      path('computer_center',views.computer_center,name='computer_center'),
-      path('download',views.download,name='download'),
-      path('technovation',views.technovation,name='technovation'),
-      path('placements',views.placement,name='placement'),
-      path('Udbhav',views.Udbhav,name='Udbhav'),
-      path('Achievements',views.Achievements,name='Achievements'),
-      path('Women_Grievance_Cell',views.Women_Grievance_Cell,name='Women_Grievance_Cell'),
-      path('recruitment',views.recruitment,name='recruitment'),
-      path('rti',views.rti,name='rti'),
-
+    path("faculty", views.faculty, name="faculty"),
+    path("anti_ragging", views.anti_ragging, name="anti_ragging"),
+    path("internship", views.internship, name="internship"),
+    path("computer_center", views.computer_center, name="computer_center"),
+    path("download", views.download, name="download"),
+    path("technovation", views.technovation, name="technovation"),
+    path("placements", views.placement, name="placement"),
+    path("Udbhav", views.Udbhav, name="Udbhav"),
+    path("Achievements", views.Achievements, name="Achievements"),
+    path(
+        "Women_Grievance_Cell", views.Women_Grievance_Cell, name="Women_Grievance_Cell"
+    ),
+    path("recruitment", views.recruitment, name="recruitment"),
+    path("rti", views.rti, name="rti"),
 ]

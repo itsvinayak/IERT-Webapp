@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import new,new_by_viewer,Comment
+from .models import new, new_by_viewer, Comment
 
 
 admin.site.register(new)

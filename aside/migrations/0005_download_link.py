@@ -5,17 +5,23 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('aside', '0004_recruitment_notice'),
-    ]
+    dependencies = [("aside", "0004_recruitment_notice")]
 
     operations = [
         migrations.CreateModel(
-            name='download_link',
+            name="download_link",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('link', models.CharField(max_length=1000)),
-                ('title', models.CharField(max_length=1000)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("link", models.CharField(max_length=1000)),
+                ("title", models.CharField(max_length=1000)),
             ],
-        ),
+        )
     ]

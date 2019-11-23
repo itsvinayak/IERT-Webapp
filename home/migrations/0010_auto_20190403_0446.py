@@ -5,14 +5,10 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('home', '0009_remove_degree_detail_image'),
-    ]
+    dependencies = [("home", "0009_remove_degree_detail_image")]
 
     operations = [
         migrations.AlterField(
-            model_name='degree_detail',
-            name='notice',
-            field=models.TextField(null=True),
-        ),
+            model_name="degree_detail", name="notice", field=models.TextField(null=True)
+        )
     ]
