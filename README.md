@@ -20,9 +20,9 @@ A virtual environment is a tool that helps to keep dependencies required by diff
 <br/>
 <a href="https://www.geeksforgeeks.org/python-virtual-environment/" >read more... </a>
 
-to run req.sh
+to run requirements.txt
 
-<pre>bash req.sh</pre>
+<pre>$ pip install -r requirements.txt</pre>
 
 ## Screenshot
 
