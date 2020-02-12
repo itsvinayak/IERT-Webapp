@@ -51,7 +51,10 @@ to run requirements.txt
 
 ## ER  Diagram
 
-    <p align="center"><img src="img/er-diagram.png"></p>
+  <p align="center"><img src="img/er-diagram.png"/></p>
+
+
+
 
 # some important things
 
