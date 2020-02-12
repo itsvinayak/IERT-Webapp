@@ -20,36 +20,66 @@ A virtual environment is a tool that helps to keep dependencies required by diff
 <br/>
 <a href="https://www.geeksforgeeks.org/python-virtual-environment/" >read more... </a>
 
-to run req.sh
+to run requirements.txt
 
-<pre>bash req.sh</pre>
+<pre>$ pip install -r requirements.txt</pre>
 
 ## Screenshot
 
   <p align="center"><img src="img/screen.png"/></p>
+
+## Tables
+
+  <p align="center"><img src="img/tables.png"/></p>
+
+  mysql commands to use
+
+  <ul>
+  <li>
+      To open database
+      <pre>$ mysql -u username -p password</pre>
+  </li>
+  <li>
+    To select database
+    <pre>$ use database_name;</pre>
+  </li>
+  <li>
+    To see tables
+    <pre>$ show tables;</pre>
+ </li>
+</ul>
+
+## ER  Diagram
+
+  <p align="center"><img src="img/er-diagram.png"/></p>
+
+
+
 
 # some important things
 
 <ul>
 <li>
 
- is_superuser  
-------------
+## is_superuser
 
  <code>is_superuser</code>  is a flag on the User model to see list of superusers.
  as to get name of all users we type,
+
  <pre>User.objects.all() </pre>
 
  to get all superuser we type,
+
  <pre> User.objects.filter(is_superuser=True) </pre>
 
  <a href="https://stackoverflow.com/questions/45275897/how-to-get-superuser-details-in-django" target="_blank">source</a>
+
  </li>
 
 <li>
 
- CSRF_COOKIE_SECURE=True/SESSION_COOKIE_SECURE = True  
-------------
+## CSRF_COOKIE_SECURE=True/SESSION_COOKIE_SECURE = True
+
  it is false by default
  <code>CSRF_COOKIE_SECURE=True/SESSION_COOKIE_SECURE = True</code> Whether to use a secure cookie for the CSRF cookie. If this is set to True, the cookie will be marked as “secure,” which means browsers may ensure that the cookie is only sent under an HTTPS connection.
 <b>use only if you are using https connection</b>
@@ -60,8 +90,7 @@ to run req.sh
 
  <li>
 
- SESSION_EXPIRE_AT_BROWSER_CLOSE = True  
-------------
+## SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 <code>SESSION_EXPIRE_AT_BROWSER_CLOSE = True</code> Django will use browser-length cookies -- cookies that expire as soon as the user closes his or her browser. Use this if you want people to have to log in every time they open a browser.
 Closing the tab or window does not count as closing the browser. Make sure you quit the browser program to end a browser session.
