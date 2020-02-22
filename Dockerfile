@@ -1,11 +1,13 @@
-FROM django
+FROM python:3.4
 
-ADD . /src
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \ 
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /src
-
+WORKDIR /usr/src/
+COPY requirements.txt ./
 RUN pip install -r requirements.txt
+COPY . .
 
-CMD [ "python", "./manage.py runserver 172.0.0.1:8000" ]
-
-
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
