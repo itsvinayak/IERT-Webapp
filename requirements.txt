@@ -1,24 +1,23 @@
-pip3 install certifi==2019.3.9
-pip3 install chardet==3.0.4
-pip3 install defusedxml==0.6.0rc1
-pip3 install Django==2.2
-pip3 install django-crispy-forms==1.7.2
-pip3 install django-pwa==1.0.5
-pip3 install idna==2.8
-pip3 install mysqlclient==1.4.2.post1
-pip3 install oauthlib==3.0.1
-pip3 install Pillow==2.2.1
-pip3 install PyJWT==1.7.1
-pip3 install python3-openid==3.1.0
-pip3 install pytz==2019.1
-pip3 install requests==2.21.0
-pip3 install requests-oauthlib==1.2.0
-pip3 install six==1.12.0
-pip3 install social-auth-app-django==3.1.0
-pip3 install social-auth-core==3.1.0
-pip3 install sqlparse==0.3.0
-pip3 install urllib3==1.24.1
-pip3 install google-api-python-client==1.4.1
-pip3 install django-jet==1.0.8
-pip3 install Markdown
-
+certifi==2019.3.9
+chardet==3.0.4
+defusedxml==0.6.0rc1
+Django==2.2
+django-crispy-forms==1.7.2
+django-pwa==1.0.5
+idna==2.8
+mysqlclient==1.4.2.post1
+oauthlib==3.0.1
+Pillow==2.2.1
+PyJWT==1.7.1
+python3-openid==3.1.0
+pytz==2019.1
+requests==2.21.0
+requests-oauthlib==1.2.0
+six==1.12.0
+social-auth-app-django==3.1.0
+social-auth-core==3.1.0
+sqlparse==0.3.0
+urllib3==1.24.1
+google-api-python-client==1.4.1
+django-jet==1.0.8
+Markdown
