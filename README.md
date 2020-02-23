@@ -1,7 +1,6 @@
 <h1 align="center">IERT DJANGO WEBAPP</h1>
 
-![](https://img.shields.io/github/repo-size/itsvinayak/iert_django_webapp.svg?label=Repo%20size&style=flat-square)&nbsp;
-
+![](https://img.shields.io/github/repo-size/itsvinayak/iert_django_webapp.svg?label=Repo%20size&style=flat-square)&nbsp; ![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square)&nbsp;
 
 
 This is my college website created using python (django framework) at backend . Some of the features of website include implementation of login/logout system for students , it's a responsive website which is also a standalone progressive web app and provide dynamic notification and content from backend.
@@ -27,7 +26,7 @@ A virtual environment is a tool that helps to keep dependencies required by diff
 to run requirements.txt
 
 <pre>$ pip install -r requirements.txt</pre>
-
+ 
 here <b>env/</b> folder contains all dependencies
 
 ## Running locally
