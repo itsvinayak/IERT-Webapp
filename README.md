@@ -11,6 +11,7 @@ This is my college website created using python (django framework) at backend . 
 
 Django is an open-source python web framework used for rapid development, pragmatic, maintainable, clean design, and secures websites. A web application framework is a toolkit of all components need for application development. The main goal of the Django framework is to allow developers to focus on components of the application that are new instead of spending time on already developed components. Django is fully featured than many other frameworks on the market. It takes care of a lot of hassle involved in the web development; enables users to focus on developing components needed for their application.
 
+
 [![Made with python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://github.com/itsvinayak/iert_django_webapp)
 
 ## Virtualenv & Dependencies
@@ -29,6 +30,44 @@ to run requirements.txt
 
 <pre>$ pip install -r requirements.txt</pre>
  
+here <b>env/</b> folder contains all dependencies
+
+## Running locally
+
+<ol>
+  <li>
+      clone repository 
+      <pre>$ git clone https://github.com/itsvinayak/iert_django_webapp.git</pre>
+  </li>
+  <li>
+     make database settings and connect it to your local database 
+    <pre>$ cd ./src/iert </pre>
+    open <b>settings.py</b> file
+    <pre>
+                DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.mysql",
+                "NAME": "iert",
+                "USER": "root",
+                "HOST": "localhost",
+                "PASSWORD": "vinayak",
+                "PORT": "3306",
+                "OPTIONS": {"sql_mode": "traditional"},
+            }
+        }
+   </pre>
+   set this part according to needs.
+  </li>
+  <li>
+    run migrations 
+    <pre>$ python manage.py migrate</pre>
+  </li>
+  <li>
+    now, runserver 
+    <pre>$ python manage.py runserver</pre>
+  </li>
+ </ol>
+
 here <b>env/</b> folder contains all dependencies
 
 ## Running locally
