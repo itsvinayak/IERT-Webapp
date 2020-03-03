@@ -17,7 +17,7 @@ six==1.12.0
 social-auth-app-django==3.1.0
 social-auth-core==3.1.0
 sqlparse==0.3.0
-urllib3==1.24.1
+urllib3==1.24.2
 google-api-python-client==1.4.1
 django-jet==1.0.8
 Markdown
