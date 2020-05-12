@@ -1,6 +1,6 @@
 <h1 align="center">IERT DJANGO WEBAPP</h1>
 
-![](https://img.shields.io/github/repo-size/itsvinayak/iert_django_webapp.svg?label=Repo%20size&style=flat-square)&nbsp; ![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square)&nbsp;
+![](https://img.shields.io/github/repo-size/itsvinayak/IERT-Webapp.svg?label=Repo%20size&style=flat-square)&nbsp; ![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square)&nbsp;
 
 
 This is my college website created using python (django framework) at backend . Some of the features of website include implementation of login/logout system for students , it's a responsive website which is also a standalone progressive web app and provide dynamic notification and content from backend.
@@ -12,7 +12,7 @@ This is my college website created using python (django framework) at backend . 
 Django is an open-source python web framework used for rapid development, pragmatic, maintainable, clean design, and secures websites. A web application framework is a toolkit of all components need for application development. The main goal of the Django framework is to allow developers to focus on components of the application that are new instead of spending time on already developed components. Django is fully featured than many other frameworks on the market. It takes care of a lot of hassle involved in the web development; enables users to focus on developing components needed for their application.
 
 
-[![Made with python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://github.com/itsvinayak/iert_django_webapp)
+[![Made with python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://github.com/itsvinayak/IERT-Webapp)
 
 ## Virtualenv & Dependencies
 
@@ -50,7 +50,7 @@ run docker file using
 <ol>
   <li>
       clone repository 
-      <pre>$ git clone https://github.com/itsvinayak/iert_django_webapp.git</pre>
+      <pre>$ git clone https://github.com/itsvinayak/IERT-Webapp.git</pre>
   </li>
   <li>
      make database settings and connect it to your local database 
