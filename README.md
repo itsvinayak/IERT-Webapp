@@ -45,43 +45,6 @@ pull docker image using
 run docker file using
 <pre>$ sudo docker run -p 8000:8000 iert_site</pre>
 
-## Running locally
-
-<ol>
-  <li>
-      clone repository 
-      <pre>$ git clone https://github.com/itsvinayak/IERT-Webapp.git</pre>
-  </li>
-  <li>
-     make database settings and connect it to your local database 
-    <pre>$ cd ./src/iert </pre>
-    open <b>settings.py</b> file
-    <pre>
-                DATABASES = {
-            "default": {
-                "ENGINE": "django.db.backends.mysql",
-                "NAME": "iert",
-                "USER": "root",
-                "HOST": "localhost",
-                "PASSWORD": "vinayak",
-                "PORT": "3306",
-                "OPTIONS": {"sql_mode": "traditional"},
-            }
-        }
-   </pre>
-   set this part according to needs.
-  </li>
-  <li>
-    run migrations 
-    <pre>$ python manage.py migrate</pre>
-  </li>
-  <li>
-    now, runserver 
-    <pre>$ python manage.py runserver</pre>
-  </li>
- </ol>
-
-here <b>env/</b> folder contains all dependencies
 
 ## Running locally
 
